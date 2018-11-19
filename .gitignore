@@ -72,3 +72,5 @@ env.py
 \.idea/
 
 cifullstack/__pycache__/
+
+creaturecomforts/__pycache__/
