@@ -2,6 +2,7 @@
 ### Code Institute Full Stack Milestone Project
 One or two paragraphs providing an overview of your project.
 Essentially, this part is your sales pitch.
+ - key words: ease, comfort, calm, relaxing, pretty, subtle, organised, fluff, texture, warmth
  
 ## UX
  - Colour psychology:
@@ -13,7 +14,7 @@ In particular, as part of this section we recommend that you provide a list of U
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 ## Features
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
+ - A Django app must perform a particular functionality within the web application (i.e. registration app, comments app, ...)
 ### Existing Features
 - Feature 1 - allows users X to achieve Y, by having them fill out Z
 - ...
