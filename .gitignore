@@ -70,3 +70,5 @@ fabric.properties
 env.py
 
 \.idea/
+
+cifullstack/__pycache__/
