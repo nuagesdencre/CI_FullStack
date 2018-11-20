@@ -1,0 +1,38 @@
+/* Typography */
+@import url('https://fonts.googleapis.com/css?family=Vibur|Open+Sans:400,700');
+*{
+    font-family:'Open Sans', sans-serif;
+}
+.title, h3 {
+    color: #006464;
+    font-family:Vibur, cursive;
+    text-shadow:2px 2px #fff ;
+}
+
+/* ENDTypography */
+/* Page Structure */
+.jumbotron{
+    background: url('/static/img/pixabay_socks.jpeg');
+    background-size:cover;
+    color:#fff;
+    text-shadow:-2px -2px 3px #000;
+}
+
+body{
+    background: url('/static/img/funky-lines.png');
+
+}
+.container--top{
+    margin-top:80px;
+}
+
+footer{
+    border-top: 2px solid #000000;
+    background-color: rgba(0, 100, 100, 0.48);
+    padding-bottom: 20px;
+}
+/* ENDPage Structure */
+/* Components */
+
+
+/* ENDComponents */
