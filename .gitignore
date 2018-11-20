@@ -68,6 +68,9 @@ fabric.properties
 
 *sqlite3
 env.py
+*.env
+.env
+.fileenv
 
 \.idea/
 
