@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse('This is the index page of the Home app')
+    """
+    Return the index page of the home app
+    (this is the welcome page of the app)
+    """
+    return render(request, 'index.html')
