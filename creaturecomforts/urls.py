@@ -16,8 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from home import urls as home_urls
+from home.views import index
+from products import urls as products_urls
+from payment import urls as payment_urls
+from cart import urls as cart_urls
+from user import urls as user_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', include(home_urls))
+    path('home/', include(home_urls)),
+    path('products/', include(products_urls)),
+    path('payment/', include(payment_urls)),
+    path('cart/', include(cart_urls)),
+    path('user/', include(user_urls)),
+    path('', index, name='index'),
 ]
