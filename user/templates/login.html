@@ -5,7 +5,11 @@
     <h1 class="title"> Login page (User app) </h1>
 </div>
 <div class="container">
-    <h2>...</h2>
+      <form method="POST">
+         {% csrf_token %} {{ login_form | as_bootstrap }}
+        <button type="submit">Login</button>
+    </form>
+  <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
 
 </div>
 
