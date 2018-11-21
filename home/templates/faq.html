@@ -1,0 +1,20 @@
+{% load staticfiles %}
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+    <h1 class="title"> FAQ page (Home app) </h1>
+</div>
+<div class="container">
+    <h2>FAQs</h2>
+    <div class="row">
+        <ul>
+
+<li> {{ Fact_1 }}</li>
+<li> {{ Fact_2 }}</li>
+<li> {{ Fact_3 }}</li>
+
+</ul>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,3 +1,11 @@
+/* Colour Palette*/
+/*dusty pink aa7788*/
+/*seafoam #78ab9a*/
+/*lilac #9a78ab*/
+/*pale pink #ccaabb*/
+/*coquelicot #cc5544*/
+/*dark blue  #334455*/
+/*dark purple #442233*/
 /* Typography */
 @import url('https://fonts.googleapis.com/css?family=Vibur|Open+Sans:400,700');
 *{
@@ -33,6 +41,12 @@ footer{
 }
 /* ENDPage Structure */
 /* Components */
-
+.temp-box{
+    width:200px;
+    height:200px;
+    margin:5px;
+    border: 6px double #ffffff;
+    background-color: rgba(0, 100, 100, 0.62);
+}
 
 /* ENDComponents */

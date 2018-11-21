@@ -1,20 +1,59 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+{% load staticfiles %}
 {% block content %}
 <div class="jumbotron">
     <h1 class="title"> Index page (Home app) </h1>
     <div class="container">
         <div class="row">
-            <div class="col-md">Read more</div>
-            <div class="col-md">Buy Now</div>
+            <div class="col-12"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+                beatae commodi cumque delectus dignissimos, ea earum, impedit in natus omnis pariatur quam quis
+                repellendus sapiente sunt totam voluptas. Deserunt, quia.</p></div>
+             <div class="col-6">
+                <button class="btn btn-sm btn-dark">Read more</button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-sm btn-dark">Subscribe now!</button>
+            </div>
         </div>
     </div>
     <div class="container">
-        <h2>How it works</h2>
-        <div class="row">
-            <div class="col-md">Step 1</div>
-            <div class="col-md">Step 2</div>
-            <div class="col-md">Step 3</div>
-        </div>
+        <h3>{{ test }}</h3>
     </div>
 </div>
+<div class="container">
+    <h2>How it works</h2>
+    <div class="row d-flex flex-wrap">
+        <div class="col">
+            <img class="temp-box" src="{% static 'img/shop_step_1.png' %}" alt="My image">
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at cupiditate, deserunt eius eveniet, fuga id illum, magni odit sit soluta vitae.</div>
+        <div class="col"><img class="temp-box" src="{% static 'img/shop_step_2.png' %}" alt="My image">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, rerum veniam! Consequuntur cupiditate ducimus explicabo illum
+            iure mollitia placeat sequi sit vel voluptatem? Ad aperiam aut dolore eligendi quibusdam, repellendus?
+        </div>
+        <div class="col"><img class="temp-box" src="{% static 'img/shop_step_3.png' %}" alt="My image">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem dicta doloribus esse nesciunt
+        obcaecati odio qui reiciendis sint vitae? Alias aliquid atque beatae cupiditate fugiat id, perferendis placeat quidem, quo repudiandae soluta.</div>
+
+    </div>
+</div>
+<div class="container">
+    <h2>What you can expect in your CreatureComforts boxes...</h2>
+    <div class="row">
+        <div class="col-4 col-md-4"><div class="temp-box">Image</div></div>
+        <div class="col-4 col-md-4"><div class="temp-box">Image</div></div>
+        <div class="col-4 col-md-4"><div class="temp-box">Image</div></div>
+    </div>
+    <button class="btn btn-sm btn-dark">Subscribe now!</button>
+</div>
+<div class="container">
+    <h2>Join the Creature Comforts' community!</h2>
+    <div class="row">
+        <div class="col-6 col-md-6">
+            <h3>Poll</h3></div>
+        <div class="col-6 col-md-6">
+            <h3>Blog</h3></div>
+
+    </div>
+</div>
+
 {% endblock %}
