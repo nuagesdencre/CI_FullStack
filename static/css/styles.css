@@ -19,7 +19,7 @@
 
 /* ENDTypography */
 /* Page Structure */
-.jumbotron{
+.jumbotron, .container--main{
     background: url('/static/img/pixabay_socks.jpeg');
     background-size:cover;
     color:#fff;
@@ -30,7 +30,7 @@ body{
     background: url('/static/img/funky-lines.png');
 
 }
-.container--top{
+.container--top, .container--main{
     margin-top:80px;
 }
 
