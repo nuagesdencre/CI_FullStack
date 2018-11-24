@@ -19,9 +19,16 @@
 
 /* ENDTypography */
 /* Page Structure */
-.jumbotron, .container--main{
-    background: url('/static/img/pixabay_socks.jpeg');
-    background-size:cover;
+.row{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.container--main{
+    background: linear-gradient(to bottom, rgba(192, 158, 121, 0), rgb(245, 245, 245)), url('/static/img/pixabay_socks.jpeg') center;
+    height: 300px;
+}
+.jumbotron{
+    background-color: #ccaabb;
     color:#fff;
     text-shadow:-2px -2px 3px #000;
 }
@@ -30,7 +37,7 @@ body{
     background: url('/static/img/funky-lines.png');
 
 }
-.container--top, .container--main{
+.container--top{
     margin-top:80px;
 }
 
