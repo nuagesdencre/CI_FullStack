@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
 from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .forms import RegistrationForm
+from django.contrib.auth.forms import AuthenticationForm
+
 
 def user(request):
     """
@@ -39,7 +40,8 @@ def register(request):
 
 def login(request):
     """
-    Display the the login form
+    Display the the login page and verify an inputted
+     username and password combination
     """
     if request.user.is_authenticated:
         return redirect(reverse('index'))
@@ -49,14 +51,20 @@ def login(request):
             user = auth.authenticate(username=request.POST['username'],
                                      password=request.POST['password'])
             if user:
-                auth.login(user=user, request=request)
-                messages.success(request, "You are now logged in")
-                return redirect(reverse('index'))
+                auth.login(request, user)
+                messages.success(request, "You have successfully logged in")
+
+                if request.GET and request.GET['next'] != '':
+                    next = request.GET['next']
+                    return HttpResponseRedirect(next)
+                else:
+                    return redirect(reverse('index'))
             else:
-                login_form.add_error(None, "Your username or password is incorrect")
+                messages.error(None, "Your username or password is incorrect")
     else:
         login_form = AuthenticationForm()
-    return render(request, "login.html", {"login_form": login_form})
+    args = {'login_form': login_form, 'next': request.GET.get('next', '')}
+    return render(request, "login.html", args)
 
 
 def logout(request):

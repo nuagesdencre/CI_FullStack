@@ -1,6 +1,15 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+
+
+# class LoginForm(AuthenticationForm):
+#     """
+#     Form to be used by visitors to log in once they have registered
+#     their details
+#     """
+#     username = forms.CharField()
+#     password = forms.CharField(widget=forms.PasswordInput)
 
 
 class RegistrationForm(UserCreationForm):
