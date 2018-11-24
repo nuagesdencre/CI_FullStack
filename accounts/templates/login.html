@@ -8,8 +8,8 @@
 <div class="container">
 
       <form method="POST">
-         {% csrf_token %} {{ login_form | as_bootstrap }}
-        <button type="submit">Login</button>
+         {% csrf_token %} {{ authentication_form | as_bootstrap }}
+        <button class="btn btn-default" type="submit">Login</button>
     </form>
 
 </div>

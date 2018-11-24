@@ -5,11 +5,11 @@ from .forms import RegistrationForm
 from django.contrib.auth.forms import AuthenticationForm
 
 
-def user(request):
+def accounts(request):
     """
-    Display the main page of the User app
+    Display the main page of the Accounts app
     """
-    return render(request, 'user.html')
+    return render(request, 'accounts.html')
 
 
 def register(request):
@@ -30,7 +30,7 @@ def register(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully registered")
-                return redirect(reverse('user'))
+                return redirect(reverse('accounts'))
             else:
                 messages.error(request, "Unable to register your account at this time")
     else:
@@ -46,24 +46,20 @@ def login(request):
     if request.user.is_authenticated:
         return redirect(reverse('index'))
     if request.method == "POST":
-        login_form = AuthenticationForm(request.POST)
-        if login_form.is_valid():
+        authentication_form = AuthenticationForm(request.POST)
+
+        if authentication_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
                                      password=request.POST['password'])
-            if user:
-                auth.login(request, user)
-                messages.success(request, "You have successfully logged in")
+            messages.success(request, "You have successfully logged in")
 
-                if request.GET and request.GET['next'] != '':
-                    next = request.GET['next']
-                    return HttpResponseRedirect(next)
-                else:
-                    return redirect(reverse('index'))
+            if user:
+                    auth.login(user=user, request=request)
             else:
-                messages.error(None, "Your username or password is incorrect")
+                authentication_form.add_error(None, "Your username or password is incorrect")
     else:
-        login_form = AuthenticationForm()
-    args = {'login_form': login_form, 'next': request.GET.get('next', '')}
+        authentication_form = AuthenticationForm()
+    args = {'authentication_form': authentication_form}
     return render(request, "login.html", args)
 
 
