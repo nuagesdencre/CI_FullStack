@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required
+from .forms import UserLoginForm, RegistrationForm
+
 
 
 def user(request):
@@ -14,14 +16,16 @@ def register(request):
     """
     Display the registration form
     """
-    return render(request, 'register.html')
+    registration_form = RegistrationForm()
+    return render(request, 'register.html', {"registration_form": registration_form})
 
 
 def login(request):
     """
     Display the the login form
     """
-    return render(request, 'login.html')
+    login_form = UserLoginForm()
+    return render(request, 'login.html', {"login_form": login_form})
 
 
 def logout(request):
