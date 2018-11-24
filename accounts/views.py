@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
 from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required
-from .forms import RegistrationForm
-from django.contrib.auth.forms import AuthenticationForm
+from .forms import RegistrationForm, LoginForm
+# from django.contrib.auth.forms import AuthenticationForm
 
 
 def accounts(request):
@@ -46,7 +46,7 @@ def login(request):
     if request.user.is_authenticated:
         return redirect(reverse('index'))
     if request.method == "POST":
-        authentication_form = AuthenticationForm(request.POST)
+        authentication_form = LoginForm(request.POST)
 
         if authentication_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
@@ -58,7 +58,7 @@ def login(request):
             else:
                 authentication_form.add_error(None, "Your username or password is incorrect")
     else:
-        authentication_form = AuthenticationForm()
+        authentication_form = LoginForm()
     args = {'authentication_form': authentication_form}
     return render(request, "login.html", args)
 
