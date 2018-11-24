@@ -29,7 +29,7 @@ def register(request):
                                      password=request.POST['password1'])
             if user:
                 auth.login(user=user, request=request)
-                messages.success(request, "You have successfully registered")
+                messages.success(request, "You are now successfully registered")
                 return redirect(reverse('accounts'))
             else:
                 messages.error(request, "Unable to register your account at this time")
@@ -51,10 +51,10 @@ def login(request):
         if authentication_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
                                      password=request.POST['password'])
-            messages.success(request, "You have successfully logged in")
-
+            messages.success(request, "You have been successfully logged in")
             if user:
                     auth.login(user=user, request=request)
+                    return redirect(reverse('index'))
             else:
                 authentication_form.add_error(None, "Your username or password is incorrect")
     else:
@@ -68,7 +68,7 @@ def logout(request):
     Log the user out and redirect back to the index page
     """
     auth.logout(request)
-    messages.success(request, 'You have successfully logged out')
+    messages.success(request, 'You have been successfully logged out')
     return redirect(reverse('index'))
 
 
