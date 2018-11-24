@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required
-from .forms import UserLoginForm, RegistrationForm
-
-
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from .forms import RegistrationForm
 
 def user(request):
     """
@@ -16,7 +15,25 @@ def register(request):
     """
     Display the registration form
     """
-    registration_form = RegistrationForm()
+    if request.user.is_authenticated:
+        return redirect(reverse('index'))
+
+    if request.method == "POST":
+        registration_form = RegistrationForm(request.POST)
+
+        if registration_form.is_valid():
+            registration_form.save()
+
+            user = auth.authenticate(username=request.POST['username'],
+                                     password=request.POST['password1'])
+            if user:
+                auth.login(user=user, request=request)
+                messages.success(request, "You have successfully registered")
+                return redirect(reverse('user'))
+            else:
+                messages.error(request, "Unable to register your account at this time")
+    else:
+        registration_form = RegistrationForm()
     return render(request, 'register.html', {"registration_form": registration_form})
 
 
@@ -24,8 +41,22 @@ def login(request):
     """
     Display the the login form
     """
-    login_form = UserLoginForm()
-    return render(request, 'login.html', {"login_form": login_form})
+    if request.user.is_authenticated:
+        return redirect(reverse('index'))
+    if request.method == "POST":
+        login_form = AuthenticationForm(request.POST)
+        if login_form.is_valid():
+            user = auth.authenticate(username=request.POST['username'],
+                                     password=request.POST['password'])
+            if user:
+                auth.login(user=user, request=request)
+                messages.success(request, "You are now logged in")
+                return redirect(reverse('index'))
+            else:
+                login_form.add_error(None, "Your username or password is incorrect")
+    else:
+        login_form = AuthenticationForm()
+    return render(request, "login.html", {"login_form": login_form})
 
 
 def logout(request):

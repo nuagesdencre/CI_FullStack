@@ -3,19 +3,20 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
 
-class UserLoginForm(forms.Form):
-    """
-    Where visitors who have gone through registration can log in
-    """
-    username= forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
-
-
 class RegistrationForm(UserCreationForm):
     """
-    Where visitors can register to access user-specific features of the website
+    Form through which visitors can register their details to access user-specific
+    features of the website
     """
 
     class Meta:
         model = User
-        fields = ['email', 'username', 'password', 'password1']
+        fields = ['email', 'username', 'password1', 'password2']
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        username = self.cleaned_data.get('username')
+        if User.objects.filter(email=email).exclude(username=username):
+            raise forms.ValidationError(u'Email address must be unique')
+        return email
+

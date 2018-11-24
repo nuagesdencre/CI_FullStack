@@ -6,9 +6,11 @@
     <h1 class="title"> Registration page (User app) </h1>
 </div>
 <div class="container">
+
      <form method="POST">
          {% csrf_token %} {{ registration_form |as_bootstrap }}
         <button class="btn btn-default" type="submit">Register</button>
+         <p>Already registered?<a href="{% url 'login' %}"> Please sign in.</a></p>
     </form>
 
 </div>
