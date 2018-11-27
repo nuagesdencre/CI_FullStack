@@ -16,7 +16,10 @@
     font-family:Vibur, cursive;
     text-shadow:2px 2px #fff ;
 }
-
+.error-msg{
+    color:red;
+    font-weight: bold;
+}
 /* ENDTypography */
 /* Page Structure */
 .row{

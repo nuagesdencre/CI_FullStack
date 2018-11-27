@@ -22,7 +22,6 @@ from payment import urls as payment_urls
 from cart import urls as cart_urls
 from accounts import urls as accounts_urls
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include(home_urls)),
