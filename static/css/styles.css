@@ -8,60 +8,82 @@
 /*dark purple #442233*/
 /* Typography */
 @import url('https://fonts.googleapis.com/css?family=Vibur|Open+Sans:400,700');
-*{
-    font-family:'Open Sans', sans-serif;
+
+* {
+    font-family: 'Open Sans', sans-serif;
 }
+
 .title, h3 {
     color: #006464;
-    font-family:Vibur, cursive;
-    text-shadow:2px 2px #fff ;
+    font-family: Vibur, cursive;
+    text-shadow: 2px 2px #fff;
 }
-.error-msg{
-    color:red;
+
+.error-msg {
+    color: red;
     font-weight: bold;
 }
+
 /* ENDTypography */
 /* Page Structure */
-.row{
+.row {
     margin-top: 10px;
     margin-bottom: 20px;
 }
-.container--main{
+
+.container--main {
     background: linear-gradient(to bottom, rgba(192, 158, 121, 0), rgb(245, 245, 245)), url('/static/img/pixabay_socks.jpeg') center;
     height: 300px;
 }
-.jumbotron{
+
+.jumbotron {
     background-color: #ccaabb;
-    color:#fff;
-    text-shadow:-2px -2px 3px #000;
+    color: #fff;
+    text-shadow: -2px -2px 3px #000;
 }
 
-body{
+body {
     background: url('/static/img/funky-lines.png');
 
 }
-.container--top{
-    margin-top:80px;
+
+.container--top {
+    margin-top: 80px;
 }
 
-footer{
+footer {
     border-top: 2px solid #000000;
     background-color: rgba(0, 100, 100, 0.48);
     padding-bottom: 20px;
 }
+
 /* ENDPage Structure */
 /* Components */
-.nav-item{
+.nav-item {
     list-style: none;
     display: inline-block;
 }
 
-.temp-box{
-    width:200px;
-    height:200px;
-    margin:5px;
+.temp-box {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
     border: 6px double #ffffff;
     background-color: rgba(0, 100, 100, 0.62);
+}
+textarea, input[type="password"]{
+        display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 /* ENDComponents */

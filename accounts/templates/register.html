@@ -10,14 +10,14 @@
     <h3>Thank you for registering</h3>
     {% else %}
     <h2>Register here!</h2>
-    <h3>Fill the form:</h3>
+    <h3>Fill the form below</h3>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ user_form | as_bootstrap }}
-        {{ profile_form.as_p }}
-        <input type="submit" name ="" value="Register">
+        {{ profile_form | as_bootstrap }}
+        <input type="submit"  name ="" value="Register">
     </form>
-<p>Already registered?<a href="{% url 'login' %}"> Please sign in.</a></p>
+<p>Already registered?<a href="{% url 'user_login' %}"> Please sign in.</a></p>
     {% endif %}
 
 </div>
