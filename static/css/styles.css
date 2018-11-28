@@ -18,15 +18,23 @@
     font-family: Vibur, cursive;
     text-shadow: 2px 2px #fff;
 }
-.jumbotron{
+.fancyfont{
+    font-family: Vibur, cursive;
+    font-size:1.2em;
+    text-transform: uppercase;
+}
+
+.jumbotron {
     color: #fff;
     text-shadow: -2px -2px 3px #000;
 }
+
 .error-msg {
     color: red;
     font-weight: bold;
 }
-textarea, input[type="password"]{
+
+textarea, input[type="password"] {
     display: block;
     width: 100%;
     height: calc(2.25rem + 2px);
@@ -38,58 +46,124 @@ textarea, input[type="password"]{
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+@-webkit-keyframes rotateIcon {
+       0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(359deg)
+    }
+}
+
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(359deg)
+    }
+}
+.menu--i:hover,
+.menu--i:focus,
+.menu--i:focus-within{
+    color:#006464;
+    -webkit-animation: rotateIcon ease-out 1s infinite;
+    animation: rotateIcon ease-out 1s infinite;
+}
+
+a:hover{
+    color:#006464;
+}
+
+
+.dropdown-menu > ul {
+    font-weight: normal;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    position: relative;
+    display: block;
+    letter-spacing: 1px;
+}
+.dropdown-header{
+    font-weight: bold;
+}
+.dropdown-menu > ul li>a,
+.dropdown-menu > ul li,.dropdown-header {
+    display: block;
+    vertical-align: top;
+    padding-left: 5px;
+    color:#ced4da;
+}
+.dropdown-menu > ul li>a:hover{
+    text-decoration: overline #ced4da;
+}
+
+.nav-item, .nav-link {
+    list-style: none;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #000000;
+}
+
+.dropdown-menu > ul li:nth-child(6),
+.dropdown-menu > ul li:nth-child(7){
+    background: #007a7a;
+}
 /* ENDTypography */
 /* Page Structure */
-.when_big{
-    display:none;
+.when_big {
+    display: none;
 }
 
-.row{
+.row {
     margin-top: 10px;
     margin-bottom: 20px;
 }
-nav{
-    border-bottom:10px double #fff;
+
+nav {
+    border-bottom: 10px double #fff;
 }
-.title--jumbo{
+
+.title--jumbo {
     background: url('/static/img/creaturecomforts.png') center no-repeat;
-    background-size:contain;
+    background-size: contain;
     height: 150px;
 }
 
 .container--top {
     margin-top: 90px;
 }
-
+.container--space {
+    padding: 90px 10px;
+}
 footer {
     border-top: 2px solid #000000;
-    background:linear-gradient(to bottom, rgba(0, 100, 100, 0.48), rgb(255, 255, 255)), url('/static/img/funky-lines.png');
+    background: linear-gradient(to bottom, rgba(0, 100, 100, 0.48), rgb(255, 255, 255)), url('/static/img/funky-lines.png');
     padding-bottom: 20px;
 }
 
 /* ENDPage Structure */
 /* Components */
-
-.dropdown-menu{
-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+.bg-line{
+    background: radial-gradient(rgba(255, 255, 255, 0.14)70%, rgb(255, 255, 255)), url('/static/img/funky-lines.png');
 }
-.nav-item, .nav-link{
-    list-style: none;
-    text-transform: uppercase;
-    display: inline-block;
-    color:#000000;
+.dropdown-menu {
+    background: rgba(0, 100, 100, 0.94);
+    clear: both;
 }
 
-.temp-box {
-    width: 200px;
-    height: 200px;
+
+.step-box {
+    max-width:100%;
     margin: 5px;
-
     border: 6px double #ffffff;
-    background-color: rgba(0, 100, 100, 0.62);
+    background-color: #ced4da;
 }
 
 
@@ -99,19 +173,24 @@ transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 
 }
 
-/*// Medium devices (tablets, 768px and up)*/
-/*@media (min-width: 768px) { ... }*/
+
+/*@media (min-width: 768px) {*/
+
+/*}*/
 
 @media (min-width: 992px) {
-    .when_big{
-        display:block;
+    .when_big {
+        display: block;
     }
-    .when_small{
-        display:none;
+
+    .when_small {
+        display: none;
     }
-        .title--jumbo{
-    height: 400px;
-}
+
+    .title--jumbo {
+        height: 400px;
+    }
+
 }
 
 /*// Extra large devices (large desktops, 1200px and up)*/

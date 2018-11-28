@@ -1,11 +1,29 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="jumbotron">
-    <h1 class="title"> Product page (Product app) </h1>
-</div>
+
+    <h1 class="title"> Product page </h1>
 <div class="container">
-    <div class="card-group">
+    <div class="jumbotron">
+    <h1 class="title"> Choose your subscription type below! </h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+                beatae commodi cumque delectus dignissimos, ea earum, impedit in natus omnis pariatur quam quis
+                repellendus sapiente sunt totam voluptas. Deserunt, quia.</p></div>
+             <div class="col-6">
+                <button class="btn btn-sm btn-dark">Read more</button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-sm btn-dark">Subscribe now!</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h3>{{ test }}</h3>
+    </div>
+</div>
+    <div class="card-columns">
          {% for product in products %}
   <div class="card">
     <img class="card-img-top" src="{{ MEDIA_URL }}{{ product.image }}" alt="Card image cap">
@@ -20,17 +38,16 @@
                 <div class="input-group">
                     <input name='quantity' type="number" min="1" max="999" class="form-control" placeholder="Quantity">
                     <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
+                            <button class="btn btn-info btn-sm fancyfont" type="submit">Add</button>
                           </span>
                 </div>
-                <!-- /input-group -->
-
-            </form>
+      </form>
     </div>
   </div>
+        {% endfor %}
   </div>
 </div>
-{% endfor %}
+
 </div>
 
 {% endblock %}
