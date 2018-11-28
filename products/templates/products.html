@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="jumbotron">
+    <h1 class="title"> Product page (Product app) </h1>
+</div>
+<div class="container">
+    <div class="card-group">
+         {% for product in products %}
+  <div class="card">
+    <img class="card-img-top" src="{{ MEDIA_URL }}{{ product.image }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">{{ product.description }}</p>
+        <p class="card-text">{{ product.price }}</p>
+    </div>
+      <div class="card-footer">
+      <form method="post" action="{% url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input name='quantity' type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                    <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Add</button>
+                          </span>
+                </div>
+                <!-- /input-group -->
+
+            </form>
+    </div>
+  </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}
