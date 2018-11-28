@@ -18,76 +18,16 @@
     font-family: Vibur, cursive;
     text-shadow: 2px 2px #fff;
 }
-
+.jumbotron{
+    color: #fff;
+    text-shadow: -2px -2px 3px #000;
+}
 .error-msg {
     color: red;
     font-weight: bold;
 }
-
-/* ENDTypography */
-/* Page Structure */
-
-
-.row{
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-.container--main{
-    background: linear-gradient(to bottom, rgba(192, 158, 121, 0), rgb(245, 245, 245)), url('/static/img/pixabay_socks.jpeg') center;
-    height: 300px;
-}
-.jumbotron{
-    background-color: #ccaabb;
-    color:#fff;
-    text-shadow:-2px -2px 3px #000;
-
-}
-
-.container--main {
-    background: linear-gradient(to bottom, rgba(192, 158, 121, 0), rgb(245, 245, 245)), url('/static/img/pixabay_socks.jpeg') center;
-    height: 300px;
-}
-
-.jumbotron {
-    background-color: #ccaabb;
-    color: #fff;
-    text-shadow: -2px -2px 3px #000;
-}
-
-body {
-    background: url('/static/img/funky-lines.png');
-
-}
-
-.container--top {
-    margin-top: 80px;
-}
-
-footer {
-    border-top: 2px solid #000000;
-    background-color: rgba(0, 100, 100, 0.48);
-    padding-bottom: 20px;
-}
-
-/* ENDPage Structure */
-/* Components */
-
-
-.nav-item{
-    list-style: none;
-    display: inline-block;
-}
-
-.temp-box {
-    width: 200px;
-    height: 200px;
-    margin: 5px;
-
-    border: 6px double #ffffff;
-    background-color: rgba(0, 100, 100, 0.62);
-}
 textarea, input[type="password"]{
-        display: block;
+    display: block;
     width: 100%;
     height: calc(2.25rem + 2px);
     padding: .375rem .75rem;
@@ -101,4 +41,80 @@ textarea, input[type="password"]{
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+/* ENDTypography */
+/* Page Structure */
+.when_big{
+    display:none;
+}
+
+.row{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+nav{
+    border-bottom:10px double #fff;
+}
+.title--jumbo{
+    background: url('/static/img/creaturecomforts.png') center no-repeat;
+    background-size:contain;
+    height: 150px;
+}
+
+.container--top {
+    margin-top: 90px;
+}
+
+footer {
+    border-top: 2px solid #000000;
+    background:linear-gradient(to bottom, rgba(0, 100, 100, 0.48), rgb(255, 255, 255)), url('/static/img/funky-lines.png');
+    padding-bottom: 20px;
+}
+
+/* ENDPage Structure */
+/* Components */
+
+.dropdown-menu{
+transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.nav-item, .nav-link{
+    list-style: none;
+    text-transform: uppercase;
+    display: inline-block;
+    color:#000000;
+}
+
+.temp-box {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+
+    border: 6px double #ffffff;
+    background-color: rgba(0, 100, 100, 0.62);
+}
+
+
 /* ENDComponents */
+/* Media Queries */
+@media (min-width: 576px) {
+
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+/*@media (min-width: 768px) { ... }*/
+
+@media (min-width: 992px) {
+    .when_big{
+        display:block;
+    }
+    .when_small{
+        display:none;
+    }
+        .title--jumbo{
+    height: 400px;
+}
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+/*@media (min-width: 1200px) { ... }*/
+
+/* ENDMEdia Queries*/
