@@ -103,12 +103,10 @@ a:hover{
 .dropdown-menu > ul li>a:hover{
     text-decoration: overline #ced4da;
 }
-
-.nav-item, .nav-link {
+.drop-item, .nav-item, .nav-link {
     list-style: none;
     text-transform: uppercase;
-    display: inline-block;
-    color: #000000;
+
 }
 
 .dropdown-menu > ul li:nth-child(6),
@@ -119,6 +117,10 @@ a:hover{
 /* Page Structure */
 .when_big {
     display: none;
+}
+.when_big li a,.when_big li {
+color: #000000;
+    display:inline-block;
 }
 
 .row {

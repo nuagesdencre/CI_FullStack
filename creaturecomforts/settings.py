@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
-    'home',
+    'home','search',
     'payment', 'products', 'accounts', 'cart',
 ]
 

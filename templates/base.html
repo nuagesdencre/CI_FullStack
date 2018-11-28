@@ -22,38 +22,53 @@
         <div class="dropdown-menu" aria-labelledby="dropdownMenu">
             <ul>
                 <li class="dropdown-header nav-link">CreatureComforts</li>
-                <li class="nav-item"><a class="nav-link" href="/home/">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item drop-item"><a class="nav-link" href="/home/">Home <span
+                        class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Shop</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'user_login' %}"> <i class="fas fa-shopping-cart"></i><span
-                            class="mx-1">Cart</span> </a>
+                <li class="nav-item drop-item"><a class="nav-link" href="#">Features</a></li>
+                <li class="nav-item drop-item"><a class="nav-link" href="{% url 'products' %}">Shop</a></li>
+                <li>
+                    <a href="{% url 'view_cart' %}">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        {% if product_count > 0 %}
+                        <label class="badge badge-warning">{{ product_count }}</label>
+                        {% endif %}
+                    </a>
                 </li>
                 {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user"></i>
+                <li class="nav-item drop-item"><a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user"></i>
                     Profile</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'user_logout' %}"><i
+                <li class="nav-item drop-item"><a class="nav-link" href="{% url 'user_logout' %}"><i
                         class="fas fa-sign-out-alt"></i>Log
                     Out</a></li>
                 {% else %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'register' %}"><i class="fa fa-user-plus"></i>
+                <li class="nav-item drop-item"><a class="nav-link" href="{% url 'register' %}"><i
+                        class="fa fa-user-plus"></i>
                     Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'user_login' %}"><i
+                <li class="nav-item drop-item"><a class="nav-link" href="{% url 'user_login' %}"><i
                         class="fas fa-sign-in-alt"></i> Log In</a>
                 </li>
                 {% endif %}
+                <div class="container my-2">
+                    <form class="form-inline" action="{% url 'search_index' %}" method="get">
+                        <input type="text" name="q">
+                        <button class="btn btn-sm ml-1 btn-outline-light my-1" type="submit">Search</button>
+                    </form>
+                </div>
             </ul>
         </div>
     </div>
     <a class="" href="/home/"><img src="{% static 'img/logo_small.png' %}" style="height:75px;"></a>
     <ul class="nav nav-pills when_big">
-
         <li class="nav-item"><a class="nav-link" href="/home/">Home <span class="sr-only">(current)</span></a></li>
         <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Shop</a></li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'user_login' %}"> <i class="fas fa-shopping-cart"></i><span class="mx-1">Cart</span>
+            <a href="{% url 'view_cart' %}">
+                <i class="fas fa-shopping-cart"></i> Cart
+                {% if product_count > 0 %}
+                <label class="badge badge-warning">{{ product_count }}</label>
+                {% endif %}
             </a>
         </li>
         {% if user.is_authenticated %}
@@ -67,6 +82,18 @@
             Log In</a>
         </li>
         {% endif %}
+        <li><div class="container">
+            <a class="nav-link" data-toggle="collapse" href="#search" role="button" aria-expanded="false"
+               aria-controls="searchbutton">
+                <i class="fas fa-search"></i>
+            </a>
+            <div class="collapse" id="search">
+                <form class="form-inline" action="{% url 'search_index' %}" method="get">
+                    <input type="text" name="q">
+                    <button class="btn btn-sm ml-1 btn-outline-info" type="submit">Search</button>
+                </form>
+            </div>
+        </div></li>
     </ul>
 
 </nav>
