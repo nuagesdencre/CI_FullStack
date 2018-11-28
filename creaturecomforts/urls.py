@@ -20,7 +20,7 @@ from home.views import index
 from products import urls as products_urls
 from payment import urls as payment_urls
 from cart import urls as cart_urls
-from user import urls as user_urls
+from accounts import urls as accounts_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +28,6 @@ urlpatterns = [
     path('products/', include(products_urls)),
     path('payment/', include(payment_urls)),
     path('cart/', include(cart_urls)),
-    path('user/', include(user_urls)),
+    path('accounts/', include(accounts_urls)),
     path('', index, name='index'),
 ]

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap_tags %}
+{% block content %}
+<div class="jumbotron">
+    <h1 class="title"> Registration page (User app) </h1>
+</div>
+<div class="container">
+{% if registered %}
+    <h3>Thank you for registering</h3>
+    {% else %}
+    <h2>Register here!</h2>
+    <h3>Fill the form below</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_form | as_bootstrap }}
+        {{ profile_form | as_bootstrap }}
+        <input type="submit"  name ="" value="Register">
+    </form>
+<p>Already registered?<a href="{% url 'user_login' %}"> Please sign in.</a></p>
+    {% endif %}
+
+</div>
+
+{% endblock %}

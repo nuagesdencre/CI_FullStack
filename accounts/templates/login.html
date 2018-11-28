@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap_tags %}
+{% block content %}
+<div class="jumbotron">
+    <h1 class="title"> Login page (User app) </h1>
+</div>
+<div class="container mb-5">
+
+    <form action="{% url 'user_login' %}" method="POST">
+        <div class="form-group">
+        <p>
+            {% csrf_token %}
+            <label id="username">Username</label>
+            <input class="form-control" type="text" name="username" placeholder="Your username">
+        </p>
+        <p>
+            <label id="password">Password</label>
+            <input class="form-control" type="password" name="password" placeholder="Your password">
+            </label></p>
+
+        <input type="submit" class="btn" name="" value="Login">
+        </div>
+    </form>
+
+<p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
+</div>
+
+{% endblock %}
