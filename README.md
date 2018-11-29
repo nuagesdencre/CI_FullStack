@@ -42,6 +42,8 @@ In this section, you should mention all of the languages, frameworks, libraries,
 -[django-braces](https://django-braces.readthedocs.io/en/latest/) Mixins for Django's class-based views.
 
 Usage of Class based views for the blog section of the website, and function based views for the user, shop, cart and product sections.
+-[Class-based views](https://docs.djangoproject.com/en/2.1/topics/class-based-views/)
+-[Using mixins with class-based views](https://docs.djangoproject.com/en/2.1/topics/class-based-views/mixins/)
 -[Class-Based Views vs. Function-Based Views](https://simpleisbetterthancomplex.com/article/2017/03/21/class-based-views-vs-function-based-views.html)
 -[What is the difference between Class Based Views and Function Based Views?](https://www.bedjango.com/blog/class-based-views-vs-function-based-views/)
         -..."we use generic views with class if the functionality contains CRUD operations or it’s more complex, as it's more optimal."

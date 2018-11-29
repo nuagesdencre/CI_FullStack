@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
 from django.contrib import messages
-from django.urls import reverse
+from django.urls import reverse_lazy
 from django.http import Http404
 from django.views import generic
 from braces.views import SelectRelatedMixin
@@ -97,7 +97,7 @@ class DeletePost(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteView):
     """
     model = models.Post
     select_related = ("user", "topic")
-    success_url = reverse("all")
+    success_url = reverse_lazy("all")
 
     def get_queryset(self):
         """
