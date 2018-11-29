@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "post_base.html" %}
 
-</body>
-</html>
+{% block middle %}
+<div class="col-md-8">
+    {% include "_post.html" %}
+</div>
+{% endblock %}

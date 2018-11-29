@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "post_base.html" %}
 
-</body>
-</html>
+{% block top %}
+<div class="col-lg-6">
+    <div class="content">
+        {% if user.is_authenticated %}
+        <div class="card">
+            <div class="content">
+                <h5 class="title">Your Followed Topics</h5>
+                <ul>
+                    {% for user_topics in get_user_topics %}
+                    <li>
+                        <a href="{% url 'topics:single' slug=user_topics.topic.slug %}">{{ follower_topic.topic.name
+                            }}</a>
+                    </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+        <div class="card">
+            <div class="content">
+                <h5 class="title">All Topics</h5>
+                <ul>
+                    {% for other_topic in get_other_topics %}
+                    <li><a href="{% url 'topics:single' slug=other_topic.slug %}">{{ other_topic.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block middle %}
+<div class="col-md-8">
+    {% for post in post_list %}
+    {% include "_post.html" %}
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+{% endblock %}

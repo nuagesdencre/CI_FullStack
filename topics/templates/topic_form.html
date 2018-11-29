@@ -1,10 +1,10 @@
-{% extends "topic/base.html" %}
+{% extends "topic_base.html" %}
 {% load bootstrap_tags %}
 
 {% block middle %}
 <h3>Create a New Topic</h3>
 
-<form action ="{% url 'create %}" method="post" id="topicForm">
+<form action ="{% url 'topics:create %}" method="post" id="topicForm">
     {% csrf_token%}
 <input type="submit" class="btn btn-info" value="Create">
 </form>

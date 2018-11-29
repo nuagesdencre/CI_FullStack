@@ -1,13 +1,13 @@
-{% extends "topic/base.html" %}
+{% extends "topic_base.html" %}
 
 {% block top %}
 <h1>{{ topic.name }}</h1>
 <h2>Currently followed by {{ topic.followers.count }} </h2>
 
 {% if user in topic.followers.all %}
-<a href="{% url 'unfollow' slug=topic.slug %}" class="btn btn-warning">Unfollow</a>
+<a href="{% url 'topics:unfollow' slug=topic.slug %}" class="btn btn-warning">Unfollow</a>
 {% else %}
-<a href="{% url 'follow' slug=topic.slug %}" class="btn btn-success">Follow</a>
+<a href="{% url 'topics:follow' slug=topic.slug %}" class="btn btn-success">Follow</a>
 {% endif %}
 {% endblock %}
 
@@ -18,7 +18,7 @@
     <h2>No posts for this topic yet.</h2>
     {% else %}
     {% for post in topic.posts.all %}
-    {% include "posts/_post.html" %}
+    {% include "_post.html" %}
     {% endfor %}
     {% endif %}
 </div>
