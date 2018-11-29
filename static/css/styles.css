@@ -18,6 +18,22 @@
     font-family: Vibur, cursive;
     text-shadow: 2px 2px #fff;
 }
+
+h4 {
+  display: flex;
+  align-items: center;
+    font-family: Vibur, cursive;
+}
+
+h4::before,
+h4::after {
+  content: "";
+  background: #007a7a;
+  height: 0.1em;
+  margin: 0.2em;
+  flex: 1;
+}
+
 .fancyfont{
     font-family: Vibur, cursive;
     font-size:1.2em;
