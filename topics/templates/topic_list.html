@@ -5,7 +5,7 @@
     <div class="content">
         {% if user.is_authenticated %}
         <h2>You are logged in as
-            <a href="{% url 'posts:user_posts' username=user.username %}" class="btn btn-success">
+            <a href="{% url 'user_posts' username=user.username %}" class="btn btn-success">
                 @{{ user.username}}
             </a></h2>
         {% endif %}
@@ -13,7 +13,7 @@
 
     </div>
     {% if user.is_authenticated %}
-    <a href="{% url 'topics:create' %}" class="btn btn-light">Create a New Topic</a>
+    <a href="{% url 'create' %}" class="btn btn-light">Create a New Topic</a>
     {% endif %}
 </div>
 
@@ -22,7 +22,7 @@
 <div class="col-lg-6">
     <div class="list-group">
         {% for topic in object_list %}
-        <a class="list-group-item" href="{% url 'topics:single' %}">
+        <a class="list-group-item" href="{% url 'single' slug=topic.slug %}">
             <h3 class="title list-group-item-heading">{{topic.name}}</h3>
         </a>
         <div class="list-group-item-text">

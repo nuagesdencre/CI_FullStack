@@ -5,9 +5,9 @@
 <h2>Currently followed by {{ topic.followers.count }} </h2>
 
 {% if user in topic.followers.all %}
-<a href="{% url 'topics:unfollow' %}" class="btn btn-warning">Unfollow</a>
+<a href="{% url 'unfollow' slug=topic.slug %}" class="btn btn-warning">Unfollow</a>
 {% else %}
-<a href="{% url 'topics:follow' %}" class="btn btn-success">Follow</a>
+<a href="{% url 'follow' slug=topic.slug %}" class="btn btn-success">Follow</a>
 {% endif %}
 {% endblock %}
 

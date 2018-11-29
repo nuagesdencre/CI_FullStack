@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.utils import timezone
 from topics.models import TopicFollower, Topic
 from django.urls import reverse
-
+import misaka
 User = get_user_model()
 
 
@@ -20,9 +20,13 @@ class Post(models.Model):
     def __str__(self):
         return self.content
 
+    def save(self, *args, **kwargs):
+        self.content_html = misaka.html(self.content)
+        super().save(*args, **kwargs)
+
     def get_absolute_url(self):
-        return reverse('posts:single', kwargs={"username":self.user.username, "pk":self.pf})
+        return reverse('posts:single', kwargs={"username":self.user.username, "pk":self.pk})
 
     class Meta:
         ordering = ["-created_at"]
-        unique_together = ("user", "content")
+        unique_together = ["user", "content"]

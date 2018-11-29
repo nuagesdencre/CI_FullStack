@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from django.utils import timezone
 from django.urls import reverse
-
+from django.utils.text import slugify
+import misaka
 User = get_user_model()
 
 
@@ -17,6 +17,14 @@ class Topic(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse("topics:single", kwargs={"slug": self.slug})
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        self.description_html = misaka.html(self.description)
+        super().save(*args, **kwargs)
+
     class Meta:
         ordering = ["name"]
 
@@ -29,4 +37,4 @@ class TopicFollower(models.Model):
         return self.user.username
 
     class Meta:
-        unique_together = ("topic", "user")
+        unique_together = ["topic", "user"]

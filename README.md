@@ -31,6 +31,9 @@ In this section, you should mention all of the languages, frameworks, libraries,
     - Lorem. Version 2.1.
     - https://docs.djangoproject.com/en/2.1/ref/templates/builtins/ (csrf_token,safe, etc.)
     - https://docs.djangoproject.com/en/2.1/ref/contrib/admin/admindocs/
+    -[super()](https://docs.djangoproject.com/en/2.1/topics/db/models/)
+        It’s important to remember to call the superclass method – that’s that super().save(*args, **kwargs) business – to ensure that the object still gets saved into the database. If you forget to call the superclass method, the default behavior won’t happen and the database won’t get touched.
+    - xyz
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
 - [Argon2](https://pypi.org/project/argon2_cffi/)
