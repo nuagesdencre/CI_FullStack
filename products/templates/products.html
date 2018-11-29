@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <h1 class="title"> Product page </h1>
+<div class="container">
+    <div class="jumbotron">
+    <h1 class="title"> Choose your subscription type below! </h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+                beatae commodi cumque delectus dignissimos, ea earum, impedit in natus omnis pariatur quam quis
+                repellendus sapiente sunt totam voluptas. Deserunt, quia.</p></div>
+             <div class="col-6">
+                <button class="btn btn-sm btn-dark">Read more</button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-sm btn-dark">Subscribe now!</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h3>{{ test }}</h3>
+    </div>
+</div>
+    <div class="card-columns">
+         {% for product in products %}
+  <div class="card">
+    <img class="card-img-top" src="{{ MEDIA_URL }}{{ product.image }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">{{ product.description }}</p>
+        <p class="card-text"><i class="fas fa-euro-sign"></i>{{ product.price }}</p>
+    </div>
+      <div class="card-footer">
+      <form method="post" action="{% url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input name='quantity' type="number" min="1" max="99" class="form-control" placeholder="Quantity">
+                    <span class="input-group-btn">
+                            <button class="btn btn-info btn-sm fancyfont" type="submit">Add</button>
+                          </span>
+                </div>
+      </form>
+    </div>
+  </div>
+        {% endfor %}
+  </div>
+</div>
+
+</div>
+
+{% endblock %}

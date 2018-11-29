@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
-    'home',
+    'home','search',
     'payment', 'products', 'accounts', 'cart',
 ]
 
@@ -67,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+                'cart.context.cart_contents'
             ],
         },
     },
@@ -140,3 +142,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST='smtp.googlemail.com'
 EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+
+# Stripe
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET')

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="jumbotron">
+    <h1 class="title"> Cart </h1>
+</div>
+<div class="container">
+    <div class="card-deck">
+        {% for item in cart_items %}
+        <div class="card">
+            <img class="card-img-top" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.product.name }}</h5>
+                <p class="card-text">{{ item.product.description }}</p>
+                <p class="card-text">{{ item.product.price }}</p>
+
+            </div>
+            <div class="card-footer">
+                <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label id="inputAmount" class="sr-only">New Qty</label>
+                        <div class="input-group align-items-center">
+                             <div class="input-group-addon mx-2 fancyfont">In cart: {{item.quantity}}</div>
+                            <input name='quantity' type="number" min="0" max="99" class="form-control mx-2" placeholder="-">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-info mx-2"> Amend</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h5 class="card-title">Total</h5>
+                <p class="card-text"><i class="fas fa-receipt"></i>{{ total }}</p></div>
+            <div class="col-6">
+                {% if user.is_authenticated %}
+                <a href="{% url 'payment' %}"
+                   class="btn btn-success" role="button"><i
+                        class="far fa-credit-card"></i> Checkout</a>
+                {% else %}
+                <p><a href="{% url 'user_login' %}">Login</a> to proceed with your payment.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
