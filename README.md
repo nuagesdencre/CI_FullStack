@@ -29,9 +29,12 @@ In this section, you should mention all of the languages, frameworks, libraries,
     - Lorem.
 - [Django]()
     - Lorem. Version 2.1.
+    - https://docs.djangoproject.com/en/2.1/ref/templates/builtins/ (csrf_token,safe, etc.)
+    - https://docs.djangoproject.com/en/2.1/ref/contrib/admin/admindocs/
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
 - [Argon2](https://pypi.org/project/argon2_cffi/)
+
 
 ## Testing
 #### Countinuus Integration
