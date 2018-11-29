@@ -16,6 +16,7 @@ This section is also where you would share links to any wireframes, mockups, dia
 ## Features
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  - A Django app must perform a particular functionality within the web application (i.e. registration app, comments app, ...)
+
 ### Existing Features
 - Feature 1 - allows users X to achieve Y, by having them fill out Z
 - ...
@@ -37,10 +38,15 @@ In this section, you should mention all of the languages, frameworks, libraries,
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
 - [Argon2](https://pypi.org/project/argon2_cffi/)
+- [Misaka](https://github.com/FSX/misaka) It is a library allows users to use markdown inside of the posts.
+-[django-braces](https://django-braces.readthedocs.io/en/latest/) Mixins for Django's class-based views.
 
-
+Usage of Class based views for the blog section of the website, and function based views for the user, shop, cart and product sections.
+-[Class-Based Views vs. Function-Based Views](https://simpleisbetterthancomplex.com/article/2017/03/21/class-based-views-vs-function-based-views.html)
+-[What is the difference between Class Based Views and Function Based Views?](https://www.bedjango.com/blog/class-based-views-vs-function-based-views/)
+        -..."we use generic views with class if the functionality contains CRUD operations or it’s more complex, as it's more optimal."
 ## Testing
-#### Countinuus Integration
+#### Countinuous Integration
 [![Build Status](https://travis-ci.org/nuagesdencre/CI_FullStack.svg?branch=master)](https://travis-ci.org/nuagesdencre/CI_FullStack)
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
