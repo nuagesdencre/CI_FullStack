@@ -23,16 +23,16 @@ def add_to_cart(request, product_id):
         return redirect(reverse('products'))
 
 
-def adjust_cart(request, id):
+def adjust_cart(request, item_id):
     """
     Adjust the quantity of a product to the cart
     """
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
     if quantity > 0:
-        cart[id] = quantity
+        cart[item_id] = quantity
     else:
-        cart.pop[id]
-        return redirect(reverse('products'))
+        cart.pop(item_id)
+
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))

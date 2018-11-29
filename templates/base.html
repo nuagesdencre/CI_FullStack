@@ -7,10 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
     <title>Creature Comforts</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% block stripe %}
+    {% endblock stripe %}
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script defer src="{% static 'font-awesome/js/all.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
 </head>
 <body>
 <!--navbar-->
@@ -82,18 +86,20 @@
             Log In</a>
         </li>
         {% endif %}
-        <li><div class="container">
-            <a class="nav-link" data-toggle="collapse" href="#search" role="button" aria-expanded="false"
-               aria-controls="searchbutton">
-                <i class="fas fa-search"></i>
-            </a>
-            <div class="collapse" id="search">
-                <form class="form-inline" action="{% url 'search_index' %}" method="get">
-                    <input type="text" name="q">
-                    <button class="btn btn-sm ml-1 btn-outline-info" type="submit">Search</button>
-                </form>
+        <li>
+            <div class="container">
+                <a class="nav-link" data-toggle="collapse" href="#search" role="button" aria-expanded="false"
+                   aria-controls="searchbutton">
+                    <i class="fas fa-search"></i>
+                </a>
+                <div class="collapse" id="search">
+                    <form class="form-inline" action="{% url 'search_index' %}" method="get">
+                        <input type="text" name="q">
+                        <button class="btn btn-sm ml-1 btn-outline-info" type="submit">Search</button>
+                    </form>
+                </div>
             </div>
-        </div></li>
+        </li>
     </ul>
 
 </nav>

@@ -30,13 +30,13 @@
     <div class="card-body">
       <h5 class="card-title">{{ product.name }}</h5>
       <p class="card-text">{{ product.description }}</p>
-        <p class="card-text">{{ product.price }}</p>
+        <p class="card-text"><i class="fas fa-euro-sign"></i>{{ product.price }}</p>
     </div>
       <div class="card-footer">
       <form method="post" action="{% url 'add_to_cart' product.id %}">
                 {% csrf_token %}
                 <div class="input-group">
-                    <input name='quantity' type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                    <input name='quantity' type="number" min="1" max="99" class="form-control" placeholder="Quantity">
                     <span class="input-group-btn">
                             <button class="btn btn-info btn-sm fancyfont" type="submit">Add</button>
                           </span>
