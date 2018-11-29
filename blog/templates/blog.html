@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="title"> Blog </h1>
+</div>
+<div class="container">
+<ul class="nav navbar">
+    						{% if user.is_authenticated %}
+                      <li><a href="{% url 'profile' %}" class="btn btn-simple">Profile</a></li>
+                      <li><a href="#" class="btn btn-simple">Post</a></li>
+                      <li><a href="#" class="btn btn-simple">Topics</a></li>
+                      <li><a href="#" class="btn btn-simple">Create Topic</a></li>
+                      <li><a href="{% url 'user_logout' %}" class="btn btn-simple">Log out</a></li>
+    						{% else %}
+    						      <li><a href="#" class="btn btn-simple">Topics</a></li>
+    						      <li><a href="{% url 'user_login' %}" class="btn btn-simple">Log in</a></li>
+    						      <li><a href="{% url 'register' %}" class="btn btn-simple">Register</a></li>
+    						{% endif %}
+</ul>
+<div class="media mb-5">
+  <img class="mr-3" src="{% static 'img/shop_step_2.png' %}" style="background-color: #006464; height:64px;" alt="Generic placeholder image">
+  <div class="media-body">
+    <h5 class="mt-0">Media heading</h5>
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+    <div class="media mt-3">
+      <a class="pr-3" href="#">
+        <img src="{% static 'img/shop_step_2.png' %}" style="background-color: #006464; height:64px;" alt="Generic placeholder image">
+      </a>
+      <div class="media-body">
+        <h5 class="mt-0">Media heading</h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}
