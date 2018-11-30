@@ -6,7 +6,7 @@
 <div class="col-12 mb-3">
     <strong>You are logged in as
         <a href="{% url 'posts:user_posts' username=user.username %}" class="nav-item">
-            @{{ user.username}}
+           <span class="fancyfont">@{{ user.username}}</span>
         </a></strong>
 </div>
 {% endif %}

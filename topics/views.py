@@ -19,7 +19,6 @@ class SingleTopic(generic.DetailView):
 class ListTopics(generic.ListView):
     model = Topic
 
-
 class FollowTopic(generic.RedirectView, LoginRequiredMixin):
     """
     Allow a user to follow a topic

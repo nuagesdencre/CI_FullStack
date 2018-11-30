@@ -3,7 +3,7 @@
 
 {% block middle %}
 <div class="container">
-<h4>Create a New Topic</h4>
+<h4>Create New Topic</h4>
 <form action ="{% url 'topics:create' %}" method="post" id="topicForm">
     {% csrf_token%}
     {{ form |as_bootstrap}}

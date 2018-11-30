@@ -9,12 +9,12 @@
         </div>
         <div class="card-footer">
             <div class="row">
-                <div class="col-md-6 fancyfont">
+                <div class="col-lg-6 fancyfont">
                     {% with total_followers=topic.followers.count %}
                     <span class="badge fancyfont">{{ total_followers }}</span>
                     Follower{{ total_followers|pluralize}}{% endwith %}
                 </div>
-                <div class="col-md-6 fancyfont">
+                <div class="col-lg-6 fancyfont">
                     {% with total_posts=topic.posts.count %}
                     <span class="badge fancyfont">{{ total_posts }}</span>
                     Post{{ total_posts|pluralize}}{% endwith %}

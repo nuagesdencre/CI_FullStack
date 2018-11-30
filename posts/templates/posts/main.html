@@ -1,19 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<h1 class="title"> Blog </h1></div>
+<div class="fancyfont" id="blog--title">
+    CreatureComforts' <img src="{% static 'img/blog_title.png' %}" >
+</div>
 
 <div class="container">
-    <ul class="nav nav-tabs">
+    <div class="nav justify-content-around">
         {% if user.is_authenticated %}
-        <li class="nav-item"><a href="{% url 'posts:create' %}" class="btn btn-simple">Posts</a></li>
-        <li class="nav-item"><a href="{% url 'topics:all' %}" class="btn btn-simple">Topics</a></li>
-        <li class="nav-item"><a href="{% url 'topics:create' %}" class="btn btn-simple">Create Topic</a></li>
+        <a href="{% url 'posts:create' %}" class="nav-item blog-option btn btn-sm btn-outline-info m-2">New Post</a>
+        <a href="{% url 'topics:create' %}" class="nav-item blog-option btn btn-sm btn-outline-info m-2">New Topic</a>
+        <a href="{% url 'topics:all' %}" class="nav-item btn blog-option btn-sm btn-outline-secondary m-2">View Topics</a>
+        <a href="{% url 'posts:user_posts' username=user.username %}" class="nav-item blog-option btn btn-sm btn-outline-dark m-2">Your Profile</a>
         {% else %}
-        <li class="nav-item"><a href="{% url 'topics:all' %}" class="btn btn-simple">Topics</a></li>
-        <li class="nav-item">Please login to view more options.</li>
-        {% endif %}
-    </ul>
+        <li><strong>Please login to view more posting options.</strong>
+            {% endif %}
+
+    </div>
     {% block blog_content %} {% endblock %}
 </div>
 
