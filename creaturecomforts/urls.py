@@ -24,6 +24,7 @@ from payment import urls as payment_urls
 from search import urls as search_urls
 from cart import urls as cart_urls
 from topics import urls as topics_urls
+from topics.views import ListTopics
 from posts import urls as posts_urls
 from accounts import urls as accounts_urls
 
@@ -38,4 +39,6 @@ urlpatterns = [
     path('topics/', include(topics_urls)),
     path('accounts/', include(accounts_urls)),
     path('', index, name='index'),
+    path('topics', ListTopics.as_view(), name='all'),
+
 ]

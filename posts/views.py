@@ -11,15 +11,6 @@ from . import forms
 
 User = get_user_model()
 
-
-# Todo: reorganise views regarding blog
-def blog(request):
-    """
-    Display the main blog page
-    """
-    return render(request, 'blog.html')
-
-
 class PostList(SelectRelatedMixin, generic.ListView):
     """
     View the list of all posts available
@@ -41,7 +32,7 @@ class UserPosts(generic.ListView):
         (while checking that the username does exist; if not, throw an error)
         """
         try:
-            self.post.user = User.objects.prefetch_related('posts').get(username__iexact=self.kwargs.get('username'))
+            self.post_user = User.objects.prefetch_related('posts').get(username__iexact=self.kwargs.get('username'))
         except User.DoesNotExist:
             raise Http404
         else:

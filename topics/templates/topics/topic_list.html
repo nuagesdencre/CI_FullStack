@@ -1,5 +1,4 @@
-{% extends "topic_base.html" %}
-
+{% extends "topics/topic_base.html" %}
 {% block top %}
 <div class="col-lg-6">
     <div class="content">
@@ -37,10 +36,8 @@
                 Post{{topic.post.count|pluralize}}
             </div>
         </div></div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
 
-
-
-{% endblock %}

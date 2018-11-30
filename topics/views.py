@@ -27,7 +27,7 @@ class FollowTopic(generic.RedirectView, LoginRequiredMixin):
 
     def get_redirect_url(self, *args, **kwargs):
         """
-        Once an user follows a topic, he is retuned to that topic's detailed view
+        Once an user follows a topic, he is returned to that topic's detailed view
         """
         return reverse('topics:single', kwargs={'slug': self.kwargs.get('slug')})
 

@@ -30,7 +30,7 @@
                 <li class="nav-item drop-item"><a class="nav-link" href="/home/">Home <span
                         class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item drop-item"><a class="nav-link" href="{% url 'profile' %}">Blog</a></li>
+                <li class="nav-item drop-item"><a class="nav-link" href="{% url 'all' %}">Blog</a></li>
                 <li class="nav-item drop-item"><a class="nav-link" href="{% url 'products' %}">Shop</a></li>
                 <li>
                     <a href="{% url 'view_cart' %}">
@@ -66,7 +66,7 @@
     <a class="" href="/home/"><img src="{% static 'img/logo_small.png' %}" style="height:75px;"></a>
     <ul class="nav nav-pills when_big">
         <li class="nav-item"><a class="nav-link" href="/home/">Home <span class="sr-only">(current)</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'all' %}">Blog</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Shop</a></li>
         <li class="nav-item">
             <a href="{% url 'view_cart' %}">

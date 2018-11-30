@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
-    'home','search','posts','topics',
+    'home', 'search', 'posts', 'topics',
     'payment', 'products', 'accounts', 'cart',
 ]
 
@@ -101,7 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-        'OPTIONS':{'min_length':8}
+        'OPTIONS': {'min_length': 8}
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -139,7 +139,7 @@ LOGIN_URL = '/accounts/testing'
 
 # Email
 EMAIL_USE_TLS = True
-EMAIL_HOST='smtp.googlemail.com'
+EMAIL_HOST = 'smtp.googlemail.com'
 EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 
