@@ -6,6 +6,35 @@
 /*coquelicot #cc5544*/
 /*dark blue  #334455*/
 /*dark purple #442233*/
+
+/* Animation */
+* {
+    -webkit-transition: all .35s ease-in-out;
+    -moz-transition: all .35s ease-in-out;
+    -o-transition: all .35s ease-in-out;
+    -ms-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+}
+
+@-webkit-keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(359deg)
+    }
+}
+
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(359deg)
+    }
+}
 /* Typography */
 @import url('https://fonts.googleapis.com/css?family=Vibur|Open+Sans:400,700');
 
@@ -62,27 +91,7 @@ textarea, input[type="password"] {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
-@-webkit-keyframes rotateIcon {
-    0% {
-        transform: rotate(0deg)
-    }
-
-    100% {
-        transform: rotate(359deg)
-    }
-}
-
-@keyframes rotateIcon {
-    0% {
-        transform: rotate(0deg)
-    }
-
-    100% {
-        transform: rotate(359deg)
-    }
+    transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .menu--i:hover,

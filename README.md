@@ -47,6 +47,8 @@ Usage of Class based views for the blog section of the website, and function bas
 -[Class-Based Views vs. Function-Based Views](https://simpleisbetterthancomplex.com/article/2017/03/21/class-based-views-vs-function-based-views.html)
 -[What is the difference between Class Based Views and Function Based Views?](https://www.bedjango.com/blog/class-based-views-vs-function-based-views/)
         -..."we use generic views with class if the functionality contains CRUD operations or it’s more complex, as it's more optimal."
+-[Built-in template tags and filters](https://docs.djangoproject.com/en/2.1/ref/templates/builtins/)        
+-[Slug](https://stackoverflow.com/questions/427102/what-is-a-slug-in-django?rq=1)
 ## Testing
 #### Countinuous Integration
 [![Build Status](https://travis-ci.org/nuagesdencre/CI_FullStack.svg?branch=master)](https://travis-ci.org/nuagesdencre/CI_FullStack)

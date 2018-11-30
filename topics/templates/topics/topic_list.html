@@ -1,43 +1,23 @@
 {% extends "topics/topic_base.html" %}
 {% block top %}
-<div class="col-lg-6">
-    <div class="content">
-        {% if user.is_authenticated %}
-        <h2>You are logged in as
-            <a href="{% url 'posts:user_posts' username=user.username %}" class="btn btn-success">
-                @{{ user.username}}
-            </a></h2>
-        {% endif %}
-        <h2>Topics</h2>
 
-    </div>
-    {% if user.is_authenticated %}
-    <a href="{% url 'topics:create' %}" class="btn btn-light">Create a New Topic</a>
-    {% endif %}
+
+{% if user.is_authenticated %}
+<div class="col-12 mb-3">
+    <strong>You are logged in as
+        <a href="{% url 'posts:user_posts' username=user.username %}" class="nav-item">
+            @{{ user.username}}
+        </a></strong>
+</div>
+{% endif %}
+<div class="col-12 mb-3">
+<h4>Topics</h4>
 </div>
 
 {% endblock %}
 {% block middle %}
-<div class="col-lg-6">
-    <div class="list-group">
-        {% for topic in object_list %}
-        <a class="list-group-item" href="{% url 'topics:single' slug=topic.slug %}">
-            <h3 class="title list-group-item-heading">{{topic.name}}</h3>
-        </a>
-        <div class="list-group-item-text">
-            {{topic.description_html|safe}}
-            <div class="row">
-            <div class="col-md-4">
-                <span class="badge">{{ topic.followers.count}}</span>
-                Follower{{topic.followers.count|pluralize}}
-            </div>
-            <div class="col-md-4">
-                <span class="badge">{{ topic.posts.count}}</span>
-                Post{{topic.post.count|pluralize}}
-            </div>
-        </div></div>
-        {% endfor %}
-    </div>
+<div class="col-lg-12">
+     {% include "topics/_topics.html" %}
 </div>
 {% endblock %}
 

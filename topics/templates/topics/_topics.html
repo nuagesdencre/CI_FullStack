@@ -1,0 +1,26 @@
+<div class="card-columns">
+    {% for topic in object_list %}
+    <div class="card">
+
+        <div class="card-body">
+            <a href="{% url 'topics:single' slug=topic.slug %}"><h3 class="card-title title">
+                {{topic.name}}</h3></a>
+            <p class="card-text">{{topic.description_html|safe}}</p>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-md-6 fancyfont">
+                    {% with total_followers=topic.followers.count %}
+                    <span class="badge fancyfont">{{ total_followers }}</span>
+                    Follower{{ total_followers|pluralize}}{% endwith %}
+                </div>
+                <div class="col-md-6 fancyfont">
+                    {% with total_posts=topic.posts.count %}
+                    <span class="badge fancyfont">{{ total_posts }}</span>
+                    Post{{ total_posts|pluralize}}{% endwith %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
