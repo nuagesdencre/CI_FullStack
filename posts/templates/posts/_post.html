@@ -1,7 +1,7 @@
 <div class="media">
 	<h3>{{ post.message_html|safe }}</h3>
+	<h4>{{ post.user.username }}</h4>
 	<div class="media-body">
-        <h4>{{ post.user.username }}</h4>
 		<h5 class="media-heading">
 			<span class="username"><a href="{% url 'posts:user_posts' username=post.user.username %}">@{{ post.user.username }}</a></span>
 			<time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a></time>

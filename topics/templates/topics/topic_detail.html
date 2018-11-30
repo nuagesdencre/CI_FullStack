@@ -14,15 +14,13 @@
 {% block middle %}
 
 <div class="col-lg-8">
-    {% if topic.posts.count ==0 %}
+    {% if topic.posts.count == 0 %}
     <h2>No posts for this topic yet.</h2>
     {% else %}
     {% for post in topic.posts.all %}
-    {% include "_post.html" %}
+    {% include "posts/_post.html" %}
     {% endfor %}
     {% endif %}
 </div>
 {% endblock %}
 
-
-{% endblock %}

@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.shortcuts import get_object_or_404
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.urls import reverse
 from django.views import generic
@@ -29,7 +29,7 @@ class FollowTopic(generic.RedirectView, LoginRequiredMixin):
         """
         Once an user follows a topic, he is returned to that topic's detailed view
         """
-        return reverse('topics:single', kwargs={'slug': self.kwargs.get('slug')})
+        return reverse('topics:single', kwargs={"slug": self.kwargs.get("slug")})
 
     def get(self, request, *args, **kwargs):
         """
@@ -59,11 +59,11 @@ class UnfollowTopic(LoginRequiredMixin, generic.RedirectView):
         Check if user is actually following the topic he is trying to unfollow
         """
         try:
-            followings = models.TopicFollower.objects.filter(user=self.request.user,
+            following = models.TopicFollower.objects.filter(user=self.request.user,
                                                              topic__slug=self.kwargs.get('slug')).get()
         except models.TopicFollower.DoesNotExist:
             messages.warning(self.request, 'You do not follow this Topic.')
         else:
-            followings.delete()
+            following.delete()
             messages.success(self.request, 'You have stopped following this Topic.')
         return super().get(request, *args, **kwargs)

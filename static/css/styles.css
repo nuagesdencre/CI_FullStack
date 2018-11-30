@@ -200,8 +200,8 @@ footer {
 .step-box {
     max-width: 100%;
     margin: 5px;
-    border: 6px double #ffffff;
-    background-color: #ced4da;
+    /*border: 6px double #ffffff;*/
+    /*background-color: #ced4da;*/
 }
 
 

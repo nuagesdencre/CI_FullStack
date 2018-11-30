@@ -10,6 +10,7 @@ register = template.Library()
 # TOPIC
 class Topic(models.Model):
     name = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(allow_unicode=True, unique=True)
     description = models.TextField(blank=True, default="")
     description_html = models.TextField(editable=False, blank=True, default="")
     # many to many relationship
@@ -31,7 +32,7 @@ class Topic(models.Model):
 
 
 class TopicFollower(models.Model):
-    topic = models.ForeignKey(Topic, related_name="followings", on_delete=models.CASCADE)
+    topic = models.ForeignKey(Topic, related_name="following", on_delete=models.CASCADE)
     user = models.ForeignKey(User, related_name='user_topics', on_delete=models.CASCADE)
 
     def __str__(self):
