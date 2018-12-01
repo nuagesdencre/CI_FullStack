@@ -8,26 +8,17 @@ from django.views import generic
 from braces.views import SelectRelatedMixin
 from . import models
 from topics.models import Topic
+
 User = get_user_model()
 
-
-class PostList(SelectRelatedMixin, generic.ListView):
-    model = models.Post
-    select_related = ('user', 'topic')
-    queryset = models.Post.objects.all()
-
-    def get_context_data(self, **kwargs):
-        context = super(PostList, self).get_context_data(**kwargs)
-        context['user_topics'] = Topic.objects.filter(followers__in=[self.request.user])
-        return context
-
-
-class UserPosts(generic.ListView, SelectRelatedMixin):
+class UserPosts(LoginRequiredMixin, generic.ListView, SelectRelatedMixin):
     """
     View the posts assigned to a specific user
     """
     model = models.Post
     template_name = 'posts/user_post_list.html'
+    select_related = ('user', 'topic')
+    queryset = models.Post.objects.all()
 
     def get_queryset(self):
         """
@@ -45,8 +36,9 @@ class UserPosts(generic.ListView, SelectRelatedMixin):
         """
         Populate a dictionary to use as the template context
         """
-        context = super().get_context_data(**kwargs)
+        context = super(UserPosts, self).get_context_data(**kwargs)
         context["post_user"] = self.post_user
+        context['user_topics'] = Topic.objects.filter(followers__in=[self.request.user])
         return context
 
 
