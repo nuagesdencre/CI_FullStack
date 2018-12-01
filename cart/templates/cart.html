@@ -43,7 +43,7 @@
                    class="btn btn-success" role="button"><i
                         class="far fa-credit-card"></i> Checkout</a>
                 {% else %}
-                <p><a href="{% url 'user_login' %}">Login</a> to proceed with your payment.</p>
+                <p><a href="{% url 'user_login' %}?next={{ request.get_full_path|urlencode }}">Login</a> to proceed with your payment.</p>
                 {% endif %}
             </div>
         </div>

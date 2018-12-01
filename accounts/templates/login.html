@@ -7,7 +7,7 @@
 </div>
 <div class="container mb-5">
 
-    <form action="{% url 'user_login' %}" method="POST">
+    <form action="{% url 'user_login' %}?next={{ next }}" method="POST">
         <div class="form-group">
         <p>
             {% csrf_token %}
@@ -17,7 +17,7 @@
         <p>
             <label id="password">Password</label>
             <input class="form-control" type="password" name="password" placeholder="Your password">
-            </label></p>
+            </p>
 
         <input type="submit" class="btn" name="" value="Login">
         </div>
