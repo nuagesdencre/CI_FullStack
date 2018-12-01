@@ -1,0 +1,17 @@
+
+
+{% if request.user.is_authenticated %}
+    <h4>Your Followed Topics</h4>
+    {% else %}
+    <h4>Followed Topics</h4>
+    {% endif %}
+    <ul>
+        {% for user_topic in user_topics %}
+            <li>
+                <a href="{% url 'topics:single' slug=user_topic.slug %}">
+                    {{ user_topic.slug|title }}</a>
+            </li>
+        {% endfor %}
+
+    </ul>
+

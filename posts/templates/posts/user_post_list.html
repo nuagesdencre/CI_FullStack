@@ -1,0 +1,20 @@
+{% extends "posts/post_base.html" %}
+
+{% block top %}
+    <div class="col-md-12">
+        <h4>Post History of @{{ post_user.username }}</h4>
+    </div>
+{% endblock %}
+
+{% block middle %}
+
+    <div class="col-md-8">
+        {% for post in post_list %}
+            {% include "posts/_post.html" %}
+        {% endfor %}
+    </div>
+        <div class="col-md-4">
+            {% include "posts/_post_list.html" %}
+        </div>
+
+{% endblock %}

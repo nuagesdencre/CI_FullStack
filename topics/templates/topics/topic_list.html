@@ -1,0 +1,23 @@
+{% extends "topics/topic_base.html" %}
+{% block top %}
+
+
+{% if user.is_authenticated %}
+<div class="col-12 mb-3">
+    <strong>You are logged in as
+        <a href="{% url 'posts:user_posts' username=user.username %}" class="nav-item">
+           <span class="fancyfont">@{{ user.username}}</span>
+        </a></strong>
+</div>
+{% endif %}
+<div class="col-12 mb-3">
+<h4>Topics</h4>
+</div>
+
+{% endblock %}
+{% block middle %}
+<div class="col-lg-12">
+     {% include "topics/_topics.html" %}
+</div>
+{% endblock %}
+

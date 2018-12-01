@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+<div id="blog--title">
+    <img src="{% static 'img/blog_title.png' %}" >
+</div></div>
+
+<div class="container">
+    <div class="nav justify-content-around">
+        {% if user.is_authenticated %}
+        <a href="{% url 'posts:create' %}" class="nav-item blog-option btn btn-sm btn-outline-info m-2">New Post</a>
+        <a href="{% url 'topics:create' %}" class="nav-item blog-option btn btn-sm btn-outline-info m-2">New Topic</a>
+        <a href="{% url 'topics:all' %}" class="nav-item btn blog-option btn-sm btn-outline-secondary m-2">View Topics</a>
+        <a href="{% url 'posts:user_posts' username=user.username %}" class="nav-item blog-option btn btn-sm btn-outline-dark m-2">Your Profile</a>
+        {% else %}
+        <a href="{% url 'topics:all' %}" class="nav-item btn blog-option btn-sm btn-outline-secondary m-2">View Topics</a>
+        <p class="nav-item m-2 fancyfont--small">Please <a href="{% url 'user_login' %}?next={{ request.get_full_path|urlencode }}" class="fancyfont">login</a> to view more posting options.</p>
+            {% endif %}
+
+    </div>
+    {% block blog_content %} {% endblock %}
+</div>
+
+{% endblock %}

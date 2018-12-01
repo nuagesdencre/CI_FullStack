@@ -1,0 +1,12 @@
+{% extends "posts/main.html" %}
+{% load static %}
+{% block blog_content %}
+<div class="container">
+    <div class="row">
+        {% block top %}{% endblock %}
+        {% block middle %}{% endblock %}
+        {% block bottom %}{% endblock %}
+    </div>
+</div>
+
+{% endblock %}

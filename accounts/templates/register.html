@@ -7,7 +7,8 @@
 </div>
 <div class="container">
 {% if registered %}
-    <h3>Thank you for registering</h3>
+    <h3>Thank you for registering!</h3>
+    <p><a href="{% url 'user_login' %}"> Please sign in.</a></p>
     {% else %}
     <h2>Register here!</h2>
     <h3>Fill the form below</h3>

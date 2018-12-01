@@ -24,12 +24,13 @@
             <i class="menu--i fa-2x fas fa-ellipsis-v"></i>
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+            <i class="fas fa-2x fa-times right m-3 close-x"></i>
             <ul>
                 <li class="dropdown-header nav-link">CreatureComforts</li>
                 <li class="nav-item drop-item"><a class="nav-link" href="/home/">Home <span
                         class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item drop-item"><a class="nav-link" href="#">Features</a></li>
+                <li class="nav-item drop-item"><a class="nav-link" href="{% url 'all' %}">Blog</a></li>
                 <li class="nav-item drop-item"><a class="nav-link" href="{% url 'products' %}">Shop</a></li>
                 <li>
                     <a href="{% url 'view_cart' %}">
@@ -65,7 +66,7 @@
     <a class="" href="/home/"><img src="{% static 'img/logo_small.png' %}" style="height:75px;"></a>
     <ul class="nav nav-pills when_big">
         <li class="nav-item"><a class="nav-link" href="/home/">Home <span class="sr-only">(current)</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'all' %}">Blog</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Shop</a></li>
         <li class="nav-item">
             <a href="{% url 'view_cart' %}">
