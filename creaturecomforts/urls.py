@@ -28,6 +28,8 @@ from topics.views import ListTopics
 from posts import urls as posts_urls
 from accounts import urls as accounts_urls
 
+handler404 = 'creaturecomforts.views.handler404'
+handler500 = 'creaturecomforts.views.handler500'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include(home_urls)),
@@ -40,5 +42,4 @@ urlpatterns = [
     path('accounts/', include(accounts_urls)),
     path('', index, name='index'),
     path('topics', ListTopics.as_view(), name='all'),
-
 ]

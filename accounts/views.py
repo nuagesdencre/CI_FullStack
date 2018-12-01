@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect, reverse
-from django.contrib import messages, auth
+from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserProfile, UserForm
 from django.contrib.auth import authenticate, login, logout
@@ -65,15 +65,20 @@ def user_login(request):
             if user.is_active:
                 login(request, user)
                 messages.success(request, 'You are now logged in')
-                return redirect(reverse('index'))
+                if request.GET and request.GET['next'] != '':
+                    next = request.GET['next']
+                    return HttpResponseRedirect(next)
+                else:
+                    return redirect(reverse('index'))
             else:
                 messages.error(request,"This account is not active.")
-                return render(request, "login.html", {})
+                return render(request, "login.html")
         else:
             messages.error(request,"Invalid login details provided.")
-            return render(request, "login.html", {})
+            return render(request, "login.html")
     else:
-        return render(request, "login.html", {})
+        args = {'next': request.GET.get('next', '')}
+        return render(request, 'login.html', args)
 
 @login_required
 def user_logout(request):
