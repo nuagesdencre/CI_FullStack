@@ -11,7 +11,7 @@ from topics.models import Topic
 
 User = get_user_model()
 
-class UserPosts(LoginRequiredMixin, generic.ListView, SelectRelatedMixin):
+class UserPosts(generic.ListView, SelectRelatedMixin):
     """
     View the posts assigned to a specific user
     """
@@ -38,7 +38,7 @@ class UserPosts(LoginRequiredMixin, generic.ListView, SelectRelatedMixin):
         """
         context = super(UserPosts, self).get_context_data(**kwargs)
         context["post_user"] = self.post_user
-        context['user_topics'] = Topic.objects.filter(followers__in=[self.request.user])
+        context["user_topics"] = Topic.objects.filter(followers__in=[self.post_user])
         return context
 
 
