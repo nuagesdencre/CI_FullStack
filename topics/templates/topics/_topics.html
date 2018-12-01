@@ -6,17 +6,18 @@
             <a href="{% url 'topics:single' slug=topic.slug %}"><h3 class="card-title title">
                 {{topic.name}}</h3></a>
             <p class="card-text">{{topic.description_html|safe}}</p>
+             <a href="{% url 'topics:single' slug=topic.slug %}" class="btn btn-outline-info btn-sm">Read Posts</a>
         </div>
         <div class="card-footer">
             <div class="row">
-                <div class="col-lg-6 fancyfont">
+                <div class="col-lg-6 fancyfont--small">
                     {% with total_followers=topic.followers.count %}
-                    <span class="badge fancyfont">{{ total_followers }}</span>
+                    <span class="badge fancyfont--small">{{ total_followers }}</span>
                     Follower{{ total_followers|pluralize}}{% endwith %}
                 </div>
-                <div class="col-lg-6 fancyfont">
+                <div class="col-lg-6 fancyfont--small">
                     {% with total_posts=topic.posts.count %}
-                    <span class="badge fancyfont">{{ total_posts }}</span>
+                    <span class="badge fancyfont--small">{{ total_posts }}</span>
                     Post{{ total_posts|pluralize}}{% endwith %}
                 </div>
             </div>

@@ -64,10 +64,13 @@ h4::after {
     flex: 1;
 }
 
-.fancyfont {
+.fancyfont, .fancyfont--small {
     font-family: Vibur, cursive;
     font-size: 1.2em;
     text-transform: uppercase;
+}
+.fancyfont--small {
+    font-size: .9em;
 }
 
 .jumbotron, .close-x {
@@ -107,7 +110,9 @@ a:hover {
     color: #006464;
     text-decoration: none;
 }
-
+a, span {
+    color: #002626;
+}
 
 .dropdown-menu > ul {
     font-weight: normal;
@@ -256,6 +261,10 @@ footer {
     .blog-option {
         width: 20%;
     }
+    #blog--title > img {
+    margin-left: 28%;
+}
+
 }
 
 /*// Extra large devices (large desktops, 1200px and up)*/

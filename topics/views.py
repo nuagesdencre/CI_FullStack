@@ -4,7 +4,6 @@ from django.contrib import messages
 from django.urls import reverse
 from django.views import generic
 from .models import Topic, TopicFollower
-from . import models
 
 
 class CreateTopic(LoginRequiredMixin, generic.CreateView):
@@ -18,6 +17,7 @@ class SingleTopic(generic.DetailView):
 
 class ListTopics(generic.ListView):
     model = Topic
+
 
 class FollowTopic(generic.RedirectView, LoginRequiredMixin):
     """
@@ -58,9 +58,9 @@ class UnfollowTopic(LoginRequiredMixin, generic.RedirectView):
         Check if user is actually following the topic he is trying to unfollow
         """
         try:
-            following = models.TopicFollower.objects.filter(user=self.request.user,
-                                                             topic__slug=self.kwargs.get('slug')).get()
-        except models.TopicFollower.DoesNotExist:
+            following = TopicFollower.objects.filter(user=self.request.user,
+                                                     topic__slug=self.kwargs.get('slug')).get()
+        except TopicFollower.DoesNotExist:
             messages.warning(self.request, 'You do not follow this Topic.')
         else:
             following.delete()

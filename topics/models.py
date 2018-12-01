@@ -8,10 +8,12 @@ User = get_user_model()
 register = template.Library()
 
 # TOPIC
+
+
 class Topic(models.Model):
-    name = models.CharField(max_length=255, unique=True)
+    name = models.CharField(max_length=155, unique=True)
     slug = models.SlugField(allow_unicode=True, unique=True)
-    description = models.TextField(blank=True, default="")
+    description = models.TextField(blank=True, max_length=255, default="")
     description_html = models.TextField(editable=False, blank=True, default="")
     # many to many relationship
     followers = models.ManyToManyField(User, through="TopicFollower")

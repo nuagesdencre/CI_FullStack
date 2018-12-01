@@ -7,19 +7,22 @@ from django.http import Http404
 from django.views import generic
 from braces.views import SelectRelatedMixin
 from . import models
-from . import forms
-
+from topics.models import Topic
 User = get_user_model()
 
+
 class PostList(SelectRelatedMixin, generic.ListView):
-    """
-    View the list of all posts available
-    """
     model = models.Post
-    select_related = ("user", "topic")
+    select_related = ('user', 'topic')
+    queryset = models.Post.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(PostList, self).get_context_data(**kwargs)
+        context['user_topics'] = Topic.objects.filter(followers__in=[self.request.user])
+        return context
 
 
-class UserPosts(generic.ListView):
+class UserPosts(generic.ListView, SelectRelatedMixin):
     """
     View the posts assigned to a specific user
     """

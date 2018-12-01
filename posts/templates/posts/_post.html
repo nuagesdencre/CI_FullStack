@@ -1,21 +1,39 @@
-<div class="media">
-	<h3>{{ post.message_html|safe }}</h3>
-	<h4>{{ post.user.username }}</h4>
-	<div class="media-body">
-		<h5 class="media-heading">
-			<span class="username"><a href="{% url 'posts:user_posts' username=post.user.username %}">@{{ post.user.username }}</a></span>
-			<time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a></time>
-			{% if post.topic %}
-			<span class="topic-name">in <a href="#">{{ post.topic.name }}</a></span>
-			{% endif %}
-		</h5>
+<div class="card p-2 m-2">
+    <div class="media">
+        <div class="div">
+            <a href="{% url 'posts:user_posts' username=post.user.username %}"><h4>{{ post.user.username }}</h4></a>
+            <div class="w-100"></div>
+            {% if user.is_authenticated and post.user == user and not hide_delete %}
+            <svg width="110" height="110">
+                <circle cx="50" cy="50" r="30" stroke="#000" stroke-width="4" fill="#006464"/>
+            </svg>
+            {% else %}
+            <svg width="110" height="110">
+                <circle cx="50" cy="50" r="30" stroke="#000" stroke-width="4" fill="#fff"/>
+            </svg>
+            {% endif %}
+        </div>
 
-		<div class="media-footer">
-			{% if user.is_authenticated and post.user == user and not hide_delete %}
-				<a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-simple">
-					<span class="text-danger">Delete</span>
-				</a>
-			{% endif %}
-		</div>
-	</div>
+        <!--<img src="{{ MEDIA_URL }}{{ post.user.profile_image }}">-->
+
+        <div class="media-body pl-2">
+            <h5 class="media-heading">
+                <time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">
+                    {{ post.created_at }}</a></time>
+                {% if post.topic %}
+                <span class="topic-name">in <a href="{% url 'topics:single' slug=post.topic.slug %}"><em>{{ post.topic.name }}</em></a></span>
+                <hr>
+                <p>{{ post.content_html|safe }}</p>
+                {% endif %}
+            </h5>
+
+            <div class="media-footer">
+                {% if user.is_authenticated and post.user == user and not hide_delete %}
+                <a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-sm btn-danger">
+                    Delete Post
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </div>
