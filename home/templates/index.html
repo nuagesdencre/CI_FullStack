@@ -1,155 +1,159 @@
 {% extends "base.html" %}
 {% load static %}
+{% block chartjs %}
+    <script src="{% static 'chartjs/chart.bundle.min.js' %}"></script>
+{% endblock %}
 {% block content %}
-<div class="jumbotron title--jumbo"></div>
-<div class="container">
-    <div class="jumbotron">
-        <h1 class="title"> Choose your subscription type below! </h1>
-        <div class="container">
-            <div class="row">
-                <div class="col-12"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-                    beatae commodi cumque delectus dignissimos, ea earum, impedit in natus omnis pariatur quam quis
-                    repellendus sapiente sunt totam voluptas. Deserunt, quia.</p></div>
-                <div class="col-6">
-                    <button class="btn btn-sm btn-dark">Read more</button>
-                </div>
-                <div class="col-6">
-                    <button class="btn btn-sm btn-dark">Subscribe now!</button>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <h3>{{ test }}</h3>
-        </div>
-    </div>
+    <div class="jumbotron title--jumbo"></div>
     <div class="container">
-        <h2>How it works</h2>
-        <div class="row justify-space-between">
-            <div class="col-sm-12 col-lg-8"><img class="step-box" src="{% static 'img/shop_step_1a.png' %}"
-                                                 alt="My image"></div>
-            <div class="col-sm-12 col-lg-4">
-                <div class="align-self-center ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at
-                    cupiditate, deserunt eius eveniet, fuga id illum, magni odit sit soluta vitae.
-                </div>
-            </div>
-            <div class="w-100">
-                <hr>
-            </div>
-            <div class="col-sm-12 col-lg-4">
-                <div class="align-self-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, rerum
-                    veniam! Consequuntur cupiditate ducimus explicabo illum
-                    iure mollitia placeat sequi sit vel voluptatem? Ad aperiam aut dolore eligendi quibusdam,
-                    repellendus?
-                </div>
-            </div>
-            <div class="col-sm-12 col-lg-8"><img class="step-box" src="{% static 'img/shop_step_2a.png' %}"
-                                                 alt="My image"></div>
-            <div class="w-100">
-                <hr>
-            </div>
-            <div class="col-sm-12 col-lg-8"><img class="step-box" src="{% static 'img/shop_step_3a.png' %}"
-                                                 alt="My image"></div>
-            <div class="col-sm-12 col-lg-4">
-                <div class="align-self-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem
-                    dicta doloribus esse nesciunt
-                    obcaecati odio qui reiciendis sint vitae? Alias aliquid atque beatae cupiditate fugiat id,
-                    perferendis placeat quidem, quo repudiandae soluta.
+        <div class="container container--space container--img">
+            <h1 class="title mb-3"> A few clicks will bring you a bundle of bliss, delivered to your doorstep. </h1>
+            <div class="row m-0">
+                <div class="col-12"><p>Think of CreatureComforts as your go-to resource to find reassurance when you
+                    worry, composure when you hurry, contentment when you need it. We have too little time to take care
+                    of
+                    ourselves properly in the busy lives we lead! </p>
+                    <p>By offering various bespoke boxes, and giving
+                        you the option to subscribe to your favourites, we at CreatureComforts wish to make you feel
+                        <span
+                                class="fancyfont">fuzzy</span> inside, every day.</p>
+                    <div class="row m-0">
+                        <div class="col-md-6 offset-md-6">
+                            <h3 class="right">Read on or <a href="{% url 'products' %}" class="fancyfont--small">Make
+                                your pick</a>!</h3></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container bg-line container--space">
-        <h2>What you can expect in your CreatureComforts boxes...</h2>
-        <div class="card-columns">
-            <div class="card">
-                <img class="card-img-top" src="{% static 'img/shop_step_3.png'%}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title that wraps to a new line</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
+        <div class="container container--space">
+            <div class="row justify-space-between">
+                <div class="col-sm-12 col-lg-8"><img class="step-box" src="{% static 'img/shop_step_1a.png' %}"
+                                                     alt="My image"></div>
+                <div class="col-sm-12 col-lg-4">
+                    <div class="sm-space text-center">
+                        <h3>Find something you love or are curious about.</h3>
+                        <p>You can find something lovely in our wide range of boxes. Items are carefully selected to fit
+                            a suggested theme; there are set elements and a few surprises to keep you wondering. We
+                            believe in good surprises.</p>
+                    </div>
                 </div>
             </div>
-            <div class="card p-3">
-                <blockquote class="blockquote mb-0 card-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <footer class="blockquote-footer">
-                        <small class="text-muted">
-                            Someone famous in <cite title="Source Title">Source Title</cite>
-                        </small>
-                    </footer>
-                </blockquote>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="{% static 'img/shop_step_3.png'%}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                        content.</p>
-                    <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
+            <div class="row justify-space-between">
+                <div class="col-sm-12 col-lg-4">
+                    <div class="sm-space text-center"> <h3>Pick a subscription type.</h3><p>Do you want to receive this box every few
+                        months, or perhaps you want to offer it as a gift? In any case, you can count on us to make the
+                        payment process smooth with Stripe.</p>
+                    </div>
                 </div>
+                <div class="col-sm-12 col-lg-8 sm-order"><img class="step-box" src="{% static 'img/shop_step_2a.png' %}"
+                                                              alt="My image"></div>
             </div>
-            <div class="card bg-dark text-white text-center p-3">
-                <blockquote class="blockquote mb-0">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-                    <footer class="blockquote-footer">
-                        <small>
-                            Someone famous in <cite title="Source Title">Source Title</cite>
-                        </small>
-                    </footer>
-                </blockquote>
-            </div>
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
-                    <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img" src="{% static 'img/shop_step_3.png'%}" alt="Card image">
-            </div>
-            <div class="card p-3 text-right">
-                <blockquote class="blockquote mb-0">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <footer class="blockquote-footer">
-                        <small class="text-muted">
-                            Someone famous in <cite title="Source Title">Source Title</cite>
-                        </small>
-                    </footer>
-                </blockquote>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is another card with title and supporting text below. This card has some
-                        additional content to make it slightly taller overall.</p>
-                    <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
+            <div class="row justify-space-between">
+                <div class="col-sm-12 col-lg-8"><img class="step-box" src="{% static 'img/shop_step_3a.png' %}"
+                                                     alt="My image"></div>
+                <div class="col-sm-12 col-lg-4">
+                    <div class="sm-space text-center"><h3>Simply wait for the arrival of your box!</h3><p> Your box is on the way! If you decided
+                        to go ahead and subscribe, you will receive a lovely package at regular interval. It makes a
+                        good reminder that it is time to relax and pamper yourself.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <button class="btn btn-sm btn-dark">Subscribe now!</button>
-    </div>
-    <div class="container container--space">
-        <h2>Join the Creature Comforts' community!</h2>
-        <div class="row">
-            <div class="col-6 col-md-6">
-                <h3>Poll</h3>
-            </div>
-            <div class="col-6 col-md-6">
-                <h3>Blog</h3>
-                <p>Share your tips and tricks to a blissful moment, whenever the time, place or
-                    occasion.</p>
-                <a class="btn btn-info" href="{% url 'all' %}">Please have a say!</a>
-            </div>
 
+        <div class="container bg-line container--space">
+            <h2>What you can expect in your CreatureComforts boxes...</h2>
+            <div class="card-columns">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'img/shop_step_3.png' %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title that wraps to a new line</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+                <div class="card p-3">
+                    <blockquote class="blockquote mb-0 card-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <footer class="blockquote-footer">
+                            <small class="text-muted">
+                                Someone famous in <cite title="Source Title">Source Title</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'img/shop_step_3.png' %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                        <p class="card-text">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-dark text-white text-center p-3">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                        <footer class="blockquote-footer">
+                            <small>
+                                Someone famous in <cite title="Source Title">Source Title</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+                        <p class="card-text">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="{% static 'img/shop_step_3.png' %}" alt="Card image">
+                </div>
+                <div class="card p-3 text-right">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <footer class="blockquote-footer">
+                            <small class="text-muted">
+                                Someone famous in <cite title="Source Title">Source Title</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is another card with title and supporting text below. This card has
+                            some
+                            additional content to make it slightly taller overall.</p>
+                        <p class="card-text">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-sm btn-dark">Subscribe now!</button>
+        </div>
+        <div class="container container--space">
+            <h2>Join the Creature Comforts' community!</h2>
+            <div class="row">
+                <div class="col-6 col-md-6">
+                    <h3>Chart</h3>
+                    {% include "_chart.html" %}
+                </div>
+                <div class="col-6 col-md-6">
+                    <h3>Blog</h3>
+                    <p>Share your tips and tricks to a blissful moment, whenever the time, place or
+                        occasion.</p>
+                    <a class="btn btn-info" href="{% url 'all' %}">Please have a say!</a>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}
