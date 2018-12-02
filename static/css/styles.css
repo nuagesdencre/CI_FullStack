@@ -211,7 +211,10 @@ nav {
     background-size: contain;
     height: 150px;
 }
-
+.jumbo--profile{
+    list-style:none;
+    padding:0;
+}
 .container--top {
     margin-top: 90px;
 }

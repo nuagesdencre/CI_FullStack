@@ -43,7 +43,7 @@
             <div class="when_small--bg">
                 {% if user.is_authenticated %}
                     <li class="dropdown-header nav-item drop-item">{{ user.username }}</li>
-                    <li class="nav-item drop-item"><a class="nav-link" href="{% url 'profile' %}"><i
+                    <li class="nav-item drop-item"><a class="nav-link" href="{% url 'posts:user_posts' username=user.username %}"><i
                             class="fa fa-user"></i>
                         Profile</a></li>
                     <li class="nav-item drop-item"><a class="nav-link" href="{% url 'user_logout' %}"><i
@@ -77,7 +77,7 @@
                 <a class="dropdown-toggle btn btn-sm btn-outline-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                    aria-expanded="false">{{ user.username }}</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'profile' %}"><i class="fa fa-user"></i>
+                    <a class="dropdown-item" href="{% url 'posts:user_posts' username=user.username %}"><i class="fa fa-user"></i>
                         Profile</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{% url 'user_logout' %}">
