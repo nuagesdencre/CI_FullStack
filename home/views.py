@@ -5,8 +5,7 @@ def index(request):
     Return the index page of the home app
     (this is the welcome page of the app)
     """
-    test = {'test': 'This is a test.'}
-    return render(request, 'index.html', context=test)
+    return render(request, 'index.html')
 
 
 def contact(request):
