@@ -6,32 +6,77 @@
     </div>
     <div class="container">
         <h2>Have you ever heard of <span>HYGGE</span>?</h2>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" style="height:500px">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="{% static 'img/shop_step_1a.png' %}" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'img/shop_step_2a.png' %}" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'img/shop_step_3a.png' %}" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+              <div class="card-columns">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'img/testimonial1.png' %}" alt="Testimonial">
+                    <div class="card-body">
+                        <h5 class="card-title">I look forward to receiving my box every month.</h5>
+                        <p class="card-text">I have subscribed a few months ago following a bad breakup. I chose the 'Optimist' collection and I have loved every item I received so far.</p>
+                    </div>
+                </div>
+                <div class="card p-3">
+                    <blockquote class="blockquote mb-0 card-body">
+                        <p>Rainy days should be spent at home with a cup of tea and a good book.</p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                Bill Watterson,  <cite title="Source Title">The Calvin and Hobbes Tenth Anniversary Book</cite>
+                            </small>
+                        </p>
+                    </blockquote>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'img/testimonial2.png' %}" alt="Testimonial">
+                    <div class="card-body">
+                        <h5 class="card-title">What a pleasant gift!</h5>
+                        <p class="card-text">I received this from my sister. It shows she care for my well-being and knows me well... Iam a big fan of books and woolen goods!
+                            content.</p>
+                        <p class="card-text">
+                            <small class="text-muted">Now an active member on the Blog</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-dark text-white text-center p-3">
+                    <blockquote class="blockquote mb-0">
+                        <p>Never underestimate how much assistance, how much satisfaction, how much comfort, how much soul and transcendence there might be in a well-made taco and a cold bottle of beer.</p>
+                        <p class="card-tex">
+                            <small>
+                                Tom Robbins, <cite title="Source Title">Jitterbug Perfume</cite>
+                            </small>
+                        </p>
+                    </blockquote>
+                </div>
+                <div class="card text-center">
+                    <div class="card-body">
+                        <p class="card-text">Surely everyone is aware of the divine pleasures which attend a wintry fireside; candles at four o'clock, warm hearthrugs, tea, a fair tea-maker, shutters closed, curtains flowing in ample draperies to the floor, whilst the wind and rain are raging audibly without.</p>
+                        <p class="card-text">
+                            Thomas De Quincey, <cite title="Source Title">Confessions of an English Opium Eater</cite>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top
+                " src="{% static 'img/testimonial3.png' %}" alt="Testimonial">
+                </div>
+                <div class="card p-3 text-right">
+                    <blockquote class="blockquote mb-0">
+                        <p>May your life be filled, as mine has been, with love and laughter; and remember, when things are rough all you need is ... Chocolate.</p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                Geraldine Solon, <cite title="Source Title">Chocolicious</cite>
+                            </small>
+                        </p>
+                    </blockquote>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Happy thoughts</h5>
+                        <p class="card-text">Kindred spirits are not so scarce as I used to think. It's splendid to find out there are so many of them in the world.</p>
+                        <p class="card-text">
+                            <small class="text-muted">L.M. Montgomery</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
 </div>
 
 {% endblock %}

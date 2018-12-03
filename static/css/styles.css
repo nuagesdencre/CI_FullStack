@@ -267,7 +267,9 @@ footer {
     margin: 5px;
 }
 
-
+.card-img-top{
+  border:10px solid #fff;
+}
 /* ENDComponents */
 /* Media Queries */
 
@@ -288,8 +290,11 @@ footer {
     .title--jumbo {
         height: 400px;
     }
-
-}
+.card-columns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+}}
 
 @media (max-width: 991px) {
     .sm-order {
