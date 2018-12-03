@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
 
 def index(request):
     """
@@ -12,7 +13,7 @@ def contact(request):
     """
     Return the contact page of the home app
     """
-    return render(request, 'contact.html')
+    return render(request, "contact.html")
 
 
 def about(request):
@@ -22,7 +23,7 @@ def about(request):
     return render(request, 'about.html')
 
 
-def faq(request):
+def faqs(request):
     """
     Return the FAQs page of the home app
     """

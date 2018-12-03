@@ -41,9 +41,11 @@
             </div>
             <div class="row justify-space-between">
                 <div class="col-sm-12 col-lg-4">
-                    <div class="sm-space text-center"> <h3>Pick a subscription type.</h3><p>Do you want to receive this box every few
-                        months, or perhaps you want to offer it as a gift? In any case, you can count on us to make the
-                        payment process smooth with Stripe.</p>
+                    <div class="sm-space text-center"><h3>Pick a subscription type.</h3>
+                        <p>Do you want to receive this box every few
+                            months, or perhaps you want to offer it as a gift? In any case, you can count on us to make
+                            the
+                            payment process smooth with Stripe.</p>
                     </div>
                 </div>
                 <div class="col-sm-12 col-lg-8 sm-order"><img class="step-box" src="{% static 'img/shop_step_2a.png' %}"
@@ -53,22 +55,24 @@
                 <div class="col-sm-12 col-lg-8"><img class="step-box" src="{% static 'img/shop_step_3a.png' %}"
                                                      alt="My image"></div>
                 <div class="col-sm-12 col-lg-4">
-                    <div class="sm-space text-center"><h3>Simply wait for the arrival of your box!</h3><p> Your box is on the way! If you decided
-                        to go ahead and subscribe, you will receive a lovely package at regular interval. It makes a
-                        good reminder that it is time to relax and pamper yourself.</p>
+                    <div class="sm-space text-center"><h3>Simply wait for the arrival of your box!</h3>
+                        <p> Your box is on the way! If you decided
+                            to go ahead and subscribe, you will receive a lovely package at regular interval. It makes a
+                            good reminder that it is time to relax and pamper yourself.</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="container bg-line container--space">
-            <h2>What you can expect in your CreatureComforts boxes...</h2>
+            <h4>What you can expect in your CreatureComforts boxes...</h4>
             <div class="card-columns">
                 <div class="card">
-                    <img class="card-img-top" src="{% static 'img/testimonial1.png' %}" alt="Testimonial">
+                    <img class="card-img-top" src="{% static 'img/cc_box_1.png' %}" alt="Testimonial">
                     <div class="card-body">
-                        <h5 class="card-title">I look forward to receiving my box every month.</h5>
-                        <p class="card-text">I have subscribed a few months ago following a bad breakup. I chose the 'Optimist' collection and I have loved every item I received so far.</p>
+                        <h3 class="card-title">I look forward to receiving my box every month.</h3>
+                        <span class="card-text">I have subscribed a few months ago following a bad breakup. I chose the
+                            'Optimist' collection and I have loved every item I received so far.</span>
                     </div>
                 </div>
                 <div class="card p-3">
@@ -76,59 +80,64 @@
                         <p>Rainy days should be spent at home with a cup of tea and a good book.</p>
                         <p class="card-text">
                             <small class="text-muted">
-                                Bill Watterson,  <cite title="Source Title">The Calvin and Hobbes Tenth Anniversary Book</cite>
-                            </small>
-                        </p>
-                    </blockquote>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="{% static 'img/testimonial2.png' %}" alt="Testimonial">
-                    <div class="card-body">
-                        <h5 class="card-title">What a pleasant gift!</h5>
-                        <p class="card-text">I received this from my sister. It shows she care for my well-being and knows me well... Iam a big fan of books and woolen goods!
-                            content.</p>
-                        <p class="card-text">
-                            <small class="text-muted">Now an active member on the Blog</small>
-                        </p>
-                    </div>
-                </div>
-                <div class="card bg-dark text-white text-center p-3">
-                    <blockquote class="blockquote mb-0">
-                        <p>Never underestimate how much assistance, how much satisfaction, how much comfort, how much soul and transcendence there might be in a well-made taco and a cold bottle of beer.</p>
-                        <p class="card-tex">
-                            <small>
-                                Tom Robbins, <cite title="Source Title">Jitterbug Perfume</cite>
+                                Bill Watterson, <cite title="Source Title">The Calvin and Hobbes Tenth Anniversary
+                                Book</cite>
                             </small>
                         </p>
                     </blockquote>
                 </div>
                 <div class="card p-3 text-right">
                     <blockquote class="blockquote mb-0">
-                        <p>May your life be filled, as mine has been, with love and laughter; and remember, when things are rough all you need is ... Chocolate.</p>
-                        <p class="card-text">
+                        <span class="card-text">May your life be filled, as mine has been, with love and laughter; and remember, when things
+                            are rough all you need is ... Chocolate.</span>
+                        <span class="card-text">
                             <small class="text-muted">
                                 Geraldine Solon, <cite title="Source Title">Chocolicious</cite>
+                            </small>
+                        </span>
+                    </blockquote>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'img/cc_box_2.png' %}" alt="Testimonial">
+                    <div class="card-body">
+                        <h3 class="card-title">What a pleasant gift!</h3>
+                        <span class="card-text">I received this from my sister. It shows she care for my well-being and
+                            knows me well... Iam a big fan of books and woolen goods!
+                           </span>
+                        <span class="card-text">
+                            <small class="text-muted">Lucy B., Now an active member on the Blog</small>
+                        </span>
+                    </div>
+                </div>
+                <div class="card bg-dark text-white text-center p-3">
+                    <blockquote class="blockquote mb-0">
+                        <p class="card-text">Never underestimate how much assistance, how much satisfaction, how much
+                            comfort, how much
+                            soul and transcendence there might be in a well-made taco and a cold bottle of beer.</p>
+                        <p class="card-text">
+                            <small>
+                                Tom Robbins, <cite title="Source Title">Jitterbug Perfume</cite>
                             </small>
                         </p>
                     </blockquote>
                 </div>
             </div>
-            <button class="btn btn-sm btn-dark">Subscribe now!</button>
+            <a href="{% url 'products' %}" class="text-center btn btn-info">Shop now!</a>
         </div>
         <div class="container container--space">
-            <h2>Join the Creature Comforts' community!</h2>
-            <div class="row">
-                <div class="col-6 col-md-6">
-                    <h3>Chart</h3>
-                    {% include "_chart.html" %}
-                </div>
-                <div class="col-6 col-md-6">
+            <h4>Join the Creature Comforts' community!</h4>
+            <div class="row my-4">
+                <div class="col-12 mb-4">
                     <h3>Blog</h3>
                     <p>Share your tips and tricks to a blissful moment, whenever the time, place or
                         occasion.</p>
                     <a class="btn btn-info" href="{% url 'all' %}">Please have a say!</a>
                 </div>
-
+                <div class="w-100"></div>
+                <div class="col-12">
+                    <h3>Chart</h3>
+                    {% include "_chart.html" %}
+                </div>
             </div>
         </div>
     </div>

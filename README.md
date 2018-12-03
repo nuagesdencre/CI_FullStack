@@ -40,6 +40,7 @@ In this section, you should mention all of the languages, frameworks, libraries,
 - [Argon2](https://pypi.org/project/argon2_cffi/)
 - [Misaka](https://github.com/FSX/misaka) It is a library allows users to use markdown inside of the posts.
 -[django-braces](https://django-braces.readthedocs.io/en/latest/) Mixins for Django's class-based views.
+- Emailjs
 
 Usage of Class based views for the blog section of the website, and function based views for the user, shop, cart and product sections.
 -[Class-based views](https://docs.djangoproject.com/en/2.1/topics/class-based-views/)

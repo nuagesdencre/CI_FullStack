@@ -231,6 +231,8 @@ nav {
 
 .container--img {
     background: url('/static/img/funky-lines.png') center;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
 }
 
 .container--space {
@@ -308,7 +310,7 @@ footer {
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.84)), url('/static/img/background.png') repeat-x;
     }
     .container--img {
-     background: linear-gradient(to right, rgb(71, 152, 167), rgb(71, 152, 167));
+     background: linear-gradient(to right, rgba(71, 152, 167, 0.74), rgba(71, 152, 167, 0.64));
 }
     .when_big {
         display: block;
