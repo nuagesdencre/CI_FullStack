@@ -63,7 +63,7 @@ h4::after {
     flex: 1;
 }
 
-p {
+p, .card-body li {
     font-size: 18px;
     line-height: 1.58;
 }
@@ -276,7 +276,7 @@ footer {
 /* Media Queries */
 
 @media (min-width: 768px) {
-    p {
+    p, .card-body li {
         font-size: 21px;
         line-height: 2;
     }
