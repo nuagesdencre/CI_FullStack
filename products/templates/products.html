@@ -2,8 +2,10 @@
 {% load static %}
 {% block content %}
 
-    <h1 class="title"> Product page </h1>
-<div class="container">
+    <div id="blog--title">
+    <img src="{% static 'img/shop_title.png' %}" >
+</div>
+<div class="container mt-4">
     <div class="jumbotron">
     <h1 class="title"> Choose your subscription type below! </h1>
     <div class="container">
@@ -45,9 +47,17 @@
     </div>
   </div>
         {% endfor %}
+
   </div>
+<hr>
+<div class="row my-4">
+    <div class="col">
+             <a href="{% url 'view_cart' %}" class="btn btn-warning">
+                        <i class="fas fa-shopping-cart"></i> View your Cart</a>
+    </div>
+</div>
 </div>
 
-</div>
+
 
 {% endblock %}

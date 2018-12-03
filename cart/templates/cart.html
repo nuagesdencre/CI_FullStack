@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="jumbotron">
-    <h1 class="title"> Cart </h1>
-</div>
+
 <div class="container">
-    <div class="card-deck">
+    <div id="blog--title">
+        <img src="{% static 'img/cart_title.png' %}">
+    </div>
+    <div class="card-deck mt-3">
         {% for item in cart_items %}
         <div class="card">
             <img class="card-img-top" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="Card image cap">
@@ -34,18 +35,23 @@
     <hr>
     <div class="container">
         <div class="row">
-            <div class="col-6">
-                <h5 class="card-title">Total</h5>
-                <p class="card-text"><i class="fas fa-receipt"></i>{{ total }}</p></div>
-            <div class="col-6">
+            <div class="col-sm-6">
+                <h5 class="card-title my-3">TOTAL <i class="fas fa-receipt"></i> {{ total }}</h5>
+               </div>
+            <div class="col-sm-3">
                 {% if user.is_authenticated %}
+                    {%  if product_count > 0 %}
                 <a href="{% url 'payment' %}"
                    class="btn btn-success" role="button"><i
                         class="far fa-credit-card"></i> Checkout</a>
+                        {% endif %}
                 {% else %}
-                <p><a href="{% url 'user_login' %}?next={{ request.get_full_path|urlencode }}">Login</a> to proceed with your payment.</p>
+                    <a href="{% url 'user_login' %}?next={{ request.get_full_path|urlencode }}"><span class="fancyfont">Login</span></a> to proceed with your payment.
                 {% endif %}
             </div>
+        <div class="col-sm-3">
+            <a href="{% url 'products' %}" class="btn btn-dark my-3">Continue Shopping</a>
+        </div>
         </div>
     </div>
 </div>
