@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['ci-vero-fullstack.herokuapp.com']
-# 'ci-vero-fullstack.herokuapp.com'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -82,15 +82,15 @@ WSGI_APPLICATION = 'creaturecomforts.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 if "DATABASE_URL" in os.environ:
-    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 else:
     print("Database URL not found. Using SQLite.")
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -137,12 +137,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
-STATICFILES_LOCATION ='static'
+STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 # AWS
 AWS_S3_OBJECT_PARAMETERS = {
-    'Expires':'Thu, 31 Dec 2099 20:00:00 GMT',
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
     'CacheControl': 'max-age=94608000'
 }
 AWS_STORAGE_BUCKET_NAME = 'vero-project5'
