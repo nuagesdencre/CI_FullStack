@@ -1,1 +1,1 @@
-web: gunicorn creaturecomforts.wsgi:application
+web: gunicorn creaturecomforts.wsgi:application --debug --log-level debug
