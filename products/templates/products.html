@@ -6,34 +6,51 @@
         <img src="{% static 'img/title/shop_title.png' %}">
     </div>
     <div class="container mt-4">
-        <div class="jumbotron">
-            <h1 class="title"> The CreatureComforts Subscription Box Promise </h1>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 title">
-                        <p>We aspire to make every box an exciting and enjoyable experience, even if you order it for
-                            yourself.
-                            Our subscribers enjoy exclusive goodies and discounts
-                            and can connect in our online community.</p>
-                    <p>Each box of a bimonthly subscription will include: a locally made product or craft -- such as a
-                        woolly scarf in wintertime. Moreover, expect organic treats, luscious skin care products,
-                        positive imagery and a
-                        newsletter. We continually search the market for items that will inspire you to relax and
-                        treasure the current moment.
-                        We think pampering should be effortless, so we pack every one of our boxes with a combination of
-                        items that we know work wonders together.</p></div>
-                    <div class="col-6">
-                        <a href="{% url 'about' %}" class="btn btn-sm btn-dark">Read more</a>
+        <div class="accordion" id="promise">
+            <div class="card card_product">
+                <div class="card-header" id="headingOne">
+                    <h1 class="title btn-light mt-2" data-toggle="collapse" data-target="#collapseOne"> The CreatureComforts
+                        Subscription Box Promise <i class="fas fa-caret-down"></i></h1>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#promise">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12 title">
+                                <p>We aspire to make every box an exciting and enjoyable experience, even if you order
+                                    it for
+                                    yourself.
+                                    Our subscribers enjoy exclusive goodies and discounts
+                                    and can connect in our online community.</p>
+                                <p>Each box of a bimonthly subscription will include: a locally made product or craft --
+                                    such as a
+                                    woolly scarf in wintertime. Moreover, expect organic treats, luscious skin care
+                                    products,
+                                    positive imagery and a
+                                    newsletter. We continually search the market for items that will inspire you to
+                                    relax and
+                                    treasure the current moment.
+                                    We think pampering should be effortless, so we pack every one of our boxes with a
+                                    combination of
+                                    items that we know work wonders together.</p>
+                                <p>We promise to give your the best value for your money and work hard to maintain your
+                                    trust and friendship.</p></div>
+                        </div>
                     </div>
-                    <div class="col-6">
-                        <a href="{% url 'topics:all' %}" class="btn btn-sm btn-dark">Share your favourites!</a>
+                    <div class="card-footer">
+                        <div class="row m-0">
+                            <div class="col-sm-6 my-2">
+                                <a href="{% url 'about' %}" class="btn btn-sm btn-dark">Read more</a>
+                            </div>
+                            <div class="col-sm-6 my-2">
+                                <a href="{% url 'topics:all' %}" class="btn btn-sm btn-info">Share your opinion!</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <h3>{{ test }}</h3>
-            </div>
         </div>
+    </div>
+    <div class="container container--space">
         <div class="card-columns">
             {% for product in products %}
                 <div class="card">

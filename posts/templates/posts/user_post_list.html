@@ -30,11 +30,11 @@
 
 {% block middle %}
 
-    <div class="col-md-4">
+    <div class="col-md-4 mb-3">
         {% include "posts/_post_list.html" %}
     </div>
     <div class="col-md-8">
-        <h4>Post History of @{{ post_user.username }}</h4>
+        <h4>Post History</h4>
 
         {% for post in post_list %}
             {% include "posts/_post.html" %}
