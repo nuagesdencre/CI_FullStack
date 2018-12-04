@@ -11,6 +11,7 @@ from topics.models import Topic
 
 User = get_user_model()
 
+
 class UserPosts(generic.ListView, SelectRelatedMixin):
     """
     View the posts assigned to a specific user

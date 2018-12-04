@@ -5,14 +5,6 @@ from .forms import UserProfile, UserForm
 from django.contrib.auth import authenticate, login, logout
 
 
-
-def accounts(request):
-    """
-    Display the main page of the Accounts app
-    """
-    return render(request, 'accounts.html')
-
-
 def register(request):
     """
     Display the registration form

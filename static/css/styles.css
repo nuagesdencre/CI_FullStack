@@ -177,11 +177,11 @@ a, span {
 /* Page Structure */
 
 
-#blog--title {
+.blog--title {
     text-align: center;
 }
 
-#blog--title > img {
+.blog--title > img {
     max-width: 100%;
 }
 
@@ -271,6 +271,10 @@ footer {
 
 .card-img-top{
   border:10px solid #fff;
+}
+
+.profile-size> img{
+max-width: 150px;
 }
 /* ENDComponents */
 /* Media Queries */

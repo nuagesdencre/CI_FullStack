@@ -1,22 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    <div id="blog--title">
-        <img src="{% static 'img/faqs_title.png' %}">
+    <div class="blog--title">
+        <img src="{% static 'img/title/faqs_title.png' %}">
     </div>
-<div class="container">
-    <h4>FAQs</h4>
-    <div class="row">
-        <ul>
-<li>Your package will be packaged and shipped by the 5th of every month. Signups received by the 10th of the month will receive the current month's box first and then be charged for subsequent month's on the 1st of each month. Signups received after the 10th of the month will have their spot reserved for the following month.</li>
-<li> {{ Fact_1 }}</li>
-<li> {{ Fact_2 }}</li>
-<li> {{ Fact_3 }}</li>
+    <div class="container">
+        <h4>FAQs</h4>
+        <div class="row">
+            <ul>
+                <li>Your package will be packaged and shipped by the 5th of every month. Signups received by the 10th of
+                    the month will receive the current month's box first and then be charged for subsequent month's on
+                    the 1st of each month. Signups received after the 10th of the month will have their spot reserved
+                    for the following month.
+                </li>
+                <li> {{ Fact_1 }}</li>
+                <li> {{ Fact_2 }}</li>
+                <li> {{ Fact_3 }}</li>
 
-</ul>
+            </ul>
+        </div>
     </div>
-</div>
-<div class="container container--space">
+    <div class="container container--space">
         <div class="accordion" id="legal_disclosures">
             <div class="card">
                 <div class="card-header" id="terms">
@@ -334,5 +338,5 @@
                 </div>
             </div>
         </div>
-</div>
+    </div>
 {% endblock %}
