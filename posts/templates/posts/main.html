@@ -2,8 +2,8 @@
 {% load static %}
 {% block content %}
 <div class="container">
-<div id="blog--title">
-    <img src="{% static 'img/blog_title.png' %}" >
+<div class="blog--title">
+    <img src="{% static 'img/title/blog_title.png' %}" >
 </div></div>
 
 <div class="container">
@@ -20,6 +20,9 @@
 
     </div>
     {% block blog_content %} {% endblock %}
+<div class="container mb-3"><hr>
+    <small>Please report any abuse or problem to the webmaster by filling the contact form</small> <a href="{% url 'contact' %}" class="fancyfont--small">here</a>.</div>
+
 </div>
 
 {% endblock %}

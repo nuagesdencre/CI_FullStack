@@ -2,13 +2,13 @@
 {% load static %}
 {% load bootstrap_tags %}
 {% block content %}
-<div class="jumbotron">
-    <h1 class="title"> Registration page (User app) </h1>
-</div>
+    <div class="blog--title">
+        <img src="{% static 'img/title/register_title.png' %}">
+    </div>
 <div class="container">
 {% if registered %}
     <h3>Thank you for registering!</h3>
-    <p><a href="{% url 'user_login' %}"> Please sign in.</a></p>
+    <p class="mb-4">To explore the website and access all its features, please <a href="{% url 'user_login' %}" class="fancyfont">sign in.</a></p>
     {% else %}
     <h2>Register here!</h2>
     <h3>Fill the form below</h3>

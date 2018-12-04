@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import env
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'home', 'search', 'posts', 'topics',
     'payment', 'products', 'accounts', 'cart',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -79,12 +81,18 @@ WSGI_APPLICATION = 'creaturecomforts.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+
+# if "DATABASE_URL" in os.environ:
+#     DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
+# else:
+#     print("Database URL not found. Using SQLite instead")
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -131,11 +139,27 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
+STATICFILES_LOCATION ='static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
+# AWS
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires':'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000'
+}
+AWS_STORAGE_BUCKET_NAME = 'vero-project5'
+AWS_S3_REGION_NAME = 'eu-west-1'
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+# Media
+MEDIAFILES_LOCATION = 'media'
 MEDIA_ROOT = MEDIA_DIR
-MEDIA_URL = '/media/'
-
-LOGIN_URL = '/accounts/testing'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+LOGIN_URL = '/'
 
 # Email
 EMAIL_USE_TLS = True

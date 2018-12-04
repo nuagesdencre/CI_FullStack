@@ -6,28 +6,35 @@
 
     <div class="container">
         <div class="row jumbotron">
+            {% if post_user.profile.profile == None %}
+                <div class="col-md-4 profile-size">
+                    <img class="card-img-top" src="{{ MEDIA_URL }}{{ post_user.profile.profile_image }}"
+                         alt="Profile image">
+                </div>
+            {% endif %}
             <div class="col-md-4">
-                <div class="title"><h1>{{ post_user.username }}</h1></div></div>
+                <div class="title "><h1 class="my-5">{{ post_user.username }}</h1></div>
+            </div>
             <div class="col-md-4">
-                <ul class="title jumbo--profile">
+                <ul class="title jumbo--profile my-5">
                     {% if request.user.is_authenticated %}
-                    <li><span class="fancyfont--small">Email</span> {{ post_user.email }}</li>
+                        <li><span class="fancyfont--small">Email</span> {{ post_user.email }}</li>
                     {% endif %}
-                    <li><span class="fancyfont--small">Twitter Handle</span>  {{ post_user.profile.twitter_handle }}</li>
+                    <li><span class="fancyfont--small">Twitter Handle</span> {{ post_user.profile.twitter_handle }}</li>
                     <li><span class="fancyfont--small">Website</span> {{ post_user.profile.website }}</li>
-                </ul></div>
-            <div class="col-md-4"><img src="{{ MEDIA_URL }}{{ post_user.profile.profile_image }}"></div>
+                </ul>
+            </div>
         </div>
     </div>
 {% endblock %}
 
 {% block middle %}
 
-    <div class="col-md-4">
+    <div class="col-md-4 mb-3">
         {% include "posts/_post_list.html" %}
     </div>
     <div class="col-md-8">
-        <h4>Post History of @{{ post_user.username }}</h4>
+        <h4>Post History</h4>
 
         {% for post in post_list %}
             {% include "posts/_post.html" %}
