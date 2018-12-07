@@ -64,7 +64,7 @@ h4::after {
 }
 
 p, .card-body li {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.58;
 }
 
@@ -273,13 +273,9 @@ footer {
     margin: 5px;
 }
 
-.card_product {
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
-    border-radius: calc(.25rem - 1px);
-}
-
 .card-img-top {
     border: 10px solid #fff;
+    max-width: 350px;
 }
 
 .profile-size > img {
@@ -291,8 +287,8 @@ footer {
 
 @media (min-width: 768px) {
     p, .card-body li {
-        font-size: 21px;
-        line-height: 2;
+        font-size: 19px;
+        line-height: 1.9;
     }
 
     .container--space {
@@ -348,6 +344,11 @@ footer {
 
     .sm-space {
         padding-top: 90px;
+    }
+        .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
     }
 }
 
