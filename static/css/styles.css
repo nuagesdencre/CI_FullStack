@@ -40,6 +40,7 @@
 /* Typography */
 * {
     font-family: 'Open Sans', sans-serif;
+    overflow-wrap: break-word
 }
 
 .title, h3 {
