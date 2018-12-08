@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
+{% block chartjs %}
+    <script src="{% static 'chartjs/chart.bundle.min.js' %}"></script>
+{% endblock %}
+{% load static %}
 {% block content %}
     <div class="blog--title">
         <img src="{% static 'img/title/about_title.png' %}">
@@ -21,6 +25,9 @@
         <p>Your daily routine can be uplifted by simple actions that you do for yourself, to enjoy the moment. Feel better, be happy and welcome <span class="fancyfont">hygge</span> in your life. </p>
         <p></p>
     </div>
-
+{#                <div class="col-12">#}
+{#                    <h3>Chart</h3>#}
+{#                    {% include "_chart.html" %}#}
+{#                </div>#}
 
 {% endblock %}

@@ -1,12 +1,32 @@
 {% extends "base.html" %}
 {% load static %}
-{% block chartjs %}
-    <script src="{% static 'chartjs/chart.bundle.min.js' %}"></script>
+{% block parallax %}
+    <!-- title__parallax -->
+<div class="banner-home title__parallax">
+            <img sizes="2200px" alt="CreatureComforts Boxes"
+                src="{% static 'img/title__parallax.jpg' %}">
+            <div class="container title__main">
+                <div class="row">
+                    <div class="col-xs-12 col-xl-10 offset-xl-1">
+                        <div class="text-center">
+                            <h4>Welcome bliss, delivered to your door</h4>
+                                <div class="jumbotron title--jumbo"></div>
+                            </div>
+                    </div>
+                    <div class="text-center col-xs-12 col-xl-10 offset-xl-1"><a class="btn btn-light my-1" href="{% url 'products' %}">Discover our fantastic selection of boxes</a>
+                        </div>
+                </div>
+            </div>
+            <div class="scroll-down hidden-xs-down">
+                <i class="fas fa-2x fa-arrow-down"></i>
+            </div>
+        </div>
+<!-- endtitle__parallax -->
 {% endblock %}
 {% block content %}
-    <div class="jumbotron title--jumbo"></div>
-    <div class="container">
 
+<div class="container-fluid bg--pale container--top pt-5">
+    <div class="container">
 
     <div class="row text-center container--space d-flex justify-content-around">
         <div class="col-md-4 p-2 m-2"><h1 class="title mb-3"> A few clicks will bring you a bundle of bliss, delivered to your doorstep. </h1></div>
@@ -26,7 +46,6 @@
 
             </div>
     </div>
-
 
         <div class="container container--space">
             <div class="row justify-space-between">
@@ -136,11 +155,9 @@
                     <a class="btn btn-info" href="{% url 'all' %}">Please have a say!</a>
                 </div>
                 <div class="w-100"></div>
-{#                <div class="col-12">#}
-{#                    <h3>Chart</h3>#}
-{#                    {% include "_chart.html" %}#}
-{#                </div>#}
+
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

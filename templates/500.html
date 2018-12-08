@@ -3,18 +3,20 @@
 {% load static %}
 
 {% block content %}
-    <div class="jumbotron bg-warning">
-        <h1 class="title"> Oops, this is not what you are looking for! </h1>
-        <h3>500 Internal Server Error</h3>
-    </div>
-    <div class="container">
-        <div class="media mb-5">
-            <img class="mr-3" src="{% static 'img/logo.png.png' %}" style="background-color: #006464; height:64px;"
-                 alt="Logo">
-            <div class="media-body">
-                <h5 class="mt-0">This is embarrassing, but fear not.</h5>
-                <p>You can find your way using the navigation bar at the top of the screen. No need to type anything
-                    :)</p>
+    <div class="container container--top">
+        <div class="jumbotron bg-warning">
+            <h1 class="title"> Oops, this is not what you are looking for! </h1>
+            <h3>500 Internal Server Error</h3>
+        </div>
+        <div class="container">
+            <div class="media mb-5">
+                <img class="mr-3" src="{% static 'img/logo.png.png' %}" style="background-color: #006464; height:64px;"
+                     alt="Logo">
+                <div class="media-body">
+                    <h5 class="mt-0">This is embarrassing, but fear not.</h5>
+                    <p>You can find your way using the navigation bar at the top of the screen. No need to type anything
+                        :)</p>
+                </div>
             </div>
         </div>
     </div>
