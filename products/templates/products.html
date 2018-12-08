@@ -1,90 +1,95 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
-    <div class="blog--title">
-        <img src="{% static 'img/title/shop_title.png' %}">
-    </div>
-    <div class="container mt-4">
-        <div id="promise">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h1 class="title btn-light mt-2" data-toggle="collapse" data-target="#collapseOne"> The CreatureComforts
-                        Subscription Box Promise <i class="fas fa-caret-down"></i></h1>
-                </div>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#promise">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-sm-12 title">
-                                <p>We aspire to make every box an exciting and enjoyable experience, even if you order
-                                    it for
-                                    yourself.
-                                    Our subscribers enjoy exclusive goodies and discounts
-                                    and can connect in our online community.</p>
-                                <p>Each box of a bimonthly subscription will include: a locally made product or craft --
-                                    such as a
-                                    woolly scarf in wintertime. Moreover, expect organic treats, luscious skin care
-                                    products,
-                                    positive imagery and a
-                                    newsletter. We continually search the market for items that will inspire you to
-                                    relax and
-                                    treasure the current moment.
-                                    We think pampering should be effortless, so we pack every one of our boxes with a
-                                    combination of
-                                    items that we know work wonders together.</p>
-                                <p>We promise to give your the best value for your money and work hard to maintain your
-                                    trust and friendship.</p></div>
-                        </div>
+    <div class="container container--top">
+        <div class="blog--title">
+            <img src="{% static 'img/title/shop_title.png' %}">
+        </div>
+        <div class="container mt-4">
+            <div id="promise">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h1 class="title btn-light mt-2" data-toggle="collapse" data-target="#collapseOne"> The
+                            CreatureComforts
+                            Subscription Box Promise <i class="fas fa-caret-down"></i></h1>
                     </div>
-                    <div class="card-footer">
-                        <div class="row m-0">
-                            <div class="col-sm-6 my-2">
-                                <a href="{% url 'about' %}" class="btn btn-sm btn-dark">Read more</a>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#promise">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12 title">
+                                    <p>We aspire to make every box an exciting and enjoyable experience, even if you
+                                        order
+                                        it for
+                                        yourself.
+                                        Our subscribers enjoy exclusive goodies and discounts
+                                        and can connect in our online community.</p>
+                                    <p>Each box of a bimonthly subscription will include: a locally made product or
+                                        craft --
+                                        such as a
+                                        woolly scarf in wintertime. Moreover, expect organic treats, luscious skin care
+                                        products,
+                                        positive imagery and a
+                                        newsletter. We continually search the market for items that will inspire you to
+                                        relax and
+                                        treasure the current moment.
+                                        We think pampering should be effortless, so we pack every one of our boxes with
+                                        a
+                                        combination of
+                                        items that we know work wonders together.</p>
+                                    <p>We promise to give your the best value for your money and work hard to maintain
+                                        your
+                                        trust and friendship.</p></div>
                             </div>
-                            <div class="col-sm-6 my-2">
-                                <a href="{% url 'topics:all' %}" class="btn btn-sm btn-info">Share your opinion!</a>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row m-0">
+                                <div class="col-sm-6 my-2">
+                                    <a href="{% url 'about' %}" class="btn btn-sm btn-dark">Read more</a>
+                                </div>
+                                <div class="col-sm-6 my-2">
+                                    <a href="{% url 'topics:all' %}" class="btn btn-sm btn-info">Share your opinion!</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container container--space">
-        <div class="card-columns">
-            {% for product in products %}
-                <div class="card">
-                    <img class="card-img-top" src="{{ MEDIA_URL }}{{ product.image }}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text">{{ product.description }}</p>
-                        <p class="card-text"><i class="fas fa-euro-sign"></i>{{ product.price }}</p>
-                    </div>
-                    <div class="card-footer">
-                        <form method="post" action="{% url 'add_to_cart' product.id %}">
-                            {% csrf_token %}
-                            <div class="input-group">
-                                <input name='quantity' type="number" min="1" max="99" class="form-control"
-                                       placeholder="Quantity">
-                                <span class="input-group-btn">
+        <div class="container container--space">
+            <div class="card-columns">
+                {% for product in products %}
+                    <div class="card">
+                        <img class="card-img-top" src="{{ MEDIA_URL }}{{ product.image }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.description }}</p>
+                            <p class="card-text"><i class="fas fa-euro-sign"></i>{{ product.price }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <form method="post" action="{% url 'add_to_cart' product.id %}">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <input name='quantity' type="number" min="1" max="99" class="form-control"
+                                           placeholder="Quantity">
+                                    <span class="input-group-btn">
                             <button class="btn btn-info btn-sm fancyfont" type="submit">Add</button>
                           </span>
-                            </div>
-                        </form>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
 
-        </div>
-        <hr>
-        <div class="row my-4">
-            <div class="col">
-                <a href="{% url 'view_cart' %}" class="btn btn-warning">
-                    <i class="fas fa-shopping-cart"></i> View your Cart</a>
+            </div>
+            <hr>
+            <div class="row my-4">
+                <div class="col">
+                    <a href="{% url 'view_cart' %}" class="btn btn-warning">
+                        <i class="fas fa-shopping-cart"></i> View your Cart</a>
+                </div>
             </div>
         </div>
     </div>
-
 
 
 {% endblock %}

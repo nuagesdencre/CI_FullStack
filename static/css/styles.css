@@ -240,7 +240,7 @@ body {
 }
 
 nav {
-    border-bottom: 10px double #fff;
+    border-bottom: 10px double #006464;
 }
 
 .title--jumbo {
@@ -259,7 +259,7 @@ nav {
 }
 
 .container--top {
-    margin-top: 90px;
+    margin-top: 140px;
 }
 
 .container--img {
@@ -275,11 +275,11 @@ nav {
 footer {
     border-top: 2px solid #000000;
     background: linear-gradient(to bottom, rgba(0, 100, 100, 0.48), rgb(255, 255, 255)), url('/static/img/funky-lines.png');
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 }
 
 .bg--pale {
-    background-color: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.9));
 }
 
 /* ENDPage Structure */
@@ -296,8 +296,6 @@ footer {
     top: 0;
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover
 }
 
 .title__parallax .title__main {
@@ -308,9 +306,9 @@ footer {
 }
 
 .title__parallax .scroll-down {
-    position: absolute;
-    bottom: 20%;
-    left: 45%;
+    position: relative;
+    bottom: -50px;
+    left: 49%;
     right: 0;
     margin-left: auto;
     margin-right: auto;
@@ -348,7 +346,9 @@ footer {
 .profile-size > img {
     max-width: 150px;
 }
-
+.btn{
+    white-space: normal;
+}
 /* ENDComponents */
 /* Media Queries */
 
@@ -375,7 +375,12 @@ footer {
         -moz-column-count: 2;
         column-count: 2;
     }
-
+    .bg--pale {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85),rgba(255, 255, 255));
+}
+    .title__parallax {
+        min-height: calc(100vh - 68px)
+    }
     .title__parallax .title__main {
         position: absolute;
         left: 0;
@@ -386,12 +391,16 @@ footer {
 
     .title__parallax .scroll-down {
         bottom: 100px;
-        left: 50%;
+        left: 49%;
     }
 
     .messages {
         left: 33%;
     }
+
+    footer {
+    padding-bottom: 100px;
+}
 }
 
 @media (max-width: 991px) {
@@ -433,15 +442,13 @@ footer {
         column-count: 3;
     }
 
-    .title__parallax {
-        min-height: calc(100vh - 68px)
-    }
 
     .title__parallax h2 {
         font-size: 55px
     }
 
     .title__parallax .scroll-down {
+        position:absolute;
         bottom: 30px;
     }
 }

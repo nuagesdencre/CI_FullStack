@@ -1,28 +1,40 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="container">
-<div class="blog--title">
-    <img src="{% static 'img/title/blog_title.png' %}" >
-</div></div>
 
-<div class="container">
-    <div class="nav justify-content-around">
-        {% if user.is_authenticated %}
-        <a href="{% url 'posts:create' %}" class="nav-item blog-option btn btn-sm btn-outline-info m-2">New Post</a>
-        <a href="{% url 'topics:create' %}" class="nav-item blog-option btn btn-sm btn-outline-info m-2">New Topic</a>
-        <a href="{% url 'topics:all' %}" class="nav-item btn blog-option btn-sm btn-outline-secondary m-2">View Topics</a>
-        <a href="{% url 'posts:user_posts' username=user.username %}" class="nav-item blog-option btn btn-sm btn-outline-dark m-2">Your Profile</a>
-        {% else %}
-        <a href="{% url 'topics:all' %}" class="nav-item btn blog-option btn-sm btn-outline-secondary m-2">View Topics</a>
-        <p class="nav-item m-2 fancyfont--small">Please <a href="{% url 'user_login' %}?next={{ request.get_full_path|urlencode }}" class="fancyfont">login</a> to view more posting options.</p>
+    <div class="container container--top">
+        <div class="blog--title">
+            <img src="{% static 'img/title/blog_title.png' %}">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="nav justify-content-around">
+            {% if user.is_authenticated %}
+                <a href="{% url 'posts:create' %}" class="nav-item blog-option btn btn-sm btn-outline-info m-2">New
+                    Post</a>
+                <a href="{% url 'topics:create' %}" class="nav-item blog-option btn btn-sm btn-outline-info m-2">New
+                    Topic</a>
+                <a href="{% url 'topics:all' %}" class="nav-item btn blog-option btn-sm btn-outline-secondary m-2">View
+                    Topics</a>
+                <a href="{% url 'posts:user_posts' username=user.username %}"
+                   class="nav-item blog-option btn btn-sm btn-outline-dark m-2">Your Profile</a>
+            {% else %}
+                <a href="{% url 'topics:all' %}" class="nav-item btn blog-option btn-sm btn-outline-secondary m-2">View
+                    Topics</a>
+                <p class="nav-item m-2 fancyfont--small">Please <a
+                        href="{% url 'user_login' %}?next={{ request.get_full_path|urlencode }}"
+                        class="fancyfont">login</a> to view more posting options.</p>
             {% endif %}
 
+        </div>
+        {% block blog_content %} {% endblock %}
+        <div class="container mb-3">
+            <hr>
+            <small>Please report any abuse or problem to the webmaster by filling the contact form</small>
+            <a href="{% url 'contact' %}" class="fancyfont--small">here</a>.
+        </div>
+
     </div>
-    {% block blog_content %} {% endblock %}
-<div class="container mb-3"><hr>
-    <small>Please report any abuse or problem to the webmaster by filling the contact form</small> <a href="{% url 'contact' %}" class="fancyfont--small">here</a>.</div>
-
-</div>
-
+    </div>
 {% endblock %}
