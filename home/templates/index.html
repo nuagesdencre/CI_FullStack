@@ -24,27 +24,24 @@
 <!-- endtitle__parallax -->
 {% endblock %}
 {% block content %}
-<div class="container-fluid bg--pale container--top pt-5">
+<div class="container-fluid bg--pale container--top">
     <div class="container">
  <div class="container title__main when_small">
                 <div class="row">
-                    <div class="col-xs-12 col-xl-10 offset-xl-1">
-                        <div class="text-center">
-                            <h4>Welcome bliss, delivered to your door</h4>
-                                <div class="jumbotron title--jumbo"></div>
-                            </div>
+                    <div class="col-xs-12 col-xl-10 offset-xl-1 text-center">
+                                 <div class="jumbotron title--jumbo"></div>
                     </div>
                     <div class="text-center col-xs-12 col-xl-10 offset-xl-1"><a class="btn btn-light my-1" href="{% url 'products' %}">Discover our fantastic selection of boxes</a>
                         </div>
                 </div>
             </div>
-    <div class="row text-center container--space d-flex justify-content-around">
-        <div class="col-md-4 p-2 m-2"><h1 class="title mb-3"> A few clicks will bring you a bundle of bliss, delivered to your doorstep. </h1></div>
+    <div class="row text-justify container--space d-flex justify-content-around">
+        <div class="col-md-4 p-2 m-2"><h1 class="title mb-3"> A few clicks will ensure that you have everything you need to relax and live in the moment delivered every two months. </h1></div>
         <div class="col-md-6 pt-3 m-2 container--img"><p>Think of CreatureComforts as your go-to resource to find reassurance when you
                     worry, composure when you hurry, contentment when you need it. We have too little time to take care
                     of
                     ourselves properly in the busy lives we lead! </p></div>
-        <div class="col-md-12 p-2 m-2">
+        <div class="offset-md-2 col-md-10 p-2 m-2">
 
                     <p>By offering various bespoke boxes, and giving
                         you the option to subscribe to your favourites, we at CreatureComforts wish to make you feel
@@ -62,7 +59,7 @@
                 <div class="col-sm-12 col-lg-8"><img class="step-box" src="{% static 'img/shop_step_1a.png' %}"
                                                      alt="My image"></div>
                 <div class="col-sm-12 col-lg-4">
-                    <div class="sm-space text-center">
+                    <div class="sm-space text-justify">
                         <h3>Find something you love or are curious about.</h3>
                         <p>You can find something lovely in our wide range of boxes. Items are carefully selected to fit
                             a suggested theme; there are set elements and a few surprises to keep you wondering. We
@@ -72,7 +69,7 @@
             </div>
             <div class="row justify-space-between">
                 <div class="col-sm-12 col-lg-4">
-                    <div class="sm-space text-center"><h3>Pick a subscription type.</h3>
+                    <div class="sm-space text-justify"><h3>Pick a subscription type.</h3>
                         <p>Do you want to receive this box every few
                             months, or perhaps you want to offer it as a gift? In any case, you can count on us to make
                             the
@@ -86,7 +83,7 @@
                 <div class="col-sm-12 col-lg-8"><img class="step-box" src="{% static 'img/shop_step_3a.png' %}"
                                                      alt="My image"></div>
                 <div class="col-sm-12 col-lg-4">
-                    <div class="sm-space text-center"><h3>Simply wait for the arrival of your box!</h3>
+                    <div class="sm-space text-justify"><h3>Simply wait for the arrival of your box!</h3>
                         <p> Your box is on the way! If you decided
                             to go ahead and subscribe, you will receive a lovely package at regular interval. It makes a
                             good reminder that it is time to relax and pamper yourself.</p>
@@ -140,7 +137,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="card bg-dark text-white text-center p-3">
+                <div class="card bg-dark text-white text-justify p-3">
                     <blockquote class="blockquote mb-0">
                         <p class="card-text">Never underestimate how much assistance, how much satisfaction, how much
                             comfort, how much
@@ -153,7 +150,7 @@
                     </blockquote>
                 </div>
             </div>
-            <a href="{% url 'products' %}" class="text-center btn btn-info">Shop now!</a>
+            <a href="{% url 'products' %}" class="text-justify btn btn-info">Shop now!</a>
         </div>
         <div class="container container--space">
             <h4>Join the Creature Comforts' community!</h4>
