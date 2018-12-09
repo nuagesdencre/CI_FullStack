@@ -5,100 +5,49 @@
         <div class="blog--title">
             <img src="{% static 'img/title/shop_title.png' %}">
         </div>
-        <div class="container mt-4">
-            <div id="promise">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h1 class="title btn-light mt-2" data-toggle="collapse" data-target="#collapseOne"> The
-                            CreatureComforts
-                            Subscription Box Promise <i class="fas fa-caret-down"></i></h1>
-                    </div>
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
-                             data-parent="#promise">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-sm-12 title">
-                                        <p>We aspire to make every box an exciting and enjoyable experience,
-                                            even if you
-                                            order
-                                            it for
-                                            yourself.
-                                            Our subscribers enjoy exclusive goodies and discounts
-                                            and can connect in our online community.</p>
-                                        <p>Each box of a bimonthly subscription will include: a locally made
-                                            product or
-                                            craft --
-                                            such as a
-                                            woolly scarf in wintertime. Moreover, expect organic treats,
-                                            luscious skin care
-                                            products,
-                                            positive imagery and a
-                                            newsletter. We continually search the market for items that will
-                                            inspire you to
-                                            relax and
-                                            treasure the current moment.
-                                            We think pampering should be effortless, so we pack every one of our
-                                            boxes with
-                                            a
-                                            combination of
-                                            items that we know work wonders together.</p>
-                                        <p>We promise to give your the best value for your money and work hard
-                                            to maintain
-                                            your
-                                            trust and friendship.</p></div>
-                                </div>
+        <div class="container container--space">
+            <div id="whatIsYourTypeOfBox" class="row py-3 bg-light card">
+                <div class="col-md-12 text-center">
+                    <h3 class="">What do you do to feel good, cozy, relaxed?</h3>
+                    <div class="container py-3">
+                        <div class="row">
+                            <div class=" col-md-3 text-center" style="border-right: 1px solid black;">
+                                <h4>Title</h4>
+                                <p class="">Text</p>
+                                <h5>Your box of choice: Nighty Night</h5>
+                                <hr class="when_small">
                             </div>
-                            <div class="card-footer">
-                                <div class="row m-0">
-                                    <div class="col-sm-6 my-2">
-                                        <a href="{% url 'about' %}" class="btn btn-sm btn-dark">Read more</a>
-                                    </div>
-                                    <div class="col-sm-6 my-2">
-                                        <a href="{% url 'topics:all' %}" class="btn btn-sm btn-info">Share your
-                                            opinion!</a>
-                                    </div>
-                                </div>
+
+
+                            <div class=" col-md-3 text-center" style="border-right: 1px solid black;">
+                                <h4>Title</h4>
+                                <p class="">Text</p>
+                                <h5>Your box of choice: Flying Away</h5>
+                                <hr class="when_small">
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    <div class="container">
-                        <div id="whatisInTheBox" class="row py-3 m-2">
-                            <div class="col-md-12 card">
-                                <div class="container--space text-center">
-                                    <h1>What is in the box?</h1>
-                                    <h4>Expect quality and wow factor as you open it!</h4>
-                                    <img src="/static/img/box_content.png" class="flex--img when_big">
-                                </div>
-                                <div class="container ">
-                                    <div class="row">
-                                        <div class="col-md-12 flex--container">
-                                            <div class="flex--component text-center">
-                                                <div>You will have in every box items that fulfill a purpose.</div>
-                                                <p>The best combination according to your needs at the present and what
-                                                    you want to achieve with our help.</p>
-                                            </div>
-                                            <div class="flex--component text-center">
-                                                <img src="/static/img/testimonial1.png" class="flex--sm_img">
-                                                <div>Box basic structure</div>
-                                                <div class="flex--component">One <em>textured</em> item of higher value
-                                                    (example: scarf, blanket, cushion, etc.)
-                                                </div>
-                                                <div class="flex--component">Two to three sensual items (example: an
-                                                    aromatherapy scent, flavourful sweets, spiced tea)
-                                                </div>
-                                                <div class="flex--component">One or two complementary items (example: in
-                                                    the 'Nighty Night' box, we pair a lavender face mask with a satin
-                                                    headband).
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+
+                            <div class=" col-md-3 text-center" style="border-right: 1px solid black;">
+                                <h4>Title</h4>
+                                <p class="">Text</p>
+                                <h5>Your box of choice: Snug like a Bug</h5>
+                                <hr class="when_small">
+                            </div>
+
+                            <div class=" col-md-3 text-center">
+                                <h4>You are a gourmand.</h4>
+                                <p class="">Your escapade of choice is to a fancy cafe or the trendiest brunch place in
+                                    town.</p>
+                                <h5>Your box of choice: A Pinch of This</h5>
                             </div>
 
                         </div>
+                    </div>
+                    <a href="{% url 'about' %}" class="btn btn-dark" style="">Learn More about our Concept</a>
+                </div>
+
+            </div>
+
             <div class="container container--space">
                 <div class="card-columns">
                     {% for product in products %}
@@ -137,5 +86,5 @@
             </div>
         </div>
 
-
+    </div>
 {% endblock %}
