@@ -43,19 +43,20 @@
     overflow-wrap: break-word
 }
 
-.title,h1, h2, h5{
+.title, h1, h2, h5 {
     color: #006464;
     font-family: Comfortaa, cursive;
     text-shadow: 2px 2px #fff, -1px -1px 3px #fff;
 }
 
-.btn{
-     font-family: Comfortaa, cursive;
+.btn {
+    font-family: Comfortaa, cursive;
 }
 
-h2, h3{
+h2, h3 {
     font-weight: bold;
 }
+
 h4 {
     display: flex;
     align-items: center;
@@ -86,9 +87,12 @@ p, .card-body li {
     font-size: .9em;
 }
 
-.jumbotron, .close-x {
+.title--jumbo, .close-x {
     color: #fff;
     text-shadow: -2px -2px 3px #000;
+    font-size: 2.7em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
 }
 
 .error-msg, #stripe-error-message {
@@ -250,19 +254,10 @@ nav {
     border-bottom: 10px double #006464;
 }
 
-.title--jumbo {
-    background: url('/static/img/creaturecomforts.png') center no-repeat;
-    background-size: contain;
-    height: 150px;
-}
 
 .jumbo--profile {
     list-style: none;
     padding: 0;
-}
-
-.jumbotron {
-    padding: 2rem 3rem
 }
 
 .container--top {
@@ -279,26 +274,28 @@ nav {
     padding: 40px 20px;
 }
 
-.flex--container{
+.flex--container {
     display: flex;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     justify-content: center;
 }
 
-.flex--component{
+.flex--component {
     flex-grow: 1;
     text-align: center;
     max-width: 280px;
     padding: 0px 20px;
-    margin:10px 0px;
+    margin: 10px 0px;
 
 }
-.flex--img{
-    width:100%;
+
+.flex--img {
+    width: 100%;
 }
-.flex--sm_img{
-    width:75px;
+
+.flex--sm_img {
+    width: 75px;
 }
 
 footer {
@@ -308,7 +305,7 @@ footer {
 }
 
 .bg--pale {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.9));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
 }
 
 /* ENDPage Structure */
@@ -374,9 +371,11 @@ footer {
 .profile-size > img {
     max-width: 150px;
 }
-.btn{
+
+.btn {
     white-space: normal;
 }
+
 /* ENDComponents */
 /* Media Queries */
 
@@ -394,21 +393,24 @@ footer {
         padding-top: 50px;
     }
 
-    .title--jumbo {
-        height: 400px;
-    }
+.title--jumbo{
+    font-size: 5em;
+}
 
     .card-columns {
         -webkit-column-count: 2;
         -moz-column-count: 2;
         column-count: 2;
     }
+
     .bg--pale {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85),rgb(255, 255, 255));
-}
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgb(255, 255, 255));
+    }
+
     .title__parallax {
         min-height: calc(100vh - 68px)
     }
+
     .title__parallax .title__main {
         position: absolute;
         left: 0;
@@ -427,8 +429,8 @@ footer {
     }
 
     footer {
-    padding-bottom: 100px;
-}
+        padding-bottom: 100px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -476,7 +478,7 @@ footer {
     }
 
     .title__parallax .scroll-down {
-        position:absolute;
+        position: absolute;
         bottom: 30px;
     }
 }

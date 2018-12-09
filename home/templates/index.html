@@ -10,7 +10,7 @@
                 <div class="col-xs-12 col-xl-10 offset-xl-1">
                     <div class="text-center">
                         <h4>Welcome bliss, delivered to your door</h4>
-                        <div class="jumbotron title--jumbo"></div>
+                        <h1 class="title--jumbo">Creature Comforts</h1>
                     </div>
                 </div>
                 <div class="text-center col-xs-12 col-xl-10 offset-xl-1"><a class="btn btn-light my-1"
@@ -31,7 +31,7 @@
         <div class="container title__main when_small">
             <div class="row">
                 <div class="col-xs-12 col-xl-10 offset-xl-1 text-center">
-                    <div class="jumbotron title--jumbo"></div>
+                    <h1 class="title--jumbo">Creature Comforts</h1>
                 </div>
                 <div class="text-center col-xs-12 col-xl-10 offset-xl-1"><a class="btn btn-dark my-1"
                                                                             href="{% url 'products' %}">Discover our
@@ -42,68 +42,70 @@
         </div>
         <!-- end main title on a small screen-->
         <div id="indexMainContainer" class="container pt-5">
-<div id="whatisInTheBox" class="row py-3 m-2">
-                            <div class="col-md-12 bg-light">
-                                <div class="container--space text-center">
-                                    <h1>What is in a Creature Comforts box?</h1>
-                                    <p>The contents will vary, according to the type of box you choose.</p>
-                                    <p>You will have in every box items that fulfill a purpose.</p>
-                                    <p>Trust us to provide the best combination according to your needs at the present.</p>
-                                    <img src="/static/img/box_content.png" class="flex--img when_big">
+            <div id="whatisInTheBox" class="row py-3 m-2">
+                <div class="col-md-12 bg-light">
+                    <div class="container--space text-center">
+                        <h2 class="my-3">What is in a Creature Comforts box?</h2>
+                        <h4 class="my-3">The contents will vary, according to the type of box you choose.</h4>
+                        <p>You will have in every box items that fulfill a purpose.</p>
+                        <p>Trust us to provide the best combination according to your needs at the present.</p>
+                        <img src="{% static 'img/box_content.png' %}" class="flex--img when_big">
+                    </div>
+                    <div class="row text-center">
+                        <div class="container">
+                            <h4>In all boxes, you are assured to receive:</h4>
+
+                            <div class="col-md-12 flex--container pt-3">
+                                <div class="flex--component">
+                                    <h3>One textured item of higher value</h3>
+                                    Example: scarf, blanket, cushion, etc.
                                 </div>
-                                    <div class="row text-center">
-                                        <div class="container">
-                                            <h4>In all boxes, you are assured to receive:</h4>
-
-                                        <div class="col-md-12 flex--container pt-3">
-                                            <div class="flex--component">
-                                                <h3>One textured item of higher value</h3>
-                                                    Example: scarf, blanket, cushion, etc.
-                                                </div>
-                                                <div class="flex--component">
-                                                    <h3>Two to three sensual items</h3> Example: an
-                                                    aromatherapy scent, flavourful sweets, spiced tea
-                                                </div>
-                                                <div class="flex--component">
-                                                    <h3>Complementary items </h3>
-                                                    Example: in
-                                                    the 'Nighty Night' box, we pair a relaxing face mask with a satin
-                                                    headband.
-                                                </div>
-                                        </div>
-                                    </div>
-                                    </div>
+                                <div class="flex--component">
+                                    <h3>Two to three evocative items</h3> Example: an
+                                    aromatherapy scent, flavourful sweets, spiced tea
+                                </div>
+                                <div class="flex--component">
+                                    <h3>Complementary items </h3>
+                                    Example: in
+                                    the 'Nighty Night' box, we pair a relaxing face mask with a satin
+                                    headband.
+                                </div>
+                                <h5 class="my-4">We also give you a copy of books and music recommendations to further
+                                    inspire you.</h5>
                             </div>
-
+                            <a href="{% url 'about' %}" class="btn btn-dark" style="">Learn More about our Concept</a>
                         </div>
+                    </div>
+                </div>
+
+            </div>
             <div id="indexPageFeatures" class="row">
                 <div class="col-md-12">
                     <div class="container--space text-center">
-                        <h1>Make every new delivery a pleasant one</h1>
-                        <h4>You will enjoy these perks every time you order from Creature Comforts.</h4>
+                        <h2>Make every new delivery a pleasant one</h2>
+                        <h4>We fulfill your expectations when you order from Creature Comforts</h4>
                     </div>
-                    <div class="container">
+                    <div class="container text-center">
                         <div class="row">
                             <div class="col-md-12 flex--container">
                                 <div class="flex--component text-center">
-                                    <img class="flex--sm_img" src="/static/img/shop_step1.png">
+                                    <img class="flex--sm_img" src="{% static 'img/shop_step1.png' %}">
                                     <h5 class="my-2">Pick and choose from different boxes</h5>
-                                    <p>By offering various bespoke boxes, and giving
+                                    <p>We offer various bespoke boxes, and giving
                                         you the option to subscribe to your favourites.
                                 </div>
                                 <div class="flex--component text-center">
-                                    <img class="flex--sm_img" src="/static/img/shop_step2.png">
+                                    <img class="flex--sm_img" src="{% static 'img/shop_step2.png' %}">
                                     <h5 class="my-2">Sort your box delivery in minutes</h5>
                                     <p>A few clicks will ensure that you have everything
                                         you need to relax and live in the moment delivered every two months.</p>
                                 </div>
                                 <div class="flex--component text-center">
-                                    <img class="flex--sm_img" src="/static/img/shop_step3.png">
+                                    <img class="flex--sm_img" src="{% static 'img/shop_step3.png' %}">
                                     <h5 class="my-2">Be excited, you are treating yourself</h5>
                                     <p>Look forward to the delivery of a box filled with goodies! Our goal is to make
                                         you feel
-                                        <span
-                                                class="fancyfont">fuzzy</span> inside, every day.</p></p>
+                                        <span class="fancyfont">fuzzy</span> inside, every day.</p></p>
                                 </div>
                             </div>
                         </div>
@@ -111,10 +113,7 @@
                 </div>
             </div>
 
-            <h3 class="right">Read on or <a href="{% url 'products' %}" class="fancyfont--small">Make
-                your pick</a>!</h3>
-
-            <div class="row bg-line container--space">
+            <div class="row bg-line my-4 p-4">
                 <h4>What you can expect in your CreatureComforts boxes...</h4>
                 <div class="card-columns">
                     <div class="card">
@@ -127,22 +126,22 @@
                     </div>
                     <div class="card p-3">
                         <blockquote class="blockquote mb-0 card-body">
-                            <p>Rainy days should be spent at home with a cup of tea and a good book.</p>
+                            <p>"I like Creature Comforts more and more each day because it makes my life a lot easier.
+                                It really saves me time and effort. Creature Comforts is exactly what my busy daily
+                                routine has been lacking."</p>
                             <p class="card-text">
                                 <small class="text-muted">
-                                    Bill Watterson, <cite title="Source Title">The Calvin and Hobbes Tenth Anniversary
-                                    Book</cite>
+                                    Jill O, <cite>Co.Meath</cite>
                                 </small>
                             </p>
                         </blockquote>
                     </div>
-                    <div class="card p-3 text-right">
+                    <div class="card p-3">
                         <blockquote class="blockquote mb-0">
-                        <span class="card-text">May your life be filled, as mine has been, with love and laughter; and remember, when things
-                            are rough all you need is ... Chocolate.</span>
+                            <span class="card-text">"I would be lost without Creature Comforts. If you aren't sure, always go for a Creature Comforts box."</span>
                             <p class="card-text">
                                 <small class="text-muted">
-                                    Geraldine Solon, <cite title="Source Title">Chocolicious</cite>
+                                    Cobb E., <cite>Co. Dublin</cite>
                                 </small>
                             </p>
                         </blockquote>
@@ -152,28 +151,38 @@
                         <div class="card-body">
                             <h3 class="card-title">What a pleasant gift!</h3>
                             <span class="card-text">I received this from my sister. It shows she care for my well-being and
-                            knows me well... Iam a big fan of books and woolen goods!
+                            knows me well... I am a big fan of the book recommendations and woollen goods!
                            </span>
                             <p class="card-text">
-                                <small class="text-muted">Lucy B., Now an active member on the Blog</small>
+                                <small class="text-muted">Lucy B., <cite>Now an active member on the Blog</cite></small>
                             </p>
                         </div>
                     </div>
-                    <div class="card bg-dark text-white text-justify p-3">
+                    <div class="card bg-dark text-white p-3">
                         <blockquote class="blockquote mb-0">
-                            <p class="card-text">Never underestimate how much assistance, how much satisfaction, how
-                                much
-                                comfort, how much
-                                soul and transcendence there might be in a well-made taco and a cold bottle of beer.</p>
+                            <p class="card-text">"These boxes are getting better and better as my wife and I receive
+                                them. Not able to tell you how happy I am with Creature Comforts."</p>
                             <p class="card-text">
                                 <small>
-                                    Tom Robbins, <cite title="Source Title">Jitterbug Perfume</cite>
+                                    Sean T., <cite>Co. Leitrim</cite>
                                 </small>
                             </p>
                         </blockquote>
                     </div>
+                    <div class="card">
+                        <img class="card-img-top" src="{% static 'img/testimonial3.png' %}" alt="Testimonial">
+                        <div class="card-body">
+                            <h3 class="card-title">We cook together and create memories.</h3>
+                            <span class="card-text">The 'With A Pinch of This' box subscription is worth much more than I paid. I will be getting the Nighty Night box for my siblings this year as a Xmas present.
+                           </span>
+                            <p class="card-text">
+                                <small class="text-muted">Aine G.,<cite> who enjoys cooking with her baby
+                                    daughter</cite></small>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <a href="{% url 'products' %}" class="text-justify btn btn-info">Shop now!</a>
+
             </div>
             <div class="container container--space">
                 <h4>Join the Creature Comforts' community!</h4>
