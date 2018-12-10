@@ -194,6 +194,7 @@ body {
 
 .blog--title > img {
     max-width: 100%;
+    margin-bottom:70px;
 }
 
 .dropdown-menu--small {
