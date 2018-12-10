@@ -22,9 +22,7 @@
 <body>
 <!--navbar-->
 <nav class="navbar bg-light fixed-top">
-    <!-- testing -->
     <a href="/home/"><img src="{% static 'img/logo_small.png' %}" style="height:45px;"></a>
-
     <div class="pos-f-t when_small">
         <div class="collapse" id="small_navbar_content">
             <div class="p-4">
@@ -81,8 +79,6 @@
             aria-label="Toggle navigation">
         <i class="fas fa-ellipsis-v"></i>
     </button>
-
-    <!-- End testing-->
 
     <ul id="navbarOnBigViewports" class="nav nav-pills when_big">
         <li class="nav-item"><a class="nav-link" href="/home/">Home <span class="sr-only">(current)</span></a></li>
@@ -144,14 +140,18 @@
 
 </nav>
 <!--navbar-->
-{% block parallax %} {% endblock %}
-<div class="messages">
-    {% if messages %}
-        <div class="alert alert-primary" role="alert">
+{% if messages %}
+    <nav class="navbar fixed-top-alert justify-content-center">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
             {% for message in messages %} {{ message }} {% endfor %}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
-    {% endif %}
-</div>
+        
+    </nav>
+{% endif %}
+{% block parallax %} {% endblock %}
 {% block content %} {% endblock %}
 
 <footer>
@@ -171,16 +171,17 @@
 
             </div>
             <div class="col-sm-4"><h5>FAQs</h5>
-                    <ul class="m-0 pl-0">
-                        <li class="footer-item"><a href="{% url 'faqs' %}">Terms and Conditions</a></li>
-                        <li class="footer-item"><a href="{% url 'faqs' %}">Privacy Policy</a></li>
-                        <li class="footer-item"><a href="{% url 'faqs' %}">Promise to our Clients</a></li>
-                    </ul>
+                <ul class="m-0 pl-0">
+                    <li class="footer-item"><a href="{% url 'faqs' %}">Terms and Conditions</a></li>
+                    <li class="footer-item"><a href="{% url 'faqs' %}">Privacy Policy</a></li>
+                    <li class="footer-item"><a href="{% url 'faqs' %}">Promise to our Clients</a></li>
+                </ul>
             </div>
             <div class="col-sm-4"><h5>Contact Us</h5>
                 <ul class="m-0 pl-0">
                     <li class="footer-item"><a href="{% url 'contact' %}">Contact Form</a></li>
-                    <li class="footer-item"><a href="https://github.com/nuagesdencre/CI_FullStack" target="_blank">Github Repository</a></li>
+                    <li class="footer-item"><a href="https://github.com/nuagesdencre/CI_FullStack" target="_blank">Github
+                        Repository</a></li>
                     <li class="footer-item"><a href="https://nuagesdencre.com" target="_blank">Nuagesdencre</a></li>
                 </ul>
             </div>

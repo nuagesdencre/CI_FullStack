@@ -74,6 +74,7 @@ p, .card-body li {
     font-size: 2.7em;
     letter-spacing: .1em;
     text-transform: uppercase;
+    margin: 50px 20px;
 }
 
 .error-msg, #stripe-error-message {
@@ -172,15 +173,13 @@ a, span {
     font-size: 48px;
 }
 
-.messages {
-    position: absolute;
-    top: 120px;
-    left: 20%;
-    max-width: 33%;
-}
-
-.alert {
-    z-index: 1029;
+.fixed-top-alert {
+position: fixed;
+    top: 80px;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    border:none;
 }
 
 /* ENDTypography */
