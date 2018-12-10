@@ -2,57 +2,67 @@
 {% load static %}
 {% block content %}
 
-<div class="container container--top">
-    <div class="blog--title">
-        <img src="{% static 'img/title/cart_title.png' %}">
-    </div>
-    <div class="card-deck mt-3">
-        {% for item in cart_items %}
-        <div class="card">
-            <img class="card-img-top" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{{ item.product.name }}</h5>
-                <p class="card-text">{{ item.product.description }}</p>
-                <p class="card-text">{{ item.product.price }}</p>
+    <div class="container container--top">
+        <div class="container title__main">
+                  <div class="page--title">
+            <h1>CART</h1>
+        </div>
 
-            </div>
-            <div class="card-footer">
-                <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label id="inputAmount" class="sr-only">New Qty</label>
-                        <div class="input-group align-items-center">
-                             <div class="input-group-addon mx-2 fancyfont">In cart: {{item.quantity}}</div>
-                            <input name='quantity' type="number" min="0" max="99" class="form-control mx-2" placeholder="-">
-                        </div>
+        </div>
+        <div class="card-deck mt-3">
+            {% for item in cart_items %}
+
+                <div class="card">
+                    <img class="card-img-top" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.product.name }}</h5>
+                        <p class="card-text">{{ item.product.description }}</p>
+                        <p class="card-text">{{ item.product.price }}</p>
+
                     </div>
-                    <button type="submit" class="btn btn-sm btn-info mx-2"> Amend</button>
-                </form>
-            </div>
+                    <div class="card-footer">
+                        <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label id="inputAmount" class="sr-only">New Qty</label>
+                                <div class="input-group align-items-center">
+                                    <div class="input-group-addon mx-2 fancyfont">In cart: {{ item.quantity }}</div>
+                                    <input name='quantity' type="number" min="0" max="99" class="form-control mx-2"
+                                           placeholder="-">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-sm btn-info mx-2"> Amend</button>
+                        </form>
+                    </div>
+                </div>
+            {% empty %}
+                <h4>Nothing in your cart yet.</h4>
+
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
-    <hr>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h5 class="card-title my-3">TOTAL <i class="fas fa-receipt"></i> <i class="fas fa-euro-sign"></i>{{ total }}</h5>
-               </div>
-            <div class="col-sm-3">
-                {% if user.is_authenticated %}
-                    {%  if product_count > 0 %}
-                <a href="{% url 'payment' %}"
-                   class="btn btn-success" role="button"><i
-                        class="far fa-credit-card"></i> Checkout</a>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h5 class="card-title my-3">TOTAL <i class="fas fa-receipt"></i> <i
+                            class="fas fa-euro-sign"></i>{{ total }}</h5>
+                </div>
+                <div class="col-sm-3">
+                    {% if user.is_authenticated %}
+                        {% if product_count > 0 %}
+                            <a href="{% url 'payment' %}"
+                               class="btn btn-success" role="button"><i
+                                    class="far fa-credit-card"></i> Checkout</a>
                         {% endif %}
-                {% else %}
-                    <a href="{% url 'user_login' %}?next={{ request.get_full_path|urlencode }}"><span class="fancyfont">Login</span></a> to proceed with your payment.
-                {% endif %}
+                    {% else %}
+                        <a href="{% url 'user_login' %}?next={{ request.get_full_path|urlencode }}"><span
+                                class="fancyfont">Login</span></a> to proceed with your payment.
+                    {% endif %}
+                </div>
+                <div class="col-sm-3">
+                    <a href="{% url 'products' %}" class="btn btn-dark my-3">Continue Shopping</a>
+                </div>
             </div>
-        <div class="col-sm-3">
-            <a href="{% url 'products' %}" class="btn btn-dark my-3">Continue Shopping</a>
-        </div>
         </div>
     </div>
-</div>
 {% endblock %}

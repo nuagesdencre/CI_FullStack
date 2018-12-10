@@ -26,22 +26,22 @@
     <!-- endtitle__parallax -->
 {% endblock %}
 {% block content %}
-    <div id="indexPageBgContainer" class="container-fluid bg--pale container--top">
-        <!--main title on a small screen-->
-        <div class="container title__main when_small">
-            <div class="row">
-                <div class="col-xs-12 col-xl-10 offset-xl-1 text-center">
-                    <h1 class="title--jumbo">Creature Comforts</h1>
-                </div>
-                <div class="text-center col-xs-12 col-xl-10 offset-xl-1"><a class="btn btn-dark my-1"
-                                                                            href="{% url 'products' %}">Discover our
-                    fantastic selection of boxes</a>
-                </div>
+    <!-- main title on a small screen -->
+    <div class="container title__main--sm title__main when_small">
+        <div class="row text-center">
+            <div class="col-xs-12 col-xl-10 offset-xl-1 text-center">
+                <h1 class="title--jumbo">Creature Comforts</h1>
             </div>
-            <hr>
+            <div class="text-center col-xs-12 col-xl-10 offset-xl-1"><a class="btn btn-dark my-1"
+                                                                        href="{% url 'products' %}">Discover our
+                boxes</a>
+            </div>
         </div>
-        <!-- end main title on a small screen-->
-        <div id="indexMainContainer" class="container pt-5">
+        <hr>
+    </div>
+    <!-- end main title on a small screen -->
+    <div id="indexPageBgContainer" class="container-fluid bg--pale container--top">
+        <div id="indexMainContainer" class="container pt-2">
             <div id="whatisInTheBox" class="row py-3 m-2">
                 <div class="col-md-12 bg-light">
                     <div class="container--space text-center">
@@ -79,7 +79,7 @@
                 </div>
 
             </div>
-            <div id="indexPageFeatures" class="row">
+            <div id="indexCCDeliveryFeatures" class="row">
                 <div class="col-md-12">
                     <div class="container--space text-center">
                         <h2>Make every new delivery a pleasant one</h2>
@@ -113,8 +113,8 @@
                 </div>
             </div>
 
-            <div class="row bg-line my-4 p-4">
-                <h4>What you can expect in your CreatureComforts boxes...</h4>
+            <div id="indexTestimonials" class="row bg-line my-4 p-4">
+                <h4>What people are saying about their CreatureComforts boxes</h4>
                 <div class="card-columns">
                     <div class="card">
                         <img class="card-img-top" src="{% static 'img/testimonial2.png' %}" alt="Testimonial">
@@ -184,7 +184,7 @@
                 </div>
 
             </div>
-            <div class="container container--space">
+            <div id="indexInvitationToBlog" class="container container--space">
                 <h4>Join the Creature Comforts' community!</h4>
                 <div class="row my-4">
                     <div class="col-12 mb-4">
@@ -199,4 +199,7 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block attribution %}
+    <h5 class="when_big">Icons used in above design were created by Freepik from www.flaticon.com</h5>
 {% endblock %}

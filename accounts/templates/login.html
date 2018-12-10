@@ -3,8 +3,8 @@
 {% load bootstrap_tags %}
 {% block content %}
     <div class="container container--top">
-        <div class="blog--title">
-            <img src="{% static 'img/title/login_title.png' %}">
+        <div class="page--title">
+            <h1>LOGIN</h1>
         </div>
         <div class="container mb-5">
 
@@ -23,7 +23,7 @@
                     <input type="submit" class="btn" name="" value="Login">
                 </div>
             </form>
-            <span>Is it your first visit?</span><a href="{% url 'user_login' %}" class="fancyfont--small"> You can
+            <span>Is it your first visit?</span><a href="{% url 'register' %}" class="fancyfont--small"> You can
             register here.</a><br>
             <span>Forgot your password? </span><a href="{% url 'password_reset' %}" class="fancyfont--small">Click
             here.</a>
