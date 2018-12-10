@@ -1,25 +1,36 @@
 {% extends "base.html" %}
 {% load static %}
+{% block chartjs %}
+    <script src="{% static 'chartjs/chart.bundle.min.js' %}"></script>
+{% endblock %}
 {% block content %}
+    <div class="container container--top">
     <div class="blog--title">
         <img src="{% static 'img/title/faqs_title.png' %}">
     </div>
     <div class="container">
         <h4>FAQs</h4>
         <div class="row">
-            <ul>
+            <div class="col-md-6"><ul>
+                <li>No exchanges or refunds on boxes once delivered.</li>
+                <li>Cancellation of a subscription can be done a month before its renewal date.</li>
+            </ul></div>
+            <div class="col-md-6"><ul>
                 <li>Your package will be packaged and shipped by the 5th of every month. Signups received by the 10th of
                     the month will receive the current month's box first and then be charged for subsequent month's on
                     the 1st of each month. Signups received after the 10th of the month will have their spot reserved
                     for the following month.
                 </li>
-                <li> {{ Fact_1 }}</li>
-                <li> {{ Fact_2 }}</li>
-                <li> {{ Fact_3 }}</li>
+                            </ul></div>
 
-            </ul>
         </div>
     </div>
+        <div class="conatiner">
+            {#                <div class="col-12">#}
+{#                    <h3>Chart</h3>#}
+{#                    {% include "_chart.html" %}#}
+{#                </div>#}
+        </div>
     <div class="container container--space">
         <div class="accordion" id="legal_disclosures">
             <div class="card">
@@ -34,13 +45,13 @@
 
                 <div id="collapseOne" class="collapse" aria-labelledby="terms" data-parent="#legal_disclosures">
                     <div class="card-body">
-                        <h3>Terms and Conditions for CreatureComforts</h3>
+                        <h3>Terms and Conditions for Creature Comforts</h3>
 
                         <h4>Introduction</h4>
 
                         <p>These Website Standard Terms and Conditions written on this webpage shall manage your use of
                             our website,
-                            CreatureComforts accessible at https://ci-vero-fullstack.herokuapp.com/.</p>
+                            Creature Comforts accessible at https://ci-vero-fullstack.herokuapp.com/.</p>
 
                         <p>These Terms will be applied fully and affect to your use of this Website. By using this
                             Website, you
@@ -56,7 +67,7 @@
 
                         <h4>Intellectual Property Rights</h4>
 
-                        <p>Other than the content you own, under these Terms, CreatureComforts and/or its licensors own
+                        <p>Other than the content you own, under these Terms, Creature Comforts and/or its licensors own
                             all the
                             intellectual property rights and materials contained in this Website.</p>
 
@@ -84,7 +95,7 @@
                             <li>using this Website to engage in any advertising or marketing.</li>
                         </ul>
 
-                        <p>Certain areas of this Website are restricted from being access by you and CreatureComforts
+                        <p>Certain areas of this Website are restricted from being access by you and Creature Comforts
                             may further
                             restrict access by you to any areas of this Website, at any time, in absolute discretion.
                             Any user ID
@@ -98,12 +109,12 @@
                             text, images
                             or other material you choose to display on this Website. By displaying Your Content, you
                             grant
-                            CreatureComforts a non-exclusive, worldwide irrevocable, sub licensable license to use,
+                            Creature Comforts a non-exclusive, worldwide irrevocable, sub licensable license to use,
                             reproduce,
                             adapt, publish, translate and distribute it in any and all media.</p>
 
                         <p>Your Content must be your own and must not be invading any third-party’s rights.
-                            CreatureComforts
+                            Creature Comforts
                             reserves the right to remove any of Your Content from this Website at any time without
                             notice.</p>
 
@@ -113,7 +124,7 @@
 
                         <h4>No warranties</h4>
 
-                        <p>This Website is provided "as is," with all faults, and CreatureComforts express no
+                        <p>This Website is provided "as is," with all faults, and Creature Comforts express no
                             representations or
                             warranties, of any kind related to this Website or the materials contained on this Website.
                             Also,
@@ -121,11 +132,11 @@
 
                         <h4>Limitation of liability</h4>
 
-                        <p>In no event shall CreatureComforts, nor any of its officers, directors and employees, shall
+                        <p>In no event shall Creature Comforts, nor any of its officers, directors and employees, shall
                             be held
                             liable for anything arising out of or in any way connected with your use of this Website
                             whether such
-                            liability is under contract.  CreatureComforts, including its officers, directors and
+                            liability is under contract.  Creature Comforts, including its officers, directors and
                             employees shall
                             not be held liable for any indirect, consequential or special liability arising out of or in
                             any way
@@ -133,7 +144,7 @@
 
                         <h4>Indemnification</h4>
 
-                        <p>You hereby indemnify to the fullest extent CreatureComforts from and against any and/or all
+                        <p>You hereby indemnify to the fullest extent Creature Comforts from and against any and/or all
                             liabilities,
                             costs, demands, causes of action, damages and expenses arising in any way related to your
                             breach of any
@@ -147,13 +158,13 @@
 
                         <h4>Variation of Terms</h4>
 
-                        <p>CreatureComforts is permitted to revise these Terms at any time as it sees fit, and by using
+                        <p>Creature Comforts is permitted to revise these Terms at any time as it sees fit, and by using
                             this Website
                             you are expected to review these Terms on a regular basis.</p>
 
                         <h4>Assignment</h4>
 
-                        <p>The CreatureComforts is allowed to assign, transfer, and subcontract its rights and/or
+                        <p>The Creature Comforts is allowed to assign, transfer, and subcontract its rights and/or
                             obligations under
                             these Terms without any notification. However, you are not allowed to assign, transfer, or
                             subcontract
@@ -161,7 +172,7 @@
 
                         <h4>Entire Agreement</h4>
 
-                        <p>These Terms constitute the entire agreement between CreatureComforts and you in relation to
+                        <p>These Terms constitute the entire agreement between Creature Comforts and you in relation to
                             your use of
                             this Website, and supersede all prior agreements and understandings.</p>
 
@@ -185,13 +196,13 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="privacy" data-parent="#legal_disclosures">
                     <div class="card-body">
-                        <h3>Privacy Policy for CreatureComforts</h3>
+                        <h3>Privacy Policy for Creature Comforts</h3>
 
-                        <p>At CreatureComforts, accessible from https://ci-vero-fullstack.herokuapp.com/, one of our
+                        <p>At Creature Comforts, accessible from https://ci-vero-fullstack.herokuapp.com/, one of our
                             main priorities
                             is the privacy of our visitors. This Privacy Policy document contains types of information
                             that is
-                            collected and recorded by CreatureComforts and how we use it.</p>
+                            collected and recorded by Creature Comforts and how we use it.</p>
 
                         <p>If you have additional questions or require more information about our Privacy Policy, do not
                             hesitate to
@@ -204,19 +215,19 @@
                                     href="https://www.freeprivacypolicy.com/blog/gdpr-privacy-policy/">GDPR
                                 guide</a>.</p>
 
-                        <p>CreatureComforts legal basis for collecting and using the personal information described in
+                        <p>Creature Comforts legal basis for collecting and using the personal information described in
                             this Privacy
                             Policy depends on the Personal Information we collect and the specific context in which we
                             collect the
                             information:</p>
                         <ul>
-                            <li>CreatureComforts needs to perform a contract with you</li>
-                            <li>You have given CreatureComforts permission to do so</li>
-                            <li>Processing your personal information is in CreatureComforts legitimate interests</li>
-                            <li>CreatureComforts needs to comply with the law</li>
+                            <li>Creature Comforts needs to perform a contract with you</li>
+                            <li>You have given Creature Comforts permission to do so</li>
+                            <li>Processing your personal information is in Creature Comforts legitimate interests</li>
+                            <li>Creature Comforts needs to comply with the law</li>
                         </ul>
 
-                        <p>CreatureComforts will retain your personal information only for as long as is necessary for
+                        <p>Creature Comforts will retain your personal information only for as long as is necessary for
                             the purposes
                             set out in this Privacy Policy. We will retain and use your information to the extent
                             necessary to
@@ -239,7 +250,7 @@
 
                         <h4>Log Files</h4>
 
-                        <p>CreatureComforts follows a standard procedure of using log files. These files log visitors
+                        <p>Creature Comforts follows a standard procedure of using log files. These files log visitors
                             when they
                             visit websites. All hosting companies do this and a part of hosting services' analytics. The
                             information
@@ -255,7 +266,7 @@
 
                         <h4>Cookies and Web Beacons</h4>
 
-                        <p>Like any other website, CreatureComforts uses 'cookies'. These cookies are used to store
+                        <p>Like any other website, Creature Comforts uses 'cookies'. These cookies are used to store
                             information
                             including visitors' preferences, and the pages on the website that the visitor accessed or
                             visited. The
@@ -271,11 +282,11 @@
                         <h4>Privacy Policies</h4>
 
                         <P>You may consult this list to find the Privacy Policy for each of the advertising partners of
-                            CreatureComforts.</p>
+                            Creature Comforts.</p>
 
                         <p>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web
                             Beacons that are
-                            used in their respective advertisements and links that appear on CreatureComforts, which are
+                            used in their respective advertisements and links that appear on Creature Comforts, which are
                             sent
                             directly to users' browser. They automatically receive your IP address when this occurs.
                             These
@@ -283,13 +294,13 @@
                             personalize
                             the advertising content that you see on websites that you visit.</p>
 
-                        <p>Note that CreatureComforts has no access to or control over these cookies that are used by
+                        <p>Note that Creature Comforts has no access to or control over these cookies that are used by
                             third-party
                             advertisers.</p>
 
                         <h4>Third Pary Privacy Policies</h4>
 
-                        <p>CreatureComforts's Privacy Policy does not apply to other advertisers or websites. Thus, we
+                        <p>Creature Comforts's Privacy Policy does not apply to other advertisers or websites. Thus, we
                             are advising
                             you to consult the respective Privacy Policies of these third-party ad servers for more
                             detailed
@@ -311,7 +322,7 @@
                             parents and guardians to observe, participate in, and/or monitor and guide their online
                             activity.</p>
 
-                        <p>CreatureComforts does not knowingly collect any Personal Identifiable Information from
+                        <p>Creature Comforts does not knowingly collect any Personal Identifiable Information from
                             children under the
                             age of 13. If you think that your child provided this kind of information on our website, we
                             strongly
@@ -325,7 +336,7 @@
                             is valid
                             for visitors to our website with regards to the information that they shared and/or collect
                             in
-                            CreatureComforts. This policy is not applicable to any information collected offline or via
+                            Creature Comforts. This policy is not applicable to any information collected offline or via
                             channels
                             other than this website. <a href="https://gdprprivacypolicy.net">Our GDPR Privacy Policy</a>
                             was
@@ -337,6 +348,49 @@
                     </div>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-header bg-secondary" id="promise">
+                    <h5 class="mb-0">
+                        <button class="btn btn-secondary collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Our Promise to our Clients
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="promise" data-parent="#legal_disclosures">
+                    <div class="card-body">
+                        <p>We aspire to make every box an exciting and enjoyable experience,
+                                            even if you
+                                            order
+                                            it for
+                                            yourself.
+                                            Our subscribers enjoy exclusive goodies and discounts
+                                            and can connect in our online community.</p>
+                                        <p>Each box of a bimonthly subscription will include: a locally made
+                                            product or
+                                            craft --
+                                            such as a
+                                            woolly scarf in wintertime. Moreover, expect organic treats,
+                                            luscious skin care
+                                            products,
+                                            positive imagery and a
+                                            newsletter. We continually search the market for items that will
+                                            inspire you to
+                                            relax and
+                                            treasure the current moment.
+                                            We think pampering should be effortless, so we pack every one of our
+                                            boxes with
+                                            a
+                                            combination of
+                                            items that we know work wonders together.</p>
+                                        <p>We promise to give your the best value for your money and work hard
+                                            to maintain
+                                            your
+                                            trust and friendship.</p>
+                        <p>Any reasonable request and/or complain will be acknowledged with patience and attention.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </div></div>
 {% endblock %}

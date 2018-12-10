@@ -2,28 +2,32 @@
 {% load static %}
 {% load bootstrap_tags %}
 {% block content %}
-    <div class="blog--title">
-        <img src="{% static 'img/title/login_title.png' %}">
-    </div>
-<div class="container mb-5">
-
-    <form action="{% url 'user_login' %}?next={{ next }}" method="POST">
-        <div class="form-group">
-        <p>
-            {% csrf_token %}
-            <label id="username">Username</label>
-            <input class="form-control" type="text" name="username" placeholder="Your username">
-        </p>
-        <p>
-            <label id="password">Password</label>
-            <input class="form-control" type="password" name="password" placeholder="Your password">
-            </p>
-
-        <input type="submit" class="btn" name="" value="Login">
+    <div class="container container--top">
+        <div class="blog--title">
+            <img src="{% static 'img/title/login_title.png' %}">
         </div>
-    </form>
+        <div class="container mb-5">
 
-<p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
-</div>
+            <form action="{% url 'user_login' %}?next={{ next }}" method="POST">
+                <div class="form-group">
+                    <p>
+                        {% csrf_token %}
+                        <label id="username">Username</label>
+                        <input class="form-control" type="text" name="username" placeholder="Your username">
+                    </p>
+                    <p>
+                        <label id="password">Password</label>
+                        <input class="form-control" type="password" name="password" placeholder="Your password">
+                    </p>
+
+                    <input type="submit" class="btn" name="" value="Login">
+                </div>
+            </form>
+            <span>Is it your first visit?</span><a href="{% url 'user_login' %}" class="fancyfont--small"> You can
+            register here.</a><br>
+            <span>Forgot your password? </span><a href="{% url 'password_reset' %}" class="fancyfont--small">Click
+            here.</a>
+        </div>
+    </div>
 
 {% endblock %}

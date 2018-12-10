@@ -1,38 +1,39 @@
 {% extends "topics/topic_base.html" %}
 
 {% block top %}
-<div class="container">
+
+    <div class="container">
     <div class="row">
         <div class="col-md-12"><h1 class="title">{{ topic.name }}</h1>
             <div>{% if user.is_authenticated %}
                 {% if user in topic.followers.all %}
-                <a href="{% url 'topics:unfollow' slug=topic.slug %}"
-                   class="btn btn-sm btn-outline-warning">Unfollow</a>
+                    <a href="{% url 'topics:unfollow' slug=topic.slug %}"
+                       class="btn btn-sm btn-outline-warning">Unfollow</a>
                 {% else %}
-                <a href="{% url 'topics:follow' slug=topic.slug %}"
-                   class="btn btn-sm btn-outline-success">Follow</a>
+                    <a href="{% url 'topics:follow' slug=topic.slug %}"
+                       class="btn btn-sm btn-outline-success">Follow</a>
                 {% endif %}
-                {% endif %}
+            {% endif %}
                 {% with total_followers=topic.followers.count %}
-                <span class="badge fancyfont--small">{{ total_followers }}</span>
-                <span class="fancyfont--small">Follower{{ total_followers|pluralize}}</span> {% endwith %}
+                    <span class="badge fancyfont--small">{{ total_followers }}</span>
+                    <span class="fancyfont--small">Follower{{ total_followers|pluralize }}</span> {% endwith %}
             </div>
         </div>
     </div>
 
-    {% endblock %}
+{% endblock %}
 
-    {% block middle %}
+{% block middle %}
 
     <div>
         {% if topic.posts.count == 0 %}
-        <h2>No posts for this topic yet.</h2>
+            <h2>No posts for this topic yet.</h2>
         {% else %}
-        {% for post in topic.posts.all %}
-        {% include "posts/_post.html" %}
-        {% endfor %}
+            {% for post in topic.posts.all %}
+                {% include "posts/_post.html" %}
+            {% endfor %}
         {% endif %}
     </div>
-</div>
+    </div>
 {% endblock %}
 

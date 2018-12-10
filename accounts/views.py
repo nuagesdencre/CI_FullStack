@@ -26,10 +26,8 @@ def register(request):
             profile = profile_form.save(commit=False)
             profile.user = user
             # OneToOne relationship
-
-            if 'profile_img' in request.FILES:
-                profile.profile_img = request.FILES['profile_img']
-
+            if 'profile_image' in request.FILES:
+                profile.profile_image = request.FILES['profile_image']
             profile.save()
 
             registered = True

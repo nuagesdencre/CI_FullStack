@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-# import env
+#Todo: comment out env for production
+import env
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,10 +27,10 @@ MEDIA_DIR = os.path.join(BASE_DIR, "media")
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
+#Todo: SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['ci-vero-fullstack.herokuapp.com']
+#Todo: remove '*' from allowed hosts for production
+ALLOWED_HOSTS = ['*','ci-vero-fullstack.herokuapp.com']
 
 # Application definition
 
@@ -157,6 +158,7 @@ MEDIAFILES_LOCATION = 'media'
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
 LOGIN_URL = '/'
 
 # Email
