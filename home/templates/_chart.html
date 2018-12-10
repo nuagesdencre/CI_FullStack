@@ -1,15 +1,15 @@
-<h2>Test! Chart</h2>
-<div class="chart-container" style="position: relative; height:70%; width:80%">
+<h4>Seasons of Happiness</h4>
+<div class="chart-container" style="position: relative; height:70%; width:100%">
     <canvas id="chart"></canvas>
     <script>
-        var myChart = new Chart(document.getElementById("chart"), {
+        var seasonChart = new Chart(document.getElementById("chart"), {
             "type": "polarArea",
             "data": {
-                "labels": ["Red", "Green", "Yellow", "Grey", "Blue"],
+                "labels": ["Winter", "Spring", "Summer", "Fall"],
                 "datasets": [{
-                    "label": "My First Dataset",
-                    "data": [11, 16, 7, 3, 14],
-                    "backgroundColor": ["rgb(255, 99, 132)", "rgb(75, 192, 192)", "rgb(255, 205, 86)", "rgb(201, 203, 207)", "rgb(54, 162, 235)"]
+                    "label": "Seasons of Happiness",
+                    "data": [7, 11, 5, 2],
+                    "backgroundColor": ["rgb(255, 99, 132)", "rgb(75, 192, 192)", "rgb(255, 205, 86)", "rgb(201, 203, 207)"]
                 }]
             }
         });
