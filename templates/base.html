@@ -23,10 +23,15 @@
 <!--navbar-->
 <nav class="navbar bg-light fixed-top">
     <a href="/home/"><img src="{% static 'img/logo_small.png' %}" style="height:45px;"></a>
-    <div class="pos-f-t when_small">
+    <button id="menu_button" class="btn btn-outline-dark when_small" type="button" data-toggle="collapse"
+            data-target="#small_navbar_content" aria-controls="small_navbar_content" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <i class="fas fa-ellipsis-v"></i>
+    </button>
+    <div id="navbarForSmallViewports" class="pos-f-t when_small">
         <div class="collapse" id="small_navbar_content">
             <div class="p-4">
-                <ul class="m-0">
+                <ul class="p-0 m-0">
                     <li class="nav-item fancyfont">CreatureComforts</li>
                     <li class="nav-item"><a class="nav-link" href="/home/">Home <span
                             class="sr-only">(current)</span></a>
@@ -43,7 +48,7 @@
                     </li>
                     <div class="bg-info card">
                         {% if user.is_authenticated %}
-                            <li class="fancyfont nav-item">{{ user.username }}</li>
+                            <li class="fancyfont--small nav-item">{{ user.username }}</li>
                             <li class="nav-item"><a
                                     href="{% url 'posts:user_posts' username=user.username %}"><i
                                     class="fa fa-user"></i>
@@ -52,7 +57,7 @@
                                     class="fas fa-sign-out-alt"></i>Log
                                 Out</a></li>
                         {% else %}
-                            <li class="fancyfont nav-item">Account</li>
+                            <li class="fancyfont-small nav-item">Account</li>
                             <li class="nav-item"><a href="{% url 'register' %}"><i
                                     class="fa fa-user-plus"></i>
                                 Register</a></li>
@@ -74,11 +79,7 @@
             </div>
         </div>
     </div>
-    <button id="menu_button" class="btn btn-outline-dark when_small" type="button" data-toggle="collapse"
-            data-target="#small_navbar_content" aria-controls="small_navbar_content" aria-expanded="false"
-            aria-label="Toggle navigation">
-        <i class="fas fa-ellipsis-v"></i>
-    </button>
+
 
     <ul id="navbarOnBigViewports" class="nav nav-pills when_big">
         <li class="nav-item"><a class="nav-link" href="/home/">Home <span class="sr-only">(current)</span></a></li>
@@ -163,21 +164,21 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-4"><h5>About</h5><a href="{% url 'about' %}">
+            <div class="col-sm-4 my-3"><h5>About</h5><a href="{% url 'about' %}">
                 <ul class="m-0 pl-0">
                     <li class="footer-item">CC's Concept</li>
                 </ul>
             </a>
 
             </div>
-            <div class="col-sm-4"><h5>FAQs</h5>
+            <div class="col-sm-4 my-3"><h5>FAQs</h5>
                 <ul class="m-0 pl-0">
                     <li class="footer-item"><a href="{% url 'faqs' %}">Terms and Conditions</a></li>
                     <li class="footer-item"><a href="{% url 'faqs' %}">Privacy Policy</a></li>
                     <li class="footer-item"><a href="{% url 'faqs' %}">Promise to our Clients</a></li>
                 </ul>
             </div>
-            <div class="col-sm-4"><h5>Contact Us</h5>
+            <div class="col-sm-4 my-3"><h5>Contact Us</h5>
                 <ul class="m-0 pl-0">
                     <li class="footer-item"><a href="{% url 'contact' %}">Contact Form</a></li>
                     <li class="footer-item"><a href="https://github.com/nuagesdencre/CI_FullStack" target="_blank">Github
