@@ -27,18 +27,18 @@
 {% endblock %}
 {% block content %}
     <!-- main title on a small screen -->
-        <div class="container title__main--sm title__main when_small">
-            <div class="row text-center">
-                <div class="col-xs-12 col-xl-10 offset-xl-1 text-center">
-                    <h1 class="title--jumbo">Creature Comforts</h1>
-                </div>
-                <div class="text-center col-xs-12 col-xl-10 offset-xl-1"><a class="btn btn-dark my-1"
-                                                                            href="{% url 'products' %}">Discover our
-                    boxes</a>
-                </div>
+    <div class="container title__main--sm title__main when_small">
+        <div class="row text-center">
+            <div class="col-xs-12 col-xl-10 offset-xl-1 text-center">
+                <h1 class="title--jumbo">Creature Comforts</h1>
             </div>
-            <hr>
+            <div class="text-center col-xs-12 col-xl-10 offset-xl-1"><a class="btn btn-dark my-1"
+                                                                        href="{% url 'products' %}">Discover our
+                boxes</a>
+            </div>
         </div>
+        <hr>
+    </div>
     <!-- end main title on a small screen -->
     <div id="indexPageBgContainer" class="container-fluid bg--pale container--top">
         <div id="indexMainContainer" class="container pt-2">
@@ -199,4 +199,7 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block attribution %}
+    <h5 class="when_big">Icons used in above design were created by Freepik from www.flaticon.com</h5>
 {% endblock %}

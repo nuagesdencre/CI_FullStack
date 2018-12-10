@@ -79,7 +79,13 @@ In addition, if it is not obvious, you should also describe how to run your code
 ### Content
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 ### Media
-- The photos used in this site were obtained from ...
+The icons were retrieved on [Flaticon](https://www.flaticon.com/) and [Invision](https://www.invisionapp.com/inside-design/design-resources/). 
+Only Flaticon required attribution and it is provided in the footer of the home page, as per the website's basic license requirements [here](https://support.flaticon.com/hc/en-us/articles/207248209). 
+The Flaticons were only used on that specific page.
+
+All pictures used on Creature Comforts were  found on [Pexels](https://www.pexels.com/) and [Pixabay](https://pixabay.com/).
+The pictures do not require attribution. They have been heavily modified for the purpose of this project.
+
 ### Acknowledgements
 - I received inspiration for this project from X
 
