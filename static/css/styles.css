@@ -291,7 +291,7 @@ nav {
 }
 
 .flex--img {
-    width: 100%;
+    max-width: 600px;
 }
 
 .flex--sm_img {
@@ -393,9 +393,9 @@ footer {
         padding-top: 50px;
     }
 
-.title--jumbo{
-    font-size: 5em;
-}
+    .title--jumbo {
+        font-size: 5em;
+    }
 
     .card-columns {
         -webkit-column-count: 2;
