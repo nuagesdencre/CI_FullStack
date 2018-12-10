@@ -17,26 +17,7 @@
     transition: all .35s ease-in-out, color .1s ease;
 }
 
-@-webkit-keyframes rotateIcon {
-    0% {
-        transform: rotate(0deg)
-    }
-
-    100% {
-        transform: rotate(359deg)
-    }
-}
-
-@keyframes rotateIcon {
-    0% {
-        transform: rotate(0deg)
-    }
-
-    100% {
-        transform: rotate(359deg)
-    }
-}
-
+/* ENDAnimation */
 /* Typography */
 * {
     font-family: 'Open Sans', sans-serif;
@@ -72,11 +53,6 @@ h4::after {
     flex: 1;
 }
 
-p, .card-body li {
-    font-size: 17px;
-    line-height: 1.58;
-}
-
 .fancyfont, .fancyfont--small {
     font-family: Comfortaa, cursive;
     font-size: 1.2em;
@@ -87,7 +63,12 @@ p, .card-body li {
     font-size: .9em;
 }
 
-.title--jumbo, .close-x {
+p, .card-body li {
+    font-size: 17px;
+    line-height: 1.58;
+}
+
+.title--jumbo {
     color: #fff;
     text-shadow: -2px -2px 3px #000;
     font-size: 2.7em;
@@ -115,14 +96,6 @@ textarea, input[type="password"] {
     transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.menu--i:hover,
-.menu--i:focus,
-.menu--i:focus-within {
-    color: #006464;
-    -webkit-animation: rotateIcon ease-out 1s infinite;
-    animation: rotateIcon ease-out 1s infinite;
-}
-
 a:hover {
     color: #006464;
     text-decoration: underline;
@@ -147,6 +120,10 @@ a, span {
 .when_big li a:hover {
     background-color: #ced4da;
 }
+/* Navbar - small viewports */
+.dropdown-header {
+    font-weight: bold;
+}
 
 .dropdown-menu--small > ul {
     font-weight: normal;
@@ -156,10 +133,6 @@ a, span {
     position: relative;
     display: block;
     letter-spacing: 1px;
-}
-
-.dropdown-header {
-    font-weight: bold;
 }
 
 .dropdown-menu--small > ul li > a,
@@ -175,15 +148,14 @@ a, span {
     text-decoration: overline #ced4da;
 }
 
-.drop-item, .nav-item, .nav-link {
+.nav-item, .nav-link {
     list-style: none;
     text-transform: uppercase;
+    font-family: Comfortaa, cursive;
+    margin: 8px;
 
 }
-
-.when_small--bg {
-    background: #007a7a;
-}
+/* ENDNavbar - small viewports */
 
 .title__parallax h4 {
     font-weight: normal;
@@ -273,7 +245,7 @@ nav {
 .container--space {
     padding: 40px 20px;
 }
-
+/*FLEX*/
 .flex--container {
     display: flex;
     -webkit-flex-flow: row wrap;
@@ -297,6 +269,7 @@ nav {
 .flex--sm_img {
     width: 75px;
 }
+/* END Flex */
 
 footer {
     border-top: 2px solid #000000;
@@ -310,7 +283,10 @@ footer {
 
 /* ENDPage Structure */
 /* Components */
-
+.title__main--sm{
+    margin-top:110px;
+    margin-bottom:-100px;
+}
 
 .title__parallax {
     min-height: auto;
@@ -481,6 +457,10 @@ footer {
         position: absolute;
         bottom: 30px;
     }
+
+    .product--sugg {
+    border-right: 1px solid black;
+}
 }
 
 /*// Extra large devices (large desktops, 1200px and up)*/
