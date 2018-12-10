@@ -148,7 +148,7 @@ a, span {
     text-decoration: overline #ced4da;
 }
 
-.nav-item, .nav-link {
+.nav-item, .nav-link, .footer-item {
     list-style: none;
     text-transform: uppercase;
     font-family: Comfortaa, cursive;

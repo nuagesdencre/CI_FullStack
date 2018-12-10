@@ -24,62 +24,63 @@
 <nav class="navbar bg-light fixed-top">
     <!-- testing -->
     <a href="/home/"><img src="{% static 'img/logo_small.png' %}" style="height:45px;"></a>
-        <div class="pos-f-t when_small">
-            <div class="collapse" id="small_navbar_content">
-                <div class="p-4">
-                    <ul class="m-0">
-                        <li class="nav-item fancyfont">CreatureComforts</li>
-                        <li class="nav-item"><a class="nav-link" href="/home/">Home <span
-                                class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'all' %}">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Shop</a></li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'view_cart' %}">
-                                <i class="fas fa-shopping-cart"></i> Cart
-                                {% if product_count > 0 %}
-                                    <label class="badge badge-warning">{{ product_count }}</label>
-                                {% endif %}
-                            </a>
-                        </li>
-                        <div class="bg-info card">
-                            {% if user.is_authenticated %}
-                                <li class="fancyfont nav-item">{{ user.username }}</li>
-                                <li class="nav-item"><a
-                                                        href="{% url 'posts:user_posts' username=user.username %}"><i
-                                        class="fa fa-user"></i>
-                                    Profile</a></li>
-                                <li class="nav-item"><a href="{% url 'user_logout' %}"><i
-                                        class="fas fa-sign-out-alt"></i>Log
-                                    Out</a></li>
-                            {% else %}
-                                <li class="fancyfont nav-item">Account</li>
-                                <li class="nav-item"><a href="{% url 'register' %}"><i
-                                        class="fa fa-user-plus"></i>
-                                    Register</a></li>
-                                <li class="nav-item">
-                                    <a
-                                       href="{% url 'user_login' %}?next={{ request.get_full_path|urlencode }}">
-                                        <i class="fas fa-sign-in-alt"></i> Log In</a>
-                                </li>
+
+    <div class="pos-f-t when_small">
+        <div class="collapse" id="small_navbar_content">
+            <div class="p-4">
+                <ul class="m-0">
+                    <li class="nav-item fancyfont">CreatureComforts</li>
+                    <li class="nav-item"><a class="nav-link" href="/home/">Home <span
+                            class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'all' %}">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Shop</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'view_cart' %}">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            {% if product_count > 0 %}
+                                <label class="badge badge-warning">{{ product_count }}</label>
                             {% endif %}
-                        </div>
-                        <div class="container my-2 bg-secondary card">
-                            <p>Search Products</p>
-                            <form class="form-inline" action="{% url 'search_index' %}" method="get">
-                                <input type="text" name="q">
-                                <button class="btn btn-sm ml-1 btn-outline-light my-1" type="submit">Search</button>
-                            </form>
-                        </div>
-                    </ul>
-                </div>
+                        </a>
+                    </li>
+                    <div class="bg-info card">
+                        {% if user.is_authenticated %}
+                            <li class="fancyfont nav-item">{{ user.username }}</li>
+                            <li class="nav-item"><a
+                                    href="{% url 'posts:user_posts' username=user.username %}"><i
+                                    class="fa fa-user"></i>
+                                Profile</a></li>
+                            <li class="nav-item"><a href="{% url 'user_logout' %}"><i
+                                    class="fas fa-sign-out-alt"></i>Log
+                                Out</a></li>
+                        {% else %}
+                            <li class="fancyfont nav-item">Account</li>
+                            <li class="nav-item"><a href="{% url 'register' %}"><i
+                                    class="fa fa-user-plus"></i>
+                                Register</a></li>
+                            <li class="nav-item">
+                                <a
+                                        href="{% url 'user_login' %}?next={{ request.get_full_path|urlencode }}">
+                                    <i class="fas fa-sign-in-alt"></i> Log In</a>
+                            </li>
+                        {% endif %}
+                    </div>
+                    <div class="container my-2 bg-secondary card">
+                        <p>Search Products</p>
+                        <form class="form-inline" action="{% url 'search_index' %}" method="get">
+                            <input type="text" name="q">
+                            <button class="btn btn-sm ml-1 btn-outline-light my-1" type="submit">Search</button>
+                        </form>
+                    </div>
+                </ul>
             </div>
         </div>
-        <button id="menu_button" class="btn btn-outline-dark when_small" type="button" data-toggle="collapse"
-                data-target="#small_navbar_content" aria-controls="small_navbar_content" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <i class="fas fa-ellipsis-v"></i>
-        </button>
+    </div>
+    <button id="menu_button" class="btn btn-outline-dark when_small" type="button" data-toggle="collapse"
+            data-target="#small_navbar_content" aria-controls="small_navbar_content" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <i class="fas fa-ellipsis-v"></i>
+    </button>
 
     <!-- End testing-->
 
@@ -162,14 +163,26 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-4"><a href="{% url 'about' %}"><h3>About</h3> - Terms and Conditions</a>
+            <div class="col-sm-4"><h5>About</h5><a href="{% url 'about' %}">
+                <ul class="m-0 pl-0">
+                    <li class="footer-item">CC's Concept</li>
+                </ul>
+            </a>
 
             </div>
-            <div class="col-sm-4"><a href="{% url 'faqs' %}"><h3>FAQs</h3> - Website Information</a>
-
+            <div class="col-sm-4"><h5>FAQs</h5>
+                    <ul class="m-0 pl-0">
+                        <li class="footer-item"><a href="{% url 'faqs' %}">Terms and Conditions</a></li>
+                        <li class="footer-item"><a href="{% url 'faqs' %}">Privacy Policy</a></li>
+                        <li class="footer-item"><a href="{% url 'faqs' %}">Promise to our Clients</a></li>
+                    </ul>
             </div>
-            <div class="col-sm-4"><a href="{% url 'contact' %}"><h3>Contact Us</h3>- Send on your comments!</a>
-
+            <div class="col-sm-4"><h5>Contact Us</h5>
+                <ul class="m-0 pl-0">
+                    <li class="footer-item"><a href="{% url 'contact' %}">Contact Form</a></li>
+                    <li class="footer-item"><a href="https://github.com/nuagesdencre/CI_FullStack" target="_blank">Github Repository</a></li>
+                    <li class="footer-item"><a href="https://nuagesdencre.com" target="_blank">Nuagesdencre</a></li>
+                </ul>
             </div>
         </div>
     </div>
