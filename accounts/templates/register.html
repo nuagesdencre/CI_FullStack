@@ -6,21 +6,33 @@
     <div class="page--title">
             <h1>REGISTER</h1>
         </div>
-<div class="container">
+<div class="container container--form">
 {% if registered %}
     <h3>Thank you for registering!</h3>
     <p class="mb-4">To explore the website and access all its features, please <a href="{% url 'user_login' %}" class="fancyfont">sign in.</a></p>
+<div class="card p-3 my-5">
+    <div class="container text-center">
+    <h4>Please find below a unique code, valid for 5 euros off your first order.</h4>
+    <p>Make sure to note down this code! It is only valid on your first purchase, if made within 24 hours.</p>
+        <div class="row">
+            <div class="col-md-4"><button id="btn_code" class="btn btn-success">Click here</button></div>
+            <div class="col-md-8 text-center"><p id="code_output" class="fancyfont"></p></div>
+        </div>
+    </div>
+</div>
+
+
     {% else %}
+
     <h3>Fill the form below</h3>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ user_form | as_bootstrap }}
         {{ profile_form | as_bootstrap }}
-        <input type="submit" class="btn"  name ="" value="Register">
+        <input type="submit" class="btn btn-dark" value="Register">
     </form>
 <p>Already registered?<a href="{% url 'user_login' %}"> Please sign in.</a></p>
     {% endif %}
-
 </div>
     </div>
 {% endblock %}

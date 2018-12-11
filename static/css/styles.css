@@ -71,7 +71,7 @@ p, .card-body li {
 .title--jumbo {
     color: #fff;
     text-shadow: -2px -2px 3px #000;
-    font-size: 2.7em;
+    font-size: 2.6em;
     letter-spacing: .1em;
     text-transform: uppercase;
     margin: 50px 20px;
@@ -100,6 +100,7 @@ textarea, input[type="password"] {
 a:hover {
     color: #0d8180;
     text-decoration: underline;
+    background: rgba(0, 143, 143, 0.18) bottom;
 }
 
 a, span {
@@ -354,6 +355,9 @@ footer {
 
     .container--space {
         padding: 70px 20px;
+    }
+    .container--form{
+        max-width:800px;
     }
 
     .sm-space {
