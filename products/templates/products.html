@@ -6,54 +6,47 @@
             <h1>OUR BOXES</h1>
         </div>
         <div class="container">
-            <div id="whatIsYourTypeOfBox" class="row py-3 bg-light card">
-                <div class="col-md-12 text-center">
-                    <h4>What do you do to feel good, cozy, relaxed?</h4>
-                    <div class="container py-3">
-                        <div class="row">
-                            <div class="py-3 product--sugg col-md-6 col-lg-3 text-center">
-                                <h3>You are a light sleeper.</h3>
-                                <p class="text-justify">You can help yourself get plenty of 'zzzs' by creating the right
-                                    atmosphere and quieting your thoughts.</p>
-                                <h5>Your box of choice: Nighty Night</h5>
 
-                            </div>
-
-
-                            <div class="py-3 product--sugg col-md-6 col-lg-3 text-center">
-                                <h3>You are a jet-setter.</h3>
-                                <p class="text-justify">Even if you travel for fun or business, you need to make sure
-                                    you get plenty of rest.</p>
-                                <h5>Your box of choice: Flying Away</h5>
-
-                            </div>
-
-
-                            <div class="py-3 product--sugg col-md-6 col-lg-3 text-center">
-                                <h3>You have children or young siblings.</h3>
-                                <p class="text-justify">Have fun together by imagining great adventures from your living
-                                    room! </p>
-                                <h5>Your box of choice: Snug like a Bug</h5>
-                            </div>
-
-                            <div class="py-3 col-md-6 col-lg-3 text-center">
-                                <h3>You are a gourmand.</h3>
-                                <p class="text-justify">Your escapade of choice is to a fancy cafe or the trendiest
-                                    brunch place in
-                                    town.</p>
-                                <h5>Your box of choice: A Pinch of This</h5>
-                            </div>
-
-                        </div>
-                    </div>
-                    <a href="{% url 'about' %}" class="btn btn-dark" style="">Learn More about our Concept</a>
+            <div id="whatIsYourTypeOfBox" class="p-4 bg-light card">
+                <h4>What makes you smile and feel great?</h4>
+                <div class="nav nav-pills" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nightnight" data-toggle="tab" href="#nightnight_box"
+                       role="tab" aria-controls="nightnight_box" aria-selected="true">Sleeping in!</a>
+                    <a class="nav-item nav-link" id="jetsetter" data-toggle="tab" href="#flyaway_box" role="tab"
+                       aria-controls="flyaway_box" aria-selected="false">A life as a jet setter.</a>
+                    <a class="nav-item nav-link" id="tastyfood" data-toggle="tab" href="#pinch_box" role="tab"
+                       aria-controls="pinch_box" aria-selected="false">Delicious things.</a>
+                    <a class="nav-item nav-link" id="snugasabug" data-toggle="tab" href="#snuagasabug_box" role="tab"
+                       aria-controls="pinch_box" aria-selected="false">Fun, carefree activities.</a>
                 </div>
 
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nightnight_box" role="tabpanel"
+                         aria-labelledby="nightnight"><p class="card-body">You can help yourself get plenty of 'zzzs'
+                        by creating the right
+                        atmosphere and quieting your thoughts.</p>
+                        <h5 class="card-body">Your box of choice: Nighty Night</h5></div>
+                    <div class="tab-pane fade" id="flyaway_box" role="tabpanel" aria-labelledby="jetsetter"><p
+                            class="card-body">Even if you travel for fun or business, you need to make sure
+                        you get plenty of rest.</p>
+                        <h5 class="card-body">Your box of choice: Flying Away</h5></div>
+                    <div class="tab-pane fade" id="pinch_box" role="tabpanel" aria-labelledby="tastyfood"><p
+                            class="card-body">Your escapade of choice is to a fancy cafe or the trendiest
+                        brunch place in
+                        town.</p>
+                        <h5 class="card-body">Your box of choice: A Pinch of This</h5></div>
+                    <div class="tab-pane fade" id="snuagasabug_box" role="tabpanel" aria-labelledby="snugasabug"><p
+                           class="card-body">Are you yound at heart, or perhaps
+                        you have children or young siblings? Have fun together by imagining great adventures from your
+                        living
+                        room! </p>
+                        <h5 class="card-body">Your box of choice: Snug like a Bug</h5></div>
+                </div>
             </div>
 
             <div id="mainShopContainer" class="container container--space">
                 <div class="card-columns">
-                <div class="card bg-light">
+                    <div class="card bg-dark text-white">
                         <div class="card-body">
                             <h4>Bespoke Creature Comforts Box</h4>
                             <div class="card-title">
@@ -69,8 +62,10 @@
                                  alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">{{ product.name }}</h5>
-                               <a class="btn_readmore fancyfont--small" href="#{{ product.name|slugify }}" data-toggle="collapse">Read more</a>
-                                <p id="{{ product.name|slugify }}" class="card-text collapse">{{ product.description }}</p>
+                                <a class="btn_readmore fancyfont--small" href="#{{ product.name|slugify }}"
+                                   data-toggle="collapse">Read more</a>
+                                <p id="{{ product.name|slugify }}"
+                                   class="card-text collapse">{{ product.description }}</p>
                                 <p class="card-text"><i class="fas fa-euro-sign"></i>{{ product.price }}</p>
                                 <p>Box delivered: {{ product.frequency }}</p>
                             </div>
@@ -88,7 +83,7 @@
                                 </form>
                             </div>
                         </div>
-                        {% empty %}
+                    {% empty %}
                         <h4>No product currently matches your search.</h4>
                         <a href="{% url 'products' %}"><p class="alert alert-info my-3">View all products here.</p></a>
                     {% endfor %}
