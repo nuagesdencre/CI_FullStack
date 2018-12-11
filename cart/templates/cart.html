@@ -18,7 +18,7 @@
                         <h5 class="card-title">{{ item.product.name }}</h5>
                         <p class="card-text">{{ item.product.description }}</p>
                         <p class="card-text">{{ item.product.price }}</p>
-
+                        <p class="card-text">{{ item.product.frequency }}</p>
                     </div>
                     <div class="card-footer">
                         <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
