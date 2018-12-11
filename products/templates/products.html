@@ -36,7 +36,7 @@
                         town.</p>
                         <h5 class="card-body">Your box of choice: A Pinch of This</h5></div>
                     <div class="tab-pane fade" id="snuagasabug_box" role="tabpanel" aria-labelledby="snugasabug"><p
-                           class="card-body">Are you yound at heart, or perhaps
+                            class="card-body">Are you yound at heart, or perhaps
                         you have children or young siblings? Have fun together by imagining great adventures from your
                         living
                         room! </p>
@@ -85,9 +85,9 @@
                         </div>
                     {% empty %}
                         <h4>No product currently matches your search.</h4>
-                        <a href="{% url 'products' %}"><p class="alert alert-info my-3">View all products here.</p></a>
                     {% endfor %}
-
+                    {% autoescape off %}
+                        {{ message|safe }}{% endautoescape %}
                 </div>
                 <hr>
                 <div class="row my-4">
