@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 # Todo: comment out env for production
-# import env
+import env
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -28,9 +28,9 @@ MEDIA_DIR = os.path.join(BASE_DIR, "media")
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 #Todo: SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 #Todo: remove '*' from allowed hosts for production
-ALLOWED_HOSTS = ['ci-vero-fullstack.herokuapp.com']
+ALLOWED_HOSTS = ['*','ci-vero-fullstack.herokuapp.com']
 
 # Application definition
 
