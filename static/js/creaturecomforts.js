@@ -22,4 +22,9 @@ $(document).ready(function () {
         $("#code_output").html(random_code);
         $("#btn_code").fadeOut("slow");
     });
+
+    /* Toggle 'Read more' or 'Read less' to display product description */
+    $('.btn_readmore').on('click', function () {
+        $(this).html() == "Read Less" ? $(this).html('Read More') : $(this).html('Read Less');
+    });
 });

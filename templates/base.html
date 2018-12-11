@@ -35,6 +35,13 @@
         <div class="collapse" id="small_navbar_content">
             <div class="p-4">
                 <ul class="p-0 m-0">
+                 <div class="container my-2 card bg-light">
+                        <p>Search Products</p>
+                        <form class="form-inline" action="{% url 'search_index' %}" method="get">
+                            <input type="text" name="q">
+                            <button class="btn btn-sm ml-1 btn-outline-info my-1" type="submit">Search</button>
+                        </form>
+                    </div>
                     <li class="nav-item fancyfont">CreatureComforts</li>
                     <li class="nav-item"><a class="nav-link" href="/home/">Home <span
                             class="sr-only">(current)</span></a>
@@ -49,7 +56,7 @@
                             {% endif %}
                         </a>
                     </li>
-                    <div class="bg-info card">
+                    <div class="bg-light card">
                         {% if user.is_authenticated %}
                             <li class="fancyfont--small nav-item">{{ user.username }}</li>
                             <li class="nav-item"><a
@@ -71,13 +78,7 @@
                             </li>
                         {% endif %}
                     </div>
-                    <div class="container my-2 bg-secondary card">
-                        <p>Search Products</p>
-                        <form class="form-inline" action="{% url 'search_index' %}" method="get">
-                            <input type="text" name="q">
-                            <button class="btn btn-sm ml-1 btn-outline-light my-1" type="submit">Search</button>
-                        </form>
-                    </div>
+
                 </ul>
             </div>
         </div>
@@ -133,6 +134,7 @@
                 <i class="fas fa-search"></i>
             </a>
             <div class="collapse" id="search">
+                <p>Search Products</p>
                 <form class="form-inline" action="{% url 'search_index' %}" method="get">
                     <input type="text" name="q">
                     <button class="btn btn-sm ml-1 btn-outline-info" type="submit">Search</button>

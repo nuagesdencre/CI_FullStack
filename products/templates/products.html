@@ -53,13 +53,24 @@
 
             <div id="mainShopContainer" class="container container--space">
                 <div class="card-columns">
+                <div class="card bg-light">
+                        <div class="card-body">
+                            <h4>Bespoke Creature Comforts Box</h4>
+                            <div class="card-title">
+                                Please get in touch with us if you have further ideas for the boxes!
+                                We are also welcoming requests for different delivery frequencies. We will adjust the
+                                price and product description according to your requests.
+                            </div>
+                        </div>
+                    </div>
                     {% for product in products %}
                         <div class="card">
                             <img class="card-img-top" src="{{ MEDIA_URL }}{{ product.image }}"
                                  alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">{{ product.name }}</h5>
-                                <p class="card-text">{{ product.description }}</p>
+                               <a class="btn_readmore fancyfont--small" href="#{{ product.name|slugify }}" data-toggle="collapse">Read more</a>
+                                <p id="{{ product.name|slugify }}" class="card-text collapse">{{ product.description }}</p>
                                 <p class="card-text"><i class="fas fa-euro-sign"></i>{{ product.price }}</p>
                                 <p>Box delivered: {{ product.frequency }}</p>
                             </div>
@@ -77,17 +88,11 @@
                                 </form>
                             </div>
                         </div>
+                        {% empty %}
+                        <h4>No product currently matches your search.</h4>
+                        <a href="{% url 'products' %}"><p class="alert alert-info my-3">View all products here.</p></a>
                     {% endfor %}
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h4>Bespoke Creature Comforts Box</h4>
-                            <div class="card-title">
-                                Please get in touch with us if you have further ideas for the boxes!
-                                We are also welcoming requests for different delivery frequencies. We will adjust the
-                                price and product description according to your requests.
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <hr>
                 <div class="row my-4">
