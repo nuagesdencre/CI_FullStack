@@ -11,20 +11,18 @@
                     <img class="card-img-top" src="{{ MEDIA_URL }}{{ post_user.profile.profile_image }}"
                          alt="Profile image">
                 </div>
-{#                todo:fix profile image bug#}
             {% endif %}
-            <div class="col-md-4">
-                <div class="title "><h1 class="my-5">{{ post_user.username }}</h1></div>
-            </div>
-            <div class="col-md-4">
-                <ul class="title jumbo--profile my-5">
+
+            <div class="offset-md-2 col-md-6 my-3">
+                <div class="fancyfont--small"><h1>{{ post_user.username }}</h1></div>
+                <ul class="title">
                     {% if request.user.is_authenticated %}
                         <li><span class="fancyfont--small">Email</span> {{ post_user.email }}</li>
                     {% endif %}
                     <li><span class="fancyfont--small">Twitter Handle</span> {{ post_user.profile.twitter_handle }}</li>
                     <li><span class="fancyfont--small">Website</span> {{ post_user.profile.website }}</li>
-                </ul>
-            </div>
+                </ul></div>
+
         </div>
     </div>
 {% endblock %}
