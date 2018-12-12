@@ -35,8 +35,10 @@
         <div class="collapse" id="small_navbar_content">
           <div class="p-4">
             <ul class="p-0 m-0">
-              <div class="container my-2 card bg-light">
-                <p>Search Products
+                <li class="nav-item fancyfont">CreatureComforts
+              </li>
+              <div class="container my-2">
+                <p class="m-0 nav-link">Search Products
                 </p>
                 <form class="form-inline" action="{% url 'search_index' %}" method="get">
                   <input type="text" name="q">
@@ -44,8 +46,7 @@
                   </button>
                 </form>
               </div>
-              <li class="nav-item fancyfont">CreatureComforts
-              </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="/home/">Home
                   <span
