@@ -1,4 +1,11 @@
-$(document).ready(function () {
+$(function () {
+
+    // loader
+    setTimeout(function () {
+        $('.vis').fadeIn(600, function () {
+            $(this).remove();
+        });
+    }, 1500);
 
     // Toggling different svgs when collapsing/viewing the small screen navbar
     $('#menu_button').click(function () {

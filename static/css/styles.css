@@ -414,7 +414,28 @@ footer {
 
 
 @media (min-width: 992px) {
+    /* loader to allow the parallax to appear properly */
+    .no-js #loader {
+        display: none;
+    }
 
+    .js #loader {
+        display: block;
+        position: absolute;
+        left: 100px;
+        top: 0;
+    }
+
+    .vis {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url('/static/img/loader.gif') center no-repeat #fff;
+    }
+    /*end loader*/
     .container--img {
         background: linear-gradient(to right, rgba(71, 152, 167, 0.74), rgba(71, 152, 167, 0.64));
     }
