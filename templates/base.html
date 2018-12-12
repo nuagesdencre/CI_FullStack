@@ -161,20 +161,23 @@
 {% block content %} {% endblock %}
 
 <footer>
+
     <div class="d-flex justify-content-around bd-highlight">
-        <div class="p-2 bd-highlight"><i class="fab fa-2x fa-github-square"></i> <i
-                class="fab fa-2x fa-tumblr-square"></i> <i class="fab fa-2x fa-twitter-square"></i> <i
-                class="fab fa-2x fa-instagram"></i>
+        <div class="p-2 bd-highlight">
+            <a href="https://github.com/nuagesdencre/CI_FullStack" target="_blank"><i class="fab fa-2x fa-github-square mx-2"></i></a>
+            <a href="https://www.tumblr.com/" target="_blank"><i class="fab fa-2x fa-tumblr-square mx-2"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-2x fa-twitter-square mx-2"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-2x fa-instagram mx-2"></i></a>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 my-3"><h5>About</h5><a href="{% url 'about' %}">
+            <div class="col-sm-4 my-3"><h5>About</h5>
                 <ul class="m-0 pl-0">
-                    <li class="footer-item">CC's Concept</li>
+                    <li class="footer-item"><a href="{% url 'about' %}">CC's Concept</a></li>
+                    {% block attribution %} {% endblock %}
                 </ul>
-            </a>
-                {% block attribution %} {% endblock %}
+
             </div>
             <div class="col-sm-4 my-3"><h5>FAQs</h5>
                 <ul class="m-0 pl-0">
