@@ -10,14 +10,21 @@ class UserForm(forms.ModelForm):
     """
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
 
-
     class Meta:
         model = User
         fields = ['email', 'username', 'password']
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        username = self.cleaned_data.get('username')
+        if User.objects.filter(email=email).exclude(username=username):
+            raise forms.ValidationError(u'Email addresses must be unique.')
+        return email
 
 
 class UserProfile(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ["website", "twitter_handle", "profile_image"]
+
 
