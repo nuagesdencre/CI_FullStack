@@ -8,7 +8,6 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
     <title>Creature Comforts
     </title>
-    {% block stripe %}{% endblock stripe %}
     {% block emailjs %}{% endblock emailjs %}
     {% block chartjs %}{% endblock chartjs %}
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
@@ -302,5 +301,6 @@
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous">
     </script>
+      {% block stripe %}{% endblock stripe %}
   </body>
 </html>
