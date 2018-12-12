@@ -10,10 +10,10 @@ def search_index(request):
     """
     query = None
     products = None
-
+    all_products = True
     if 'q' in request.GET:
         query = request.GET.get('q')
         products = Product.objects.all().filter(Q(name__icontains=query) | Q(description__icontains=query))
-        message = "<a href='/products/'><p class='alert alert-info my-3'>View all products here.</p></a>"
-        
-    return render(request, "products.html", {"products": products, "message": message})
+        all_products = False
+
+    return render(request, "products.html", {"products": products, "all_products": all_products})
