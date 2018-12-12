@@ -3,24 +3,25 @@
 {% load bootstrap_tags %}
 {% block content %}
     <div class="container container--top">
-    <div class="page--title">
+        <div class="page--title">
             <h1>REGISTER</h1>
         </div>
-<div class="container">
-{% if registered %}
-    <h3>Thank you for registering!</h3>
-    <p class="mb-4">To explore the website and access all its features, please <a href="{% url 'user_login' %}" class="fancyfont">sign in.</a></p>
-    {% else %}
-    <h3>Fill the form below</h3>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ user_form | as_bootstrap }}
-        {{ profile_form | as_bootstrap }}
-        <input type="submit" class="btn"  name ="" value="Register">
-    </form>
-<p>Already registered?<a href="{% url 'user_login' %}"> Please sign in.</a></p>
-    {% endif %}
+        <div class="container container--form">
+            {% if registered %}
+                <h3>Thank you for registering!</h3>
+                <p class="mb-4">To explore the website and access all its features, please <a
+                        href="{% url 'user_login' %}" class="fancyfont">sign in.</a></p>
+            {% else %}
 
-</div>
+                <h3>Fill the form below</h3>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ user_form | as_bootstrap }}
+                    {{ profile_form | as_bootstrap }}
+                    <input type="submit" class="btn btn-dark" value="Register">
+                </form>
+                <p>Already registered?<a href="{% url 'user_login' %}"> Please sign in.</a></p>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}

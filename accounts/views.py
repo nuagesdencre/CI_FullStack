@@ -29,8 +29,8 @@ def register(request):
             if 'profile_image' in request.FILES:
                 profile.profile_image = request.FILES['profile_image']
             profile.save()
-
             registered = True
+            return render(request, "login.html")
         else:
             print(user_form.errors, profile_form.errors)
     else:
@@ -78,13 +78,6 @@ def user_logout(request):
     logout(request)
     messages.success(request, 'You have been successfully logged out')
     return redirect(reverse('index'))
-
-
-def profile(request):
-    """
-    Display the profile page of a user
-    """
-    return render(request, 'profile.html')
 
 
 

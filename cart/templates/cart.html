@@ -17,8 +17,8 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ item.product.name }}</h5>
                         <p class="card-text">{{ item.product.description }}</p>
-                        <p class="card-text">{{ item.product.price }}</p>
-
+                        <p class="card-text"><i class="fas fa-euro-sign"></i>{{ item.product.price }}</p>
+                        <p class="card-text">Box delivered: {{ item.product.frequency }}</p>
                     </div>
                     <div class="card-footer">
                         <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
@@ -31,7 +31,7 @@
                                            placeholder="-">
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-sm btn-info mx-2"> Amend</button>
+                            <button type="submit" class="btn btn-sm btn-info mx-2"> Amend Qty</button>
                         </form>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                     {% if user.is_authenticated %}
                         {% if product_count > 0 %}
                             <a href="{% url 'payment' %}"
-                               class="btn btn-success" role="button"><i
+                               class="btn btn-success my-3" role="button"><i
                                     class="far fa-credit-card"></i> Checkout</a>
                         {% endif %}
                     {% else %}

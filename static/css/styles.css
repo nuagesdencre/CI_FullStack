@@ -1,12 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700|Open+Sans:400,700');
-/* Colour Palette*/
-/*dusty pink aa7788*/
-/*seafoam #78ab9a*/
-/*lilac #9a78ab*/
-/*pale pink #ccaabb*/
-/*coquelicot #cc5544*/
-/*dark blue  #334455*/
-/*dark purple #442233*/
 
 /* Animation */
 * {
@@ -71,7 +63,7 @@ p, .card-body li {
 .title--jumbo {
     color: #fff;
     text-shadow: -2px -2px 3px #000;
-    font-size: 2.7em;
+    font-size: 2.6em;
     letter-spacing: .1em;
     text-transform: uppercase;
     margin: 50px 20px;
@@ -100,15 +92,24 @@ textarea, input[type="password"] {
 a:hover {
     color: #0d8180;
     text-decoration: underline;
+    background: rgba(0, 143, 143, 0.18) bottom;
 }
 
 a, span {
     color: #002626;
 }
 
+.btn {
+    white-space: normal;
+}
+
 .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #17a2b8;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #008d8d;
 }
 
 .nav-link {
@@ -123,7 +124,7 @@ a, span {
 }
 
 /* Navbar - small viewports */
-#menu_button{
+#menu_button {
     position: absolute;
     right: 16px;
     top: 12px;
@@ -172,7 +173,7 @@ body {
 .page--title {
     text-align: center;
     max-width: 100%;
-    margin-top:30px;
+    margin-top: 30px;
     margin-bottom: 150px;
 }
 
@@ -230,7 +231,7 @@ nav {
     padding: 40px 20px;
 }
 
-/*FLEX*/
+/* FLex */
 .flex--container {
     display: flex;
     -webkit-flex-flow: row wrap;
@@ -319,7 +320,6 @@ footer {
     background: radial-gradient(rgba(255, 255, 255, 0.14) 70%, rgb(255, 255, 255)), url('/static/img/funky-lines.png');
 }
 
-
 .step-box {
     max-width: 100%;
     margin: 5px;
@@ -334,18 +334,15 @@ footer {
     max-width: 150px;
 }
 
-.btn {
-    white-space: normal;
-}
-
 /* ENDComponents */
 
 /* Media Queries */
-@media (max-width: 400px){
+@media (max-width: 400px) {
     .page--title > h1 {
-    font-size: 4.1em;
+        font-size: 4.1em;
+    }
 }
-}
+
 @media (min-width: 768px) {
     p, .card-body li {
         font-size: 19px;
@@ -354,6 +351,10 @@ footer {
 
     .container--space {
         padding: 70px 20px;
+    }
+
+    .container--form {
+        max-width: 800px;
     }
 
     .sm-space {
@@ -459,7 +460,5 @@ footer {
     }
 }
 
-/*// Extra large devices (large desktops, 1200px and up)*/
-/*@media (min-width: 1200px) { ... }*/
 
 /* ENDMEdia Queries*/

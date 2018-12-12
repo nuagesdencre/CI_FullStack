@@ -6,7 +6,7 @@
         <div class="page--title">
             <h1>LOGIN</h1>
         </div>
-        <div class="container mb-5">
+        <div class="container container--form mb-5">
 
             <form action="{% url 'user_login' %}?next={{ next }}" method="POST">
                 <div class="form-group">
@@ -20,7 +20,7 @@
                         <input class="form-control" type="password" name="password" placeholder="Your password">
                     </p>
 
-                    <input type="submit" class="btn" name="" value="Login">
+                    <input type="submit" class="btn btn-dark" name="" value="Login">
                 </div>
             </form>
             <span>Is it your first visit?</span><a href="{% url 'register' %}" class="fancyfont--small"> You can
