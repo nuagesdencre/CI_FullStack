@@ -140,7 +140,7 @@ I linked my "nuagesdencre/ci-fullstack" Github repository to the Heroku app for 
 
 - On the Heroku website, using the dashboard, I entered the IP and PORT into the Heroku Config Vars fields (0.0.0.0 and 5000), along with my environment file's other variables.
 
-- media file hosting with AWS.
+- In order to avoid relying on the ephemeral storage system of Heroku, I opted for media file hosting with AWS.
 I added the relevant environment variables in order to access my AWS bucket and the uploaded data. I made sure to use the COLLECTSTATIC command to gather my local static files and bring them to the database. 
 In the Config VArs screen of the Heroku dashboard, I stopped any automatic COLLECTSTATIC by Herokuby associating it with the value 1.
 
@@ -150,7 +150,9 @@ In the Config VArs screen of the Heroku dashboard, I stopped any automatic COLLE
 link to the Heroku generated PostgreSQL database instead. I initialized the PostgreSQL database and pushed the migrations. With Django, the module dj_database_url was use so that I could refer to the url directly in my settings (in my case, via the environment files).
 To allow Travis to proceed with its checks, I allowed for the Django web app to fall back on the SQLite database if no DATABASE_URL variable was detected in the environment (os.environ).
 
-- In my settings.py file, I changed the app environment to production and removed the debugging option (DEBUG=False). I also removed '*' from the ALLOWED_HOSTS fields
+- In my settings.py file, I changed the app environment to production and removed the debugging option (DEBUG=False). I also removed '*' from the ALLOWED_HOSTS fields. 
+I made sure to provide the appropriate information in my Procfile (**web: gunicorn creaturecomforts.wsgi:application**). 
+A Procfile is a mechanism for declaring what commands are run by my application’s web dynos (lightweight Linux containers dedicated to running my application web processes) on the Heroku platform.
 
 - I manually requested the deployment from the master branch.
  I reviewed the logs via the Heroku dashboard once the deployment confirmed and opened the app using my web browser to ensure everything was working properly.

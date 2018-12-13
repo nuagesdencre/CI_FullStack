@@ -6,7 +6,7 @@ from django.db.models import Q
 
 def search_index(request):
     """
-    Search within the Products
+    Search within the Products (name and description)
     """
     query = None
     products = None

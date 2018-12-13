@@ -126,6 +126,7 @@
         - #####  While a visitor is logged in:
 
 - ### User identification 
+    - #### Superuser and Admin Panel
 
     - #### Register
     
@@ -183,6 +184,9 @@
 I integrated a custom error 404 page to the project in order to direct visitors back to the home page should they encounter this specific issue. However, the website is conceived in a way that encourages visitors to use the website features and navigation options.
 
 - Error 500  
+    The 500 Internal Server Error is a very general HTTP status code that means something has gone wrong on the website's server.
+    I integrated a custom error 500 page to the project in order to direct visitors back to the home page should they encounter this specific issue.
+
  
 #### Python and Django
 

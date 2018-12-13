@@ -4,6 +4,9 @@ from posts import models
 
 
 class PostForm(forms.ModelForm):
+    """
+    Display the topics that can be associated with the new post
+    """
     class Meta:
         fields = ("content", "topic")
         model = models.Post

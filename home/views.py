@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect, reverse
-from django.contrib import messages
+from django.shortcuts import render
+
 
 def index(request):
     """
-    Return the index page of the home app
+    Return the INDEX (home) page of Creature Comforts
     (this is the welcome page of the app)
     """
     return render(request, 'index.html')
@@ -11,22 +11,20 @@ def index(request):
 
 def contact(request):
     """
-    Return the contact page of the home app
+    Return the CONTACT page of Creature Comforts
     """
     return render(request, "contact.html")
 
 
 def about(request):
     """
-    Return the about page of the home app
+    Return the ABOUT page of Creature Comforts
     """
     return render(request, 'about.html')
 
 
 def faqs(request):
     """
-    Return the FAQs page of the home app
+    Return the FAQs page of Creature Comforts
     """
-    faqs = {'Fact_1': 'This is a test.', 'Fact_2': 'This is a test too.',
-            'Fact_3': 'This is also a test.'}
-    return render(request, 'faq.html', context=faqs)
+    return render(request, 'faq.html')

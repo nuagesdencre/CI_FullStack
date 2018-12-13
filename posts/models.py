@@ -4,6 +4,7 @@ from django.utils import timezone
 from topics.models import TopicFollower, Topic
 from django.urls import reverse
 import misaka
+
 User = get_user_model()
 
 
@@ -25,7 +26,7 @@ class Post(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('posts:single', kwargs={"username":self.user.username, "pk":self.pk})
+        return reverse('posts:single', kwargs={"username": self.user.username, "pk": self.pk})
 
     class Meta:
         ordering = ["-created_at"]

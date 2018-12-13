@@ -3,6 +3,9 @@ from .models import Order
 
 
 class MakePaymentForm(forms.Form):
+    """
+    Gather the necessary information to process a card payment with Stripe
+    """
     MONTH_CHOICES = [(i, i) for i in range(1, 12 + 1)]
     YEAR_CHOICES = [(i, i) for i in range(2018, 2036)]
 
@@ -14,6 +17,9 @@ class MakePaymentForm(forms.Form):
 
 
 class OrderForm(forms.ModelForm):
+    """
+    Display required information from the user before his/her payment can be processed
+    """
     class Meta:
         model = Order
         fields = (
