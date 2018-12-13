@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700|Open+Sans:400,700');
 
-/* Animation */
+/* Animation and flow */
 * {
     -webkit-transition: all .35s ease-in-out, color .1s ease;
     -moz-transition: all .35s ease-in-out, color .1s ease;
     -o-transition: all .35s ease-in-out, color .1s ease;
     -ms-transition: all .35s ease-in-out, color .1s ease;
     transition: all .35s ease-in-out, color .1s ease;
+}
+
+.loading {
+    display: none;
 }
 
 /* ENDAnimation */
@@ -145,6 +149,9 @@ a, span {
 
 /* ENDNavbar - small viewports */
 
+.footer-icon:hover{
+    text-decoration: none;
+}
 .title__parallax h4 {
     font-weight: normal;
     color: #fff;
