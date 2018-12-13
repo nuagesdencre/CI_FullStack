@@ -1,11 +1,16 @@
 # Veronique's Full Stack Project **Creature Comforts**
 ### Code Institute Full Stack Milestone Project
-[![Build Status](https://travis-ci.org/nuagesdencre/CI_FullStack.svg?branch=master)](https://travis-ci.org/nuagesdencre/CI_FullStack)
 
-**sales pitch**
+**Creature Comforts** is a small business venture that aims to bring happiness via well-thought, bespoke boxes.
+By offering boxes filled with goods chosen with care, we wish to instill hygge (well-being) via SCENT, LIGHT, TEXTURE AND TASTE.
+Our customers' daily routine can be uplifted by simple actions that are triggered or inspired by the content of the Creature Comforts boxes.
+Those boxes can be purchase online and will be delivered at regular intervals following the frequency advertised (twice-yearly, every 3 months, etc.). 
+Since the purpose of Creature Comforts is to help our customers maintain a cosy, happy mindset, we also offer a blog on our website to facilitate the connection of like-minded visitors 
+and the exchange of ideas over various topics. 
 
 ## UX
- - Colour psychology:
+
+ - Colour psychology useful for this project:
     -[Color in Design: Influence on Users' Actions](https://tubikstudio.com/color-in-design-influence-on-users-actions/)
     -[Color Theory Brief](https://uxplanet.org/color-theory-brief-guide-for-designers-76e11c57eaa)
     
@@ -42,6 +47,7 @@
 |                | wants to see on the Creature Comforts' blog what other parents do with their kids in their down time | so he can come up with new activities on a budget.                                             |
 
 ## Features
+
 - Home page introducing the online shop
 - User login /Register to access all website features
 - Shop with unique product
@@ -51,6 +57,7 @@
     - Follow option to track topics that interest you
     - You can access other users' profiles to reach out to them if they share similar ideas 
 - Contact form
+
 - FAQs
     - To obtain information about the box subscription system itself
     - To review privacy policy, terms and conditions, Creature Comforts' promise to their clients
@@ -87,15 +94,14 @@
     
 - [Jinja2](http://jinja.pocoo.org/)
     
-    Jinja2 is a full featured template engine for Python. 
-     It has full unicode support, an optional integrated sandboxed execution environment, widely used and BSD licensed. This was used for the dynamic elements of the website, along with the forms management.
+    Jinja2 is a full featured template engine for Python. This was used for the dynamic elements of the website, along with the forms management.
 
 - [Django](https://www.djangoproject.com/) (Version 2.1.)
 
     - Django is a free, open-source high-level Python Web framework that encourages rapid development and clean, pragmatic design. The Creature Comforts Project was built and rely entirely on the Django framework.
     - https://docs.djangoproject.com/en/2.1/ref/templates/builtins/ (csrf_token,safe, etc.)
     - https://docs.djangoproject.com/en/2.1/ref/contrib/admin/admindocs/
-    - [Argon2](https://pypi.org/project/argon2_cffi/)
+    - [Argon2](https://pypi.org/project/argon2_cffi/) It allows for the best password hashing function (Argon2 was declared the winner of the Password Hashing Competition (PHC)). Argon2 is used in this project to ash the password submitted upon user registration.
     - [Misaka](https://github.com/FSX/misaka) It is a library allows users to use markdown inside of the posts.
     -[django-braces](https://django-braces.readthedocs.io/en/latest/) Mixins for Django's class-based views.
 
@@ -120,22 +126,13 @@
     
         AWS Identity and Access Management (IAM) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
 
-## Testing
-#### Countinuous Integration
-[![Build Status](https://travis-ci.org/nuagesdencre/CI_FullStack.svg?branch=master)](https://travis-ci.org/nuagesdencre/CI_FullStack)
-
+## [Testing](testing.md)
+ Due to the length of my tests' description, I have included my breakdown in another file referenced [here](testing.md).
+ 
 ## Installation & Deployment
 
-This project has been deployed using Heroku.
-- This project can be deployed again using the below button.
-
-  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-    
-    This option is available since I provide an app.json file as per the guidelines found [here](https://devcenter.heroku.com/articles/heroku-button).
-*******
-
-- I created the web app using [PyCharm](https://www.jetbrains.com/pycharm/), which is a Python IDE. The app was tested in a development environment with a debugging option.
-The secret key and other config variables were stored in an environment file during development. 
+- I created the web app using [PyCharm](https://www.jetbrains.com/pycharm/), which is a Python IDE. The app was tested in a development environment with a debugging option (in settings: Debug=True).
+The secret key and other config variables were stored in an environment file during development. I also included '*' in the ALLOWED_HOSTS field in order to work with the Django app using the localhost.
 These variables are relevant to the Django project and the issuance of email via the reset password option.
 
 - I then logged in my Heroku account and created an app (ci-vero-fullstack). A Heroku-hosted remote that’s associated with my app was created at the same time.
@@ -143,27 +140,30 @@ I linked my "nuagesdencre/ci-fullstack" Github repository to the Heroku app for 
 
 - On the Heroku website, using the dashboard, I entered the IP and PORT into the Heroku Config Vars fields (0.0.0.0 and 5000), along with my environment file's other variables.
 
-- media file hosting with AWS
+- media file hosting with AWS.
+I added the relevant environment variables in order to access my AWS bucket and the uploaded data. I made sure to use the COLLECTSTATIC command to gather my local static files and bring them to the database. 
+In the Config VArs screen of the Heroku dashboard, I stopped any automatic COLLECTSTATIC by Herokuby associating it with the value 1.
 
 - I also created a PostgreSQL database using the heroku command **"heroku addons:create heroku-postgresql:hobby-dev"**.
 
      I had to change from SQLite database (file based) to PostgreSQL on Heroku for my database to retain its contents once the website is deployed online. I commented out my local database and include the
-link to the Heroku generated PostgreSQL database instead. I intialized the PostgreSQL database and pushed the migrations.
+link to the Heroku generated PostgreSQL database instead. I initialized the PostgreSQL database and pushed the migrations. With Django, the module dj_database_url was use so that I could refer to the url directly in my settings (in my case, via the environment files).
+To allow Travis to proceed with its checks, I allowed for the Django web app to fall back on the SQLite database if no DATABASE_URL variable was detected in the environment (os.environ).
 
-- I changed the app environment to production and removed the debugging option.
+- In my settings.py file, I changed the app environment to production and removed the debugging option (DEBUG=False). I also removed '*' from the ALLOWED_HOSTS fields
 
 - I manually requested the deployment from the master branch.
  I reviewed the logs via the Heroku dashboard once the deployment confirmed and opened the app using my web browser to ensure everything was working properly.
 
-- continous integration with travis 
-
-## [Testing](testing.md)
- Due to the length of my tests' description, I have included my breakdown in another file referenced [here](testing.md).
- 
 ## Hurdles
 
 - Stripe Payment
+I encountered an issue with the checkout as the stripe.js script was called before JQuery. It took me a little while to figure out the issue, as I initially was thrown off by the error 'stripe_id required'.
+I had to realize the stripe_id was not generated because the script did not run in the first place.
+
 - UI/UX of the website
+As usual, I had a lot of feedback from my friends and family members regarding the website. 
+It was quite difficult to come up with an elegant concept that pleased everyone, but I did it after consulting each of my 'advisors' on their preferred user experience.
 
 ## Credits
 
