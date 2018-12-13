@@ -23,6 +23,9 @@ class UserForm(forms.ModelForm):
 
 
 class UserProfile(forms.ModelForm):
+    """
+    Form through which visitors can provide optional information about themselves
+    """
     class Meta:
         model = Profile
         fields = ["website", "twitter_handle", "profile_image"]

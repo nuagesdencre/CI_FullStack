@@ -6,22 +6,27 @@
 
     <div class="container">
         <div class="row jumbotron">
-            {% if post_user.profile.profile == None %}
-                <div class="col-md-4 profile-size">
+            {% if post_user.profile.profile_image|length != 0 %}
+                <div class="col-md-6 profile-size">
                     <img class="card-img-top" src="{{ MEDIA_URL }}{{ post_user.profile.profile_image }}"
                          alt="Profile image">
                 </div>
             {% endif %}
 
-            <div class="offset-md-2 col-md-6 my-3">
+            <div class="col-md-6 my-3">
                 <div class="fancyfont--small"><h1>{{ post_user.username }}</h1></div>
                 <ul class="title">
                     {% if request.user.is_authenticated %}
                         <li><span class="fancyfont--small">Email</span> {{ post_user.email }}</li>
                     {% endif %}
-                    <li><span class="fancyfont--small">Twitter Handle</span> {{ post_user.profile.twitter_handle }}</li>
-                    <li><span class="fancyfont--small">Website</span> {{ post_user.profile.website }}</li>
-                </ul></div>
+                    {% if post_user.profile.twitter_handle|length != 0 %}
+                        <li><span class="fancyfont--small">Twitter Handle</span> {{ post_user.profile.twitter_handle }}
+                        </li>{% endif %}
+                    {% if post_user.profile.website|length != 0 %}
+                        <li><span class="fancyfont--small">Website</span> {{ post_user.profile.website }}
+                        </li>{% endif %}
+                </ul>
+            </div>
 
         </div>
     </div>
