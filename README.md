@@ -49,6 +49,8 @@ and the exchange of ideas over various topics.
 ## Features
 
 - Home page introducing the online shop
+    - On this page, the visitor can navigate using the top-screen navbar (collapsible if on a small viewport). 
+    The visitor has an overview of Creature Comforts' concept and what is provided in the boxes promoted. The visitor can also view testimonials from previous Creature Comforts' customers.
 - User login /Register to access all website features
 - Shop with unique product
     - possible to find products using the search bar

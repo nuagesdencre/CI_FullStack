@@ -14,7 +14,8 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script defer src="{% static 'font-awesome/js/all.js' %}">
     </script>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{#    <link rel="stylesheet" href="{% static 'css/styles.css' %}">#}
+    <link rel="stylesheet" href="/static/css/styles.css">
     <script defer src="{% static 'js/creaturecomforts.js' %}">
     </script>
 
@@ -23,7 +24,7 @@
     <!--navbar-->
     <nav class="navbar bg-light fixed-top">
       <a href="/home/">
-        <img src="{% static 'img/logo_small.png' %}" style="height:45px;">
+        <img src="{% static 'img/logo_small.png' %}" alt="Creature Comforts Logo" style="height:45px;">
       </a>
       <button id="menu_button" class="btn btn-outline-dark when_small" type="button" data-toggle="collapse"
               data-target="#small_navbar_content" aria-controls="small_navbar_content" aria-expanded="false"
@@ -111,7 +112,7 @@
             </p>
             <form class="form-inline" action="{% url 'search_index' %}" method="get">
               <input type="text" name="q">
-              <button class="btn btn-sm ml-1 btn-outline-info" type="submit">Search
+              <button id="searchbutton" class="btn btn-sm ml-1 btn-outline-info" type="submit">Search
               </button>
             </form>
           </div>
@@ -121,10 +122,10 @@
      <div id="navbarForSmallViewports" class="pos-f-t fixed-top bg-light when_small">
         <div class="collapse" id="small_navbar_content">
           <div class="p-4">
-            <ul class="p-0 m-0">
+            <ul id="small-nav" class="p-0 m-0">
                 <li class="nav-item fancyfont">CreatureComforts
               </li>
-              <div class="container my-2">
+              <li class=" nav-item my-2">
                 <p class="m-0 nav-link">Search Products
                 </p>
                 <form class="form-inline" action="{% url 'search_index' %}" method="get">
@@ -132,7 +133,7 @@
                   <button class="btn btn-sm ml-1 btn-outline-info my-1" type="submit">Search
                   </button>
                 </form>
-              </div>
+              </li>
 
               <li class="nav-item">
                 <a class="nav-link" href="/home/">Home
@@ -159,7 +160,7 @@
                   {% endif %}
                 </a>
               </li>
-              <div class="bg-light card">
+            <li class="nav-item"><hr></li>
                 {% if user.is_authenticated %}
                 <li class="fancyfont--small nav-item">{{ user.username }}
                 </li>
@@ -199,7 +200,6 @@
                   </a>
                 </li>
                 {% endif %}
-              </div>
             </ul>
           </div>
         </div>
