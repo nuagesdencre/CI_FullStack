@@ -18,8 +18,8 @@
 
         <div class="media-body pl-2">
             <h5 class="media-heading">
-                <time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">
-                    {{ post.created_at }}</a></time>
+                <time class="time">
+                    {{ post.created_at }}</time>
                 {% if post.topic %}
                 <span class="topic-name">in <a href="{% url 'topics:single' slug=post.topic.slug %}"><em>{{ post.topic.name }}</em></a></span>
                 <hr>
