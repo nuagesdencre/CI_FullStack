@@ -2,8 +2,8 @@
 {% load static %}
 {% load bootstrap_tags %}
 {% block emailjs %}
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
-    <script type="text/javascript">
+    <script src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+    <script>
         (function () {
             emailjs.init("user_3AuwuMmJ74uD02b8NXmqe");
         })();
@@ -20,14 +20,14 @@
         <div class="container container--space">
             <form id="contact_form" method="post">
                 <div class="form-group">
-                    <label for="fullname">Who are you?</label>
+                    <label id="fullname">Who are you?</label>
                     <input type="text" id="from_name" name="from_name"
                             {% if user.is_authenticated %} value="{{ user.username }}"
                            {% else %}placeholder="Your name or nickname"{% endif %}
                            class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label id="email">Email</label>
 
                     <input type="email" autocomplete="shipping email" id="from_email" name="from_email"
                            class="form-control" {% if user.is_authenticated %} value="{{ user.email }}"
@@ -35,16 +35,20 @@
                            required>{% endif %}
                 </div>
                 <div class="form-group">
-                    <label for="whereat">Where are you from?</label>
+                    <label id="whereat">Where are you from?</label>
                     <input type="text" id="where_at" class="form-control"
                            name="where_at" placeholder="Location">
                 </div>
                 <div class="form-group">
-                    <label for="message">Your Message</label><br>
+                    <label id="message">Your Message</label><br>
                     <textarea id="comments" name="comments" rows="6"
                               class="form-control" placeholder="Share your thoughts."></textarea>
                 </div>
-                <input id="#button" class="btn btn-info submit" type="submit" value="Send your message!">
+                <input id="#button" class="btn btn-info submit" type="submit"
+                       onclick="$('.loading').toggle()" value="Send your message!">
+                <div class="loading">
+                    <img src="{% static 'img/loader_long.svg' %}" class="my-4 progress" alt="Sending the message...">
+                </div>
             </form>
         </div>
 
@@ -57,6 +61,7 @@
                     emailjs.sendForm('gmail', 'ci_fs', this)
                         .then(function () {
                             alert("Your message has been sent!");
+                            $('.loading').toggle();
                             window.location = '/';
                         }, function (err) {
                             alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
