@@ -8,17 +8,16 @@ Those boxes can be purchase online and will be delivered at regular intervals fo
 Since the purpose of Creature Comforts is to help our customers maintain a cosy, happy mindset, we also offer a blog on our website to facilitate the connection of like-minded visitors 
 and the exchange of ideas over various topics. 
 
-## UX
-
- - Colour psychology useful for this project:
-    -[Color in Design: Influence on Users' Actions](https://tubikstudio.com/color-in-design-influence-on-users-actions/)
-    -[Color Theory Brief](https://uxplanet.org/color-theory-brief-guide-for-designers-76e11c57eaa)
-    
+## UX and UI
 - [Original Wireframe](./planning/creaturecomforts.png)
 - [Planning](./planning/userstories_creaturecomforts.xlsx)
 
+ - Usage of specific colours in this project (psychology):
+    - [Color in Design: Influence on Users' Actions](https://tubikstudio.com/color-in-design-influence-on-users-actions/)
+    - [Color Theory Brief](https://uxplanet.org/color-theory-brief-guide-for-designers-76e11c57eaa)
+    
 - User stories
- [Meet our Users!](./planning/USERS_STORIES.jpg?raw=true)
+    - Personas: [Meet our Users!](./planning/USERS_STORIES.jpg?raw=true)
  
 | As a [persona] | I want to [do something]                                                                             | so that I can [realize a reward]                                                               |
 |----------------|------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
@@ -48,26 +47,43 @@ and the exchange of ideas over various topics.
 
 ## Features
 
-- Home page introducing the online shop
-    - On this page, the visitor can navigate using the top-screen navbar (collapsible if on a small viewport). 
-    The visitor has an overview of Creature Comforts' concept and what is provided in the boxes promoted. The visitor can also view testimonials from previous Creature Comforts' customers.
-- User login /Register to access all website features
-- Shop with unique product
-    - possible to find products using the search bar
-- Blog where members can exchange ideas
-    - Possible to create posts and topics
-    - Follow option to track topics that interest you
-    - You can access other users' profiles to reach out to them if they share similar ideas 
+- Creature Comforts' first impression (home page)
+    - When arriving on the website's landing page, if they are using a big viewport, visitors are presented with a loading icon for less than a second while the home page promptly loads the relevant content (parallax image).
+    On smaller viewport, the parallax is omitted and visitors are able to access the landing page immediately.
+    
+    - Visitors are then presented with a lovely website, and they can explore its many pages using the top-screen navigation bar (collapsible if on a small viewport). 
+    Visitors have an overview of Creature Comforts' concept and what is provided in the boxes promoted. 
+    Visitors can also view testimonials from previous Creature Comforts' customers.
+
+- User Registration & Login to access all website features
+    - Creature Comforts allows visitors to browse and view most of its content (products, search results, posts).
+    However, a visitor can only do so much by browsing anonymously on the website. 
+    In order to avail of all of the blog's options or to finalize a purchase, a visitor must register and log in.
+
+- Online shop offering bespoke products
+    - A selection of products suited to different needs are available via the box concept offered by Creature Comforts.
+    - Moreover, it is possible for visitors to look up specific products quickly using key words via the search bar.
+    
+    - A few clicks are sufficient for a visitor to add items to his/her cart, review his/her selection, checkout and receive the desired box at regular intervals.
+    
+
+- Blog where members can inspire each other
+    - All visitors can view the contributions of others to the Creature Comforts' blog.
+    - Registered visitors can create posts and topics and follow subjects that interests them.
+    - Visitors can also access other users' profiles and reach out to them using their profile details if they share similar ideas. 
+
 - Contact form
+    - For visitors who want to reach out to the webmaster, using the contact form provided on the website makes the process easy and straightforward.
+    All comments are acknowledged.
 
 - FAQs
-    - To obtain information about the box subscription system itself
-    - To review privacy policy, terms and conditions, Creature Comforts' promise to their clients
-- About page
-    - To learn more about the concept behind Creature Comforts
+    - On the FAQs page, visitors can obtain information about the box subscription system itself. 
+    They can review privacy policy, terms and conditions, and Creature Comforts' promise to their customers as well.
+
+- About 
+    - This page is meant for visitors that remain curious about the concept behind Creature Comforts and the reasoning behind the box contents.
     
-## Potential future features
-- View Orders
+
 ## Technologies Used
 
 - [CSS](https://simple.wikipedia.org/wiki/Cascading_Style_Sheets)
@@ -93,6 +109,9 @@ and the exchange of ideas over various topics.
     
     Python is a clear and powerful object-oriented programming language, comparable to Perl, Ruby, Scheme, or Java. Most of this project's elements are built using Python via Jinja2.
     
+- [Gunicorn 'Green Unicorn'](https://gunicorn.org/)
+
+    The Gunicorn "Green Unicorn" is a Python Web Server Gateway Interface HTTP server. 
     
 - [Jinja2](http://jinja.pocoo.org/)
     
@@ -101,11 +120,14 @@ and the exchange of ideas over various topics.
 - [Django](https://www.djangoproject.com/) (Version 2.1.)
 
     - Django is a free, open-source high-level Python Web framework that encourages rapid development and clean, pragmatic design. The Creature Comforts Project was built and rely entirely on the Django framework.
-    - https://docs.djangoproject.com/en/2.1/ref/templates/builtins/ (csrf_token,safe, etc.)
-    - https://docs.djangoproject.com/en/2.1/ref/contrib/admin/admindocs/
-    - [Argon2](https://pypi.org/project/argon2_cffi/) It allows for the best password hashing function (Argon2 was declared the winner of the Password Hashing Competition (PHC)). Argon2 is used in this project to ash the password submitted upon user registration.
-    - [Misaka](https://github.com/FSX/misaka) It is a library allows users to use markdown inside of the posts.
-    -[django-braces](https://django-braces.readthedocs.io/en/latest/) Mixins for Django's class-based views.
+        
+        Specific Django Resources:
+        - [Built-in template tags and filters](https://docs.djangoproject.com/en/2.1/ref/templates/builtins/) This was helpful with my understanding of csrf_token, safe filter, etc.
+        - [The Django admin documentation generator](https://docs.djangoproject.com/en/2.1/ref/contrib/admin/admindocs/)
+        - [Argon2](https://pypi.org/project/argon2_cffi/) It allows for the best password hashing function (Argon2 was declared the winner of the Password Hashing Competition (PHC)). Argon2 is used in this project to ash the password submitted upon user registration.
+        - [Misaka](https://github.com/FSX/misaka) It is a library allows users to use markdown inside of the posts.
+        - [django-braces](https://django-braces.readthedocs.io/en/latest/) Mixins for Django's class-based views.
+        - [Q Objects](https://docs.djangoproject.com/en/2.1/ref/models/querysets/#django.db.models.Q) This permits the construction of complex database queries using | (OR) and & (AND) operators.
 
 - [Heroku](https://www.heroku.com/)
 
@@ -130,64 +152,86 @@ and the exchange of ideas over various topics.
 
 ## [Testing](testing.md)
  Due to the length of my tests' description, I have included my breakdown in another file referenced [here](testing.md).
+ The Word (.docx) version of the testing document is also available [here](testing.docx).
  
 ## Installation & Deployment
+**While in development**
 
-- I created the web app using [PyCharm](https://www.jetbrains.com/pycharm/), which is a Python IDE. The app was tested in a development environment with a debugging option (in settings: Debug=True).
-The secret key and other config variables were stored in an environment file during development. I also included '*' in the ALLOWED_HOSTS field in order to work with the Django app using the localhost.
+- I created the web app using [PyCharm](https://www.jetbrains.com/pycharm/), which is a Python IDE. The app was tested in a development environment with Django's debug mode (in settings: Debug=True).
+The Debug mode is a massive perk while in development, as to refer to the Django documentation itself [[1]](https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-DEBUG):
+    > One of the main features of debug mode is the display of detailed error pages. If your app raises an exception when DEBUG is True, Django will display a detailed traceback, including a lot of metadata about your environment, such as all the currently defined Django settings (from settings.py).
+The secret key and other config variables were stored in an environment file during development. 
+
+- I also included '*' in the ALLOWED_HOSTS field in order to work with the Django app using the localhost.
 These variables are relevant to the Django project and the issuance of email via the reset password option.
 
+**Preparing for deployment**
 - I then logged in my Heroku account and created an app (ci-vero-fullstack). A Heroku-hosted remote that’s associated with my app was created at the same time.
 I linked my "nuagesdencre/ci-fullstack" Github repository to the Heroku app for deployment from its master branch.
 
-- On the Heroku website, using the dashboard, I entered the IP and PORT into the Heroku Config Vars fields (0.0.0.0 and 5000), along with my environment file's other variables.
+- On the Heroku website, using the dashboard's Setting tab, I accessed the Config Vars section where I entered all variables I had referred to locally in my environment file.
+    These variables are essential for all the features of my project to function (such as the checkout feature, the reset password feature, etc.).
+    (SECRET_KEY, STRIPE_SECRET, STRIPE_PUBLISHABLE, EMAIL_PASSWORD, EMAIL_ADDRESS )
 
 - In order to avoid relying on the ephemeral storage system of Heroku, I opted for media file hosting with AWS.
-I added the relevant environment variables in order to access my AWS bucket and the uploaded data. I made sure to use the COLLECTSTATIC command to gather my local static files and bring them to the database. 
-In the Config VArs screen of the Heroku dashboard, I stopped any automatic COLLECTSTATIC by Herokuby associating it with the value 1.
+I added the relevant environment variables (AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY) in order to access my AWS bucket and the uploaded data. I made sure to use the COLLECTSTATIC command to gather my local static files and bring them to the database. 
+In the Config Vars screen of the Heroku dashboard, I disabled the collectstatic during a deploy by Heroku by adding in the Config Vars DISABLE_COLLECTSTATIC with the value 1.
 
-- I also created a PostgreSQL database using the heroku command **"heroku addons:create heroku-postgresql:hobby-dev"**.
+- Once again, to avoid losing user created data, I also created a PostgreSQL database using the heroku command **"heroku addons:create heroku-postgresql:hobby-dev"**.
+ I had to change from SQLite database (file based) to PostgreSQL on Heroku for my database to retain its contents once the website is deployed online. 
+ To quote the Heroku website [[2]](https://devcenter.heroku.com/articles/sqlite3):
+ 
+     > SQLite runs in memory, and backs up its data store in files on disk. While this strategy works well for development, Heroku’s Cedar stack has an ephemeral filesystem." 
+     
+     I commented out my local database and include the
+     link to the Heroku generated PostgreSQL database instead. I initialized the PostgreSQL database and pushed the migrations. 
+     I used the module dj_database_url within my Django project so that I could refer to the url directly in my settings.py (in my case, via a variable in the environment file).
 
-     I had to change from SQLite database (file based) to PostgreSQL on Heroku for my database to retain its contents once the website is deployed online. I commented out my local database and include the
-link to the Heroku generated PostgreSQL database instead. I initialized the PostgreSQL database and pushed the migrations. With Django, the module dj_database_url was use so that I could refer to the url directly in my settings (in my case, via the environment files).
-To allow Travis to proceed with its checks, I allowed for the Django web app to fall back on the SQLite database if no DATABASE_URL variable was detected in the environment (os.environ).
+**In production**
+  
+- In my settings.py file, I changed the app environment to production and removed the debugging option (DEBUG=False). 
+I also removed ' * ' (wildcard) from the ALLOWED_HOSTS fields. 
+I made sure to include the appropriate information in my Procfile (**web: gunicorn creaturecomforts.wsgi:application**). 
 
-- In my settings.py file, I changed the app environment to production and removed the debugging option (DEBUG=False). I also removed '*' from the ALLOWED_HOSTS fields. 
-I made sure to provide the appropriate information in my Procfile (**web: gunicorn creaturecomforts.wsgi:application**). 
-A Procfile is a mechanism for declaring what commands are run by my application’s web dynos (lightweight Linux containers dedicated to running my application web processes) on the Heroku platform.
+    A Procfile is a mechanism for declaring what commands are run by my application’s web dynos (lightweight Linux containers dedicated to running my application web processes) on the Heroku platform.[[3]](https://devcenter.heroku.com/articles/dynos)
 
 - I manually requested the deployment from the master branch.
  I reviewed the logs via the Heroku dashboard once the deployment confirmed and opened the app using my web browser to ensure everything was working properly.
-
+I tested the checkout feature relying on Stripe to ensure everything was processed smoothly. 
 ## Hurdles
 
 - Stripe Payment
-I encountered an issue with the checkout as the stripe.js script was called before JQuery. It took me a little while to figure out the issue, as I initially was thrown off by the error 'stripe_id required'.
+    - I encountered an issue with the checkout as the stripe.js script was called before JQuery. It took me a little while to figure out the issue, as I initially was thrown off by the error 'stripe_id required'.
 I had to realize the stripe_id was not generated because the script did not run in the first place.
 
 - UI/UX of the website
-As usual, I had a lot of feedback from my friends and family members regarding the website. 
+    - As usual, I had a lot of feedback from my friends and family members regarding the website. 
 It was quite difficult to come up with an elegant concept that pleased everyone, but I did it after consulting each of my 'advisors' on their preferred user experience.
+
+- Profile Image
+    - I had a typo in the user profile page that did not display the profile_image but instead checked if the user had provided any profile data.
+This typo was thankfully found during the final testing process of the project.
 
 ## Credits
 
 Usage of Class based views for the blog section of the website, and function based views for the user, shop, cart and product sections.
-    -[Class-based views](https://docs.djangoproject.com/en/2.1/topics/class-based-views/)
-    -[Using mixins with class-based views](https://docs.djangoproject.com/en/2.1/topics/class-based-views/mixins/)
-    -[Class-Based Views vs. Function-Based Views](https://simpleisbetterthancomplex.com/article/2017/03/21/class-based-views-vs-function-based-views.html)
-    -[What is the difference between Class Based Views and Function Based Views?](https://www.bedjango.com/blog/class-based-views-vs-function-based-views/)
-            -..."we use generic views with class if the functionality contains CRUD operations or it’s more complex, as it's more optimal."
-    -[Built-in template tags and filters](https://docs.djangoproject.com/en/2.1/ref/templates/builtins/)        
-    -[Slug](https://stackoverflow.com/questions/427102/what-is-a-slug-in-django?rq=1)
-    -[super()](https://docs.djangoproject.com/en/2.1/topics/db/models/)
-        It’s important to remember to call the superclass method – that’s that super().save(*args, **kwargs) business – to ensure that the object still gets saved into the database. 
-        If you forget to call the superclass method, the default behavior won’t happen and the database won’t get touched.
-    
+- [Class-based views](https://docs.djangoproject.com/en/2.1/topics/class-based-views/)
+- [Using mixins with class-based views](https://docs.djangoproject.com/en/2.1/topics/class-based-views/mixins/)
+- [Class-Based Views vs. Function-Based Views](https://simpleisbetterthancomplex.com/article/2017/03/21/class-based-views-vs-function-based-views.html)
+- [What is the difference between Class Based Views and Function Based Views?](https://www.bedjango.com/blog/class-based-views-vs-function-based-views/)
+        -..."we use generic views with class if the functionality contains CRUD operations or it’s more complex, as it's more optimal."
+- [Built-in template tags and filters](https://docs.djangoproject.com/en/2.1/ref/templates/builtins/)        
+- [Slug](https://stackoverflow.com/questions/427102/what-is-a-slug-in-django?rq=1)
+- [super()](https://docs.djangoproject.com/en/2.1/topics/db/models/)
+    - It’s important to remember to call the superclass method – that’s that super().save(*args, **kwargs) business – to ensure that the object still gets saved into the database. 
+    If you forget to call the superclass method, the default behavior won’t happen and the database won’t get touched.
+
 ### Content
 
-- The concept and content of Creature Comforts is made up entirely to serve in the context of a web development course. 
-It has been largely inspired from existing box delivery companies and current self-care trends.
-This website was created for educational purposes only.
+- The concept and contents of Creature Comforts are inspired by 'CrateJoy' [[link here]](https://www.cratejoy.com/), but otherwise up entirely original, made up to serve in the context of a web development course. 
+
+    I combined business elements similar to those of existing box delivery companies, my own fascination for the Danish art of living well and current self-care trends.
+This website was created for educational purposes only and I do not claim to be an expert in any of the above aspects.
 
 ### Media
 
@@ -196,12 +240,12 @@ Only Flaticon required attribution and it is provided in the footer of the home 
 The Flaticons were only used on that specific page.
 
 All pictures used on Creature Comforts were  found on [Pexels](https://www.pexels.com/) and [Pixabay](https://pixabay.com/).
-The pictures do not require attribution. They have been heavily modified for the purpose of this project.
+The pictures are under public domain and do not require attribution. They have been heavily modified for the purpose of this project.
 
 ## Acknowledgements
 
 It is the last project that I submit for the CI Software Development Course. I am amazed at the progress I have made since I first started, what a contrast from my earlier days coding!
-Biggest thanks to my friends and family who supported me during this process and did their best to pinpoint the weaknesses and perks of Creature Comforts.
+Biggest thanks to my friends and family who supported me during this process and did their best to pinpoint the weaknesses and praise the strengths of Creature Comforts.
 I received the best advice and moral support from my mentor, who I hope is pleased with the outcome of my Code Institute journey.
  #### Thank you!
  ###
