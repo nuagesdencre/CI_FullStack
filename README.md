@@ -99,6 +99,9 @@ and the exchange of ideas over various topics.
 - [JQuery](https://jquery.com)
      
      The project uses JQuery to simplify DOM manipulation.
+- [Modernizr](https://modernizr.com/)
+
+    Modernizr tells you what HTML, CSS and JavaScript features the user’s browser has to offer. I use it for this project in relation to the loading animation on big viewport preceding the parallax image.
     
 - [EmailJS](https://www.emailjs.com/)
     

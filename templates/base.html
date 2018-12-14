@@ -14,8 +14,7 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script defer src="{% static 'font-awesome/js/all.js' %}">
     </script>
-{#    <link rel="stylesheet" href="{% static 'css/styles.css' %}">#}
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <script defer src="{% static 'js/creaturecomforts.js' %}">
     </script>
 
@@ -302,7 +301,7 @@
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous">
     </script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script defer src="{% static 'js/vendor/modernizr.js' %}"></script>
       {% block stripe %}{% endblock stripe %}
   </body>
 </html>
