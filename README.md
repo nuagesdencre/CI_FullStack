@@ -143,6 +143,7 @@ and the exchange of ideas over various topics.
 
     Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. During the creation of Creature Comforts, I used Bootstrap to establish and maintain good UI/UX over all aspects of the website (forms, navigation, product display, etc.).
 - [Font Awesome](https://fontawesome.com/)
+
     Font Awesome is a font and icon toolkit based on CSS and LESS. It was made by Dave Gandy for use with Twitter Bootstrap, and later was incorporated into the BootstrapCDN.
 
 - [AWS](https://aws.amazon.com/)      
