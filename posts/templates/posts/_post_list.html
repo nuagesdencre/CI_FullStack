@@ -1,7 +1,7 @@
 
 
-{% if request.user.is_authenticated %}
-    <h4>Your Followed Topics</h4>
+{% if request.user == post_user %}
+    <h4>My Followed Topics</h4>
 {% else %}
     <h4>Followed Topics</h4>
 {% endif %}

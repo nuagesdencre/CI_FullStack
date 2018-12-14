@@ -141,18 +141,27 @@ and the exchange of ideas over various topics.
 
     Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. During the creation of Creature Comforts, I used Bootstrap to establish and maintain good UI/UX over all aspects of the website (forms, navigation, product display, etc.).
 
-- [AWS](https://aws.amazon.com/)        
+- [AWS](https://aws.amazon.com/)      
+  
     AWS offers a complete range of cloud storage services to support both application and archival compliance requirements. 
+    
     - [S3](https://aws.amazon.com/s3/)
     
         Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance.
+        
     - [IAM](https://aws.amazon.com/iam/)
     
         AWS Identity and Access Management (IAM) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
+    
+    - [AWS SDK for Python (Boto3)](https://aws.amazon.com/sdk-for-python/)
+    
+    Boto3 is the AWS SDK for Python and allows an easy integration with Python applications, services or libraries with AWS services, such as Amazon S3.
 
-## [Testing](testing.md)
- Due to the length of my tests' description, I have included my breakdown in another file referenced [here](testing.md).
- The Word (.docx) version of the testing document is also available [here](testing.docx).
+## [Testing](testing.pdf)
+
+ Due to the thoroughness of my tests' description, I have included my testing process in another file referenced [here](testing.pdf). As it is a lengthy document, I converted it to PDF instead of using Markdown.
+ Hopefully this will be easier to read in that format.
+ If needed or prefered, the Word (.docx) version of the testing document is also available [here](testing.docx).
  
 ## Installation & Deployment
 **While in development**
@@ -197,18 +206,22 @@ I made sure to include the appropriate information in my Procfile (**web: gunico
 
 - I manually requested the deployment from the master branch.
  I reviewed the logs via the Heroku dashboard once the deployment confirmed and opened the app using my web browser to ensure everything was working properly.
-I tested the checkout feature relying on Stripe to ensure everything was processed smoothly. 
+Lastly, I tested the checkout feature relying on Stripe to ensure everything was processed smoothly. 
+
 ## Hurdles
 
 - Stripe Payment
+
     - I encountered an issue with the checkout as the stripe.js script was called before JQuery. It took me a little while to figure out the issue, as I initially was thrown off by the error 'stripe_id required'.
 I had to realize the stripe_id was not generated because the script did not run in the first place.
 
 - UI/UX of the website
+
     - As usual, I had a lot of feedback from my friends and family members regarding the website. 
 It was quite difficult to come up with an elegant concept that pleased everyone, but I did it after consulting each of my 'advisors' on their preferred user experience.
 
 - Profile Image
+
     - I had a typo in the user profile page that did not display the profile_image but instead checked if the user had provided any profile data.
 This typo was thankfully found during the final testing process of the project.
 
@@ -247,7 +260,7 @@ The pictures are under public domain and do not require attribution. They have b
 It is the last project that I submit for the CI Software Development Course. I am amazed at the progress I have made since I first started, what a contrast from my earlier days coding!
 Biggest thanks to my friends and family who supported me during this process and did their best to pinpoint the weaknesses and praise the strengths of Creature Comforts.
 I received the best advice and moral support from my mentor, who I hope is pleased with the outcome of my Code Institute journey.
- #### Thank you!
+ #### A big, enthusiastic thank you!
  ###
  
 Please get in touch if you have any comments or questions.
