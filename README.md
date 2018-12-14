@@ -63,7 +63,6 @@ and the exchange of ideas over various topics.
 - Online shop offering bespoke products
     - A selection of products suited to different needs are available via the box concept offered by Creature Comforts.
     - Moreover, it is possible for visitors to look up specific products quickly using key words via the search bar.
-    
     - A few clicks are sufficient for a visitor to add items to his/her cart, review his/her selection, checkout and receive the desired box at regular intervals.
     
 
@@ -81,7 +80,7 @@ and the exchange of ideas over various topics.
     They can review privacy policy, terms and conditions, and Creature Comforts' promise to their customers as well.
 
 - About 
-    - This page is meant for visitors that remain curious about the concept behind Creature Comforts and the reasoning behind the box contents.
+    - This page is meant for visitors that remain curious about the concept behind Creature Comforts and the reasoning explaining the box contents.
     
 
 ## Technologies Used
@@ -128,7 +127,7 @@ and the exchange of ideas over various topics.
         - [Built-in template tags and filters](https://docs.djangoproject.com/en/2.1/ref/templates/builtins/) This was helpful with my understanding of csrf_token, safe filter, etc.
         - [The Django admin documentation generator](https://docs.djangoproject.com/en/2.1/ref/contrib/admin/admindocs/)
         - [Argon2](https://pypi.org/project/argon2_cffi/) It allows for the best password hashing function (Argon2 was declared the winner of the Password Hashing Competition (PHC)). Argon2 is used in this project to ash the password submitted upon user registration.
-        - [Misaka](https://github.com/FSX/misaka) It is a library allows users to use markdown inside of the posts.
+        - [Misaka](https://github.com/FSX/misaka) It is a library that allows users to use markdown inside of the posts.
         - [django-braces](https://django-braces.readthedocs.io/en/latest/) Mixins for Django's class-based views.
         - [Q Objects](https://docs.djangoproject.com/en/2.1/ref/models/querysets/#django.db.models.Q) This permits the construction of complex database queries using | (OR) and & (AND) operators.
 
@@ -138,11 +137,13 @@ and the exchange of ideas over various topics.
     
      - [Heroku Postgres](https://www.heroku.com/postgres)
         
-        PostgreSQL is one of the world's most popular relational database management systems. I transitioned my database from SQLAlchemy (SQLite) to PostgreSQL while deploying my website with Heroku.
+        PostgreSQL is one of the world's most popular relational database management systems. I transitioned my database from SQLite to PostgreSQL while deploying my website with Heroku.
 
 - [Bootstrap](http://getbootstrap.com/) (v4.1.3)
 
     Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. During the creation of Creature Comforts, I used Bootstrap to establish and maintain good UI/UX over all aspects of the website (forms, navigation, product display, etc.).
+- [Font Awesome](https://fontawesome.com/)
+    Font Awesome is a font and icon toolkit based on CSS and LESS. It was made by Dave Gandy for use with Twitter Bootstrap, and later was incorporated into the BootstrapCDN.
 
 - [AWS](https://aws.amazon.com/)      
   
@@ -158,7 +159,7 @@ and the exchange of ideas over various topics.
     
     - [AWS SDK for Python (Boto3)](https://aws.amazon.com/sdk-for-python/)
     
-    Boto3 is the AWS SDK for Python and allows an easy integration with Python applications, services or libraries with AWS services, such as Amazon S3.
+        Boto3 is the AWS SDK for Python and allows an easy integration with Python applications, services or libraries with AWS services, such as Amazon S3.
 
 ## [Testing](testing.pdf)
 
@@ -244,20 +245,22 @@ Usage of Class based views for the blog section of the website, and function bas
 
 ### Content
 
-- The concept and contents of Creature Comforts are inspired by 'CrateJoy' [[link here]](https://www.cratejoy.com/), but otherwise up entirely original, made up to serve in the context of a web development course. 
+The concept and contents of Creature Comforts are inspired by 'CrateJoy' [[link here]](https://www.cratejoy.com/), but otherwise up entirely original, made up to serve in the context of a web development course. 
 
-    I combined business elements similar to those of existing box delivery companies, my own fascination for the Danish art of living well and current self-care trends.
+I combined business elements similar to those of existing box delivery companies, my own fascination for the Danish art of living well and current self-care trends.
 This website was created for educational purposes only and I do not claim to be an expert in any of the above aspects.
 
 ### Media
 
-The icons were retrieved on [Flaticon](https://www.flaticon.com/) and [Invision](https://www.invisionapp.com/inside-design/design-resources/). 
+Icons other than Font Awesome - displayed on Creature Comforts were sourced on [Flaticon](https://www.flaticon.com/) and [Invision](https://www.invisionapp.com/inside-design/design-resources/). 
+
 Only Flaticon required attribution and it is provided in the footer of the home page, as per the website's basic license requirements [here](https://support.flaticon.com/hc/en-us/articles/207248209). 
 The Flaticons were only used on that specific page.
 
 All pictures used on Creature Comforts were  found on [Pexels](https://www.pexels.com/) and [Pixabay](https://pixabay.com/).
 The pictures are under public domain and do not require attribution. They have been heavily modified for the purpose of this project.
 
+The background pattern of 'funky lines' was found on [Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/).
 ## Acknowledgements
 
 It is the last project that I submit for the CI Software Development Course. I am amazed at the progress I have made since I first started, what a contrast from my earlier days coding!
